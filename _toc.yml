@@ -1,0 +1,11 @@
+format: jb-book
+root: plan.md
+chapters:
+- file: 01/chapter_one_intro.ipynb
+  sections:
+  - file: 01/1/Introduction_to_Python.ipynb
+  - file: 01/2/Introduction_To_Proofs.ipynb
+  - file: 01/3/Counterexamples_and_Testing.ipynb
+  - file: 01/4/Types_and_Induction.ipynb
+  - file: 01/5/First_Algorithms.ipynb
+  - file: 01/6/statistical_analysis_of_algorithms.ipynb

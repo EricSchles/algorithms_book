@@ -1,0 +1,2323 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction To Proofs &#8212; The Analysis Of Algorithms</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Counter Examples and Testing" href="../3/Counterexamples_and_Testing.html" />
+    <link rel="prev" title="Introduction To Python" href="../1/Introduction_to_Python.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">The Analysis Of Algorithms</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../plan.html">
+   Analysis Of Algorithms
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../chapter_one_intro.html">
+   Algorithms Foundations
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1/Introduction_to_Python.html">
+     Introduction To Python
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Introduction To Proofs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3/Counterexamples_and_Testing.html">
+     Counter Examples and Testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4/Types_and_Induction.html">
+     Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5/First_Algorithms.html">
+     First Algorithms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6/statistical_analysis_of_algorithms.html">
+     Statistical Analysis of Algorithms
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/01/2/Introduction_To_Proofs.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/01/2/Introduction_To_Proofs.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-mathematics">
+   What Is Mathematics?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-introduction-to-logic">
+   An Introduction To Logic
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boolean-operators">
+   Boolean Operators
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sets">
+   Sets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#towards-functions">
+   Towards Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions">
+   Functions
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction-to-proofs">
+<h1>Introduction To Proofs<a class="headerlink" href="#introduction-to-proofs" title="Permalink to this headline">¶</a></h1>
+<p>In the last section we learned Python.  Next we will cover proofs, which will be a complete change of gears.  Then in the next section, introduction to counter examples, we will make a first attempt at combining programming and proofs.</p>
+<div class="section" id="what-is-mathematics">
+<h2>What Is Mathematics?<a class="headerlink" href="#what-is-mathematics" title="Permalink to this headline">¶</a></h2>
+<p>Although it’s likely if you are reading this book you’ve studied mathematics before, potentially for a large part of your life, have you ever considered what mathematics is?  Take a moment to think about what mathematics means to you.  If you can, write down a definition.</p>
+<p>Now that you’ve thought about it for a few minutes, and come up with your own definition, let’s consider some possible definitions that I thought about.</p>
+<p>Is mathematics the study of counting?  Certainly, mathematics started off about counting, and we can think of lots of ways to build from the counting to lots of other things.  But if all we interested in was counting, then things like geometry might be hard to think about.  So, I think we have to reject that as the definition.  Although, counting is certainly a <em>part</em> of mathematics.  It’s so important it’s got it’s own name, combinatorics.</p>
+<p>Is mathematics the study of numbers?  Mathematics definitely involves numbers.  But again we run into the problem with geometry still?  We can think of numbers as a natural extension of counting for a while, but at some point we reach numbers like <span class="math notranslate nohighlight">\(\sqrt{2}\)</span> which doesn’t have an intuitive counting equivalent.  But this is a natural thing to do in geometry.</p>
+<p>Consider the following triangle:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff86a2e65e0&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/Introduction_To_Proofs_1_1.png" src="../../_images/Introduction_To_Proofs_1_1.png" />
+</div>
+</div>
+<p>If we are interested in it’s hypotenuse we need to consider it’s two other sides, which both measure length 1.  Then we apply the pythagorian formula for length:</p>
+<div class="math notranslate nohighlight">
+\[ C^{2} = A^{2} + B^{2} \]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[ C = \sqrt{A^{2} + B^{2}} \]</div>
+<p>In our case this yields:</p>
+<p>A = 1
+B = 1</p>
+<p>Therefore,</p>
+<div class="math notranslate nohighlight">
+\[ C = \sqrt{1^{2} + 1^{2}}\]</div>
+<p>then we simply carry out the squaring:</p>
+<div class="math notranslate nohighlight">
+\[ C = \sqrt{1 + 1}\]</div>
+<p>And carry out the addition:</p>
+<div class="math notranslate nohighlight">
+\[ C = \sqrt{2}\]</div>
+<p>It is not easy to count <span class="math notranslate nohighlight">\(\sqrt{2}\)</span> and yet, it is a thing that occurs <em>very</em> naturally.  So numbers cannot entirely be based on counting.  And even then, it’s still not entirely obvious how to capture shapes in the numbers.  Of course, if we embed shapes in the cartesian plane, then this becomes clear, like we did above.  But what if we want to consider geometry <em>outside</em> of the plane?  What then?</p>
+<p>I think this is at least a somewhat convincing argument that numbers are not a strong enough basis for the foundations of all of mathematics.</p>
+<p>So is geometry?  Well geometry certainly can handle lots of cases.  But what happens when you need things like imaginary or complex numbers?  Or if you are dealing with dimensions that are fractional?  Or if a shape is not the right abstraction?  For instance, consider a social network:</p>
+<p>What shape best describes the connections between you and your friends?  While you might be able to capture this, wouldn’t a discrete graph be better than a continuous one?  What about transformations between spaces?  How does geometry think about that?  It may not be easy to capture transformations of an N dimensional plane geometrically.  Especially if there are <em>affine</em> transformations.  Or worse yet, if the transformation makes the space <em>smaller</em>, decreasing the number of dimensions of the space.</p>
+<p>No, I think geometry too must fail to be the central core of the study mathematics.  If you are unfamiliar with any of the above, not to worry!  The point of this book is to teach you about each of these things, to some degree.  At the very least, to introduce you to each of the above topics.  In case you’ve never seen the above topics before:</p>
+<p>The study of complex numbers is called complex analysis.  The study of spaces is called linear algebra, when we are dealing with translations between cartesian coordinates.  If we are dealing with discrete graphs, we are studying graph theory.  The study of spaces when we are not dealing with translations between cartesian coordinates is called topology.  There are many more fields of mathematics, like probability theory, category theory, homology, abstract algebra, real analysis, calculus, differential equations, and many more.  Each discipline is a <em>part</em> of mathematics, but not all of it.</p>
+<p>So in order to define mathematics, we have to ask ourselves, what do all of these things have <em>in common</em>?  My own working definition is this:</p>
+<p>Mathematics is the study of falsifiable statements, and primarily concerned with coming up with <em>new</em> true and false statements using a combination of logic, previously proven mathematical statements, and experimental evidence.</p>
+<p>So in order to learn mathematics, we need to know the <em>definitions</em> of our subfield, we need to know logic, and we need to be able to check our logic for errors or counter examples.  If we can do all that, then we can do mathematics in <em>any</em> subfield, no matter how sophisticated or simple.  Notice, that our definition requires that any statement we consider to prove mathematically be such that, it be either true or false, but not both.  This becomes very tricky in some parts of mathematics.</p>
+<p>For instance, if we consider probability, statistics, or machine learning, it’s <em>not</em> necessarily the case that any of the things we say or try to provide evidence for will <em>stay</em> true.  This is where mathematics and science diverge.  Science necessarily has to allow for exceptional cases.  The hypotheses science attempts to prove necessarily have falsifiability.  But that doesn’t mean that those statements <em>always</em> be true.  Just that they be predictable.  There are millions of reasons a given experiment could fail, and that may or may not mean that the hypothesis under consideration is true or false.  That is because there is a component of experimental design, associated with an experiment.  And experimental design is subject to failures outside of the thing under observation.  One of these factors is, humans.  We define the parameters of our experiments, and that doesn’t always mean we define them correctly.  We also have to analyze the data <em>after</em> or <em>during</em> the experiment has been carried out.  And often when that happens, there can be errors.  This implies that science is certainly interested in truth, but does not require the same tools, nor can we necessarily draw the same conclusions from mathematics that we can from science.</p>
+<p>This is not to say that both aren’t <em>important</em> and that they can’t work together - they absolutely can and do.  It is my ascertion that both are requirements for the other.  Science helps grounds mathematics in usefulness, and mathematics allows us to extend the technical capabilities of all science.  Therefore, when done well, and learned seriously, the two skills naturally reinforce one another.  But too much of one and not the other can lead to cellings in how far you can go.</p>
+<p>To summarize and extend, here are some of the areas of mathematics:</p>
+<ul class="simple">
+<li><p>combinatorics</p></li>
+<li><p>number theory</p></li>
+<li><p>algebra</p></li>
+<li><p>abstract algebra</p></li>
+<li><p>linear algebra</p></li>
+<li><p>real analysis</p></li>
+<li><p>complex analysis</p></li>
+<li><p>topology</p></li>
+<li><p>algebraic topology</p></li>
+<li><p>category theory</p></li>
+<li><p>graph theory</p></li>
+<li><p>geometry</p></li>
+<li><p>algebraic geometry</p></li>
+<li><p>probability theory</p></li>
+<li><p>statistics</p></li>
+<li><p>machine learning</p></li>
+<li><p>numerical methods</p></li>
+</ul>
+<p>Each of these areas is rich with it’s own storied history.  And each of these branches is certainly worthy of study.  That said, we will only have time and space in this text to study some of them, and only at the introductory level.  If you are interested in any of these topics, I highly recommend looking for a relevant set of sources at your nearest library.  Libribrians are a powerful resource, that often goes under utilized.  It’s their job to help you find interesting source material, that is useful.  Think of them like google search on steriods.</p>
+</div>
+<div class="section" id="an-introduction-to-logic">
+<h2>An Introduction To Logic<a class="headerlink" href="#an-introduction-to-logic" title="Permalink to this headline">¶</a></h2>
+<p>Logic is the study of statements that are true or false.  Using this binary set of cases, logicians build from basic notions to complex ones.  As an example of a falsifiable statement, consider the following statement:</p>
+<p>P: The integer 5 is odd.</p>
+<p>This statement can either be true or false, there is no wiggle room.  Either 5 is odd or it’s even.  Those are our only options.  Whether or not 5 is odd will be proved soon, but for now, don’t worry about that.  Now consider the following <em>open</em> statement:</p>
+<p>P(x): The integer 5x is odd.</p>
+<p>The reason this statement is open is because we don’t at the writing of the statement know the value of x.  That means it could be either case, until x is given.  If we were dealing with a Python program like this, it would be one where all the functions return a boolean.  Another example of an open statement, in Python would be:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_x_even</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we are asking if x is even.  If it is, then the function returns true.  If it’s odd, the function returns false.  Let’s take some examples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_x_even</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_x_even</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>See!  Pretty neat right?  If we want to assess whether an open statement is always true or always false however, we cannot rely on <em>any</em> programming language.  This is because programs are constrained by the computers running those programs, and the compute power associated with those computers.  That means, there is a limit to what a computer can figure out for us.  Next let’s look at how a human would check an open statement:</p>
+<p>Suppose P is an open statement, that means it can be either True or False:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+</tr>
+</tbody>
+</table>
+<p>So we have two possible states for our statement.  What if we had two open statements?  Then we would have 4 possible states:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>Q</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+</tbody>
+</table>
+<p>What if we have three open statements?  Then we have 8 possible states:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>Q</p></th>
+<th class="head"><p>R</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+</tbody>
+</table>
+<p>The above three diagrams are called truth tables and describe the possible states of open statements.  What’s powerful about these, is they describe the entire state of a set of statements.  As we’ll come to see, when we combine these with boolean operators, we’ll be able to make some powerful insights.</p>
+</div>
+<div class="section" id="boolean-operators">
+<h2>Boolean Operators<a class="headerlink" href="#boolean-operators" title="Permalink to this headline">¶</a></h2>
+<p>We’ve already seen these in the last section on Python, for the most part.  There will be a few new additions, but for the most part, this should be review.  First consider a single open statement, like</p>
+<p>P: The integer 2x is even.</p>
+<p>What is the negation of that statement?</p>
+<p>~P: The integer 2x is not even.</p>
+<p>OR</p>
+<p>~P: The integer 2x is odd.</p>
+<p>Next, let’s write down the truth table for P and ~P:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>~P</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>T</p></td>
+</tr>
+</tbody>
+</table>
+<p>Notice, that while the truth table for two variables has four possible states, the truth table for a statement and it’s negation only has two.  That is because ~P contains the same amount of information as P, except with the opposite values.  In otherwords, there is no extra state information in the negation.</p>
+<p>Let’s look at the Python operator equivalent:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="n">q</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, we capture the same amount of information with the Python code, that we do with the diagram.</p>
+<p>Next let’s look at the AND operator.  Unlike the not operator (~), the AND operator has a binary input, because it takes in two open statements.</p>
+<p>Let’s look at an example of a compound statement, using AND.</p>
+<p>P: 2x is an even number.
+Q: 3x is an odd number.</p>
+<p>P AND Q: 2x is an even number and 3x is an odd number.</p>
+<p>Now let’s look at it’s diagram:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>Q</p></th>
+<th class="head"><p>P AND Q</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+</tbody>
+</table>
+<p>As you can see, a statement containing an AND is only true if both the components are true.  The next compound statement we will look at is OR:</p>
+<p>Example:</p>
+<p>P: 45x + 7 is an even number.
+Q: 17x - 12 is an odd number.</p>
+<p>P OR Q: 45x + 7 is an even number or 17x - 12 is an odd number.</p>
+<p>Now let’s look at it’s diagram:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>Q</p></th>
+<th class="head"><p>P OR Q</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+</tbody>
+</table>
+<p>As you can see, a statement containing an OR is true unless both of it’s components are false.  Now let’s ask a question - are AND and OR opposites?  That is, is one true whenever the other is false?  We can check by comparing their truth tables:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>Q</p></th>
+<th class="head"><p>P OR Q</p></th>
+<th class="head"><p>P AND Q</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+</tbody>
+</table>
+<p>It looks like they aren’t opposites.  That’s because if the pair (P, Q) have the same value, then P AND Q, and P OR Q agree.  If a truth table can tell us when two operators are opposites, that means they can tell us <em>when they are the same</em>.  That means, we can use a truth table, to also <em>prove</em> that two operators do the same thing.</p>
+<p>Consider the following operator which many computer programmers may have seen before:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>Q</p></th>
+<th class="head"><p>P XOR Q</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+</tr>
+</tbody>
+</table>
+<p>This operator says - if both P and Q have the same truth value, XOR will be true and false otherwise.  Can we use the operators we’ve developed so far to decompose XOR into the operators, AND, OR and NOT?</p>
+<p>Proof:</p>
+<p>P XOR Q is equivalent to (P AND Q) OR (~P AND ~Q).</p>
+<p>We have already seen the truth table for XOR, but we will add it below for completeness:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>Q</p></th>
+<th class="head"><p>P XOR Q</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+</tr>
+</tbody>
+</table>
+<p>Next, let’s do the truth table for the second statement:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>Q</p></th>
+<th class="head"><p>~P</p></th>
+<th class="head"><p>~Q</p></th>
+<th class="head"><p>P AND Q</p></th>
+<th class="head"><p>~P AND ~Q</p></th>
+<th class="head"><p>(P AND Q) OR (~P AND ~Q)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+</tbody>
+</table>
+<p>As you can see they have equivalent truth values everywhere.  QED.</p>
+<p>At the end of a proof we usually write QED, which is an acryonm in latin.  The words mean, “for that which is to be shown”.  We can also implement the second operator pretty easily in Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">q</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="p">(</span><span class="n">p</span> <span class="ow">and</span> <span class="n">q</span><span class="p">)</span> <span class="ow">or</span> <span class="p">((</span><span class="ow">not</span> <span class="n">q</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">p</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">q</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="p">(</span><span class="n">p</span> <span class="ow">and</span> <span class="n">q</span><span class="p">)</span> <span class="ow">or</span> <span class="p">((</span><span class="ow">not</span> <span class="n">q</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">p</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">q</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="p">(</span><span class="n">p</span> <span class="ow">and</span> <span class="n">q</span><span class="p">)</span> <span class="ow">or</span> <span class="p">((</span><span class="ow">not</span> <span class="n">q</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">p</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">q</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="p">(</span><span class="n">p</span> <span class="ow">and</span> <span class="n">q</span><span class="p">)</span> <span class="ow">or</span> <span class="p">((</span><span class="ow">not</span> <span class="n">q</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">p</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>More importantly, we’ve just seen our first proof!  Proofs are the building block of all of mathematics.  In general it is the main mechanism to verify a new idea.  With a proof, you can be sure you are on stable ground.  In addition to that, it can also be an important mechanism for understanding why a statement is true or false.  So even if we get a negative result by trying to come up with a new idea, often times, in attempting to prove it, we still come away with some deeper understanding.</p>
+<p>In general the way knowledge discovery works is:</p>
+<p>Start with a set of primitives.  Use those primitives to prove new results.  Take the new results as part of your set of primitives.  Prove new results using this new enhanced set of primitives.</p>
+<p>With a complete system, you could continue this process forever, and learn <em>everything</em> in the world.  While this procedure doesn’t <em>always</em> work, it works to an incredibly effective degree.</p>
+<p>Next let’s talk about a very important type of mathematical statement:  If P then Q.  We’ve already seen this logic play out with the if/elif/else statement in Python, however it’s importance and power is greater in mathematics.  This is because if/elif/else statements are only useful for checking specific cases.  We can extend this with a for loop, however it’s just not as powerful.  For instance, suppose you wanted to check the following state:</p>
+<p>If x is an integer then 2x is even.</p>
+<p>For let’s see how we might check this with Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">count</span> <span class="o">==</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>At this point we have verified the statement for the first 100 integers.  But we haven’t verified it for <em>all</em> integers.  This is, unfortunately impossible for a machine.  This is because computers have <em>finite</em> memory.  They literally cannot check all the cases.  And this means, we can <em>never</em> be sure with code that a statement of this form will be true from a computer.</p>
+<p>Now let’s look at the truth table for if P then Q.  We’ll then use that truth table to prove the above statement.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>Q</p></th>
+<th class="head"><p>If P then Q</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+</tr>
+</tbody>
+</table>
+<p>As you can see we need to check three things -</p>
+<ol class="simple">
+<li><p>Whether P is true or false</p></li>
+<li><p>Whether Q is true or false</p></li>
+<li><p>The combination of P and Q.</p></li>
+</ol>
+<p>If P is False, then no matter what, the statement “if P then Q” is <em>always</em> true.  If P happens to be true, then we need to ensure Q is true as well, otherwise the statement is false.</p>
+<p>First let us verify that P is true.  In this case P is:</p>
+<p>x is an integer.</p>
+<p>To make this statement true, we can simply <em>assume</em> P is true.  That is, we can let x be some integer.  No more work is required.  This will have consequences for our statement Q, because now we must also assume the x in 2x is an integer.  If it’s not then the statement will be false.  Additionally, if 2x is not even, then the statement will be false.</p>
+<p>So we need to check:</p>
+<ol class="simple">
+<li><p>Is x an integer?</p></li>
+<li><p>Is 2x an integer?</p></li>
+<li><p>Is 2x an <em>even</em> integer?</p></li>
+</ol>
+<p>If all three of those are true, then “If P then Q” will be true, and we are <em>done</em>.</p>
+<p>Proof:</p>
+<p>let x be an integer.  (by assumption)</p>
+<p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">x</span></code> an integer.  (by 2 an integer, x an integer and integers closed under <code class="docutils literal notranslate"><span class="pre">*</span></code>)</p>
+<p>So now we know statements (1) and (2) are both true.  Next all we need to do is verify 2x is even.  At this point, we need the definition of even:</p>
+<p>definition: if y is an integer and <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">2*r</span></code> for some integer r, then y is even.</p>
+<p>From the above definition we can write <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">t</span></code> and t is an integer (by (1) and (2)).</p>
+<p>Therefore,</p>
+<p>If x is an integer, then 2x is even.</p>
+<p>QED.</p>
+<p>In this proof, we tried to <em>as explicit as possible</em>.  In some cases, being this explicit will be unnecessary.  However, sometimes, being more explicit than necessary will be helpful in finding errors in proofs.  The question of how much detail to include is much more an art than a science unfortunately.</p>
+<p>In any event, we’ve now seen how to prove a statement from a set of primitives.  I want to impress how <em>powerful</em> the above statement is:</p>
+<p>“If x is an integer, then 2x is even”</p>
+<p>is <em>impossible</em> for a computer to prove.  In a few lines of logic, we have shown something a computer can never do.  That’s the power of proofs.  By being able to show statements are <em>always</em> true, or <em>always</em> false, we humans are more powerful computational machines than computers.  Perhaps there will come a day when computers <em>truly</em> understand language.  Until that day comes, the human will always reign supreme in terms of computational prowess.</p>
+<p>Before we leave this proof, there are a few terms and phrases we need to define, that you may not already know.</p>
+<p>During the proof we used the phrase “integers closed under <code class="docutils literal notranslate"><span class="pre">*</span></code>”, this means that if you take <em>any</em> two integers and multiply them together, you’re answer is <em>still</em> an integer.</p>
+<p>The second thing you may not be used to is the style of this sort of proof.  Here we made a statement like:</p>
+<p>“let x be an integer.  (by assumption)”</p>
+<p>The thing being stated is the primitive and the thing in the () is the justification.  Sometimes you need a seperate line for the justification.  In which case a () is cumbersome.  But when the reasoning is straight forward to state, using () can add to the readability.</p>
+<p>As an aside, another way to write if P then Q is P =&gt; Q, read P implies Q.  The arrow notation is fairly standard and we will mostly use it going forward whenever possible.</p>
+<p>Now, let’s consider - can we write the truth table P =&gt; Q using the primitives we’ve defined so far?  The answer is yes!  Let’s state this as a lemma, which is a helper proof, and then prove it!</p>
+<p>Lemma: P =&gt; Q is equivalent to (~ P) OR Q.</p>
+<p>Proof:</p>
+<p>In order to prove this, we need only show that the two statements are logically equivalent, which we can do with the truth table:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>Q</p></th>
+<th class="head"><p>~P</p></th>
+<th class="head"><p>P =&gt; Q</p></th>
+<th class="head"><p>(~P) OR Q</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+</tbody>
+</table>
+<p>As you can see, the truth table for the two columns are equivalent!</p>
+<p>QED.</p>
+<p>While this proof is very straight forward, it gives us another powerful building block for proving results.  Specifically, it may be easier to negate a result and then check if both statements are false.  If both <em>are not</em> false, then the implication P =&gt; Q is true!</p>
+<p>Next let’s establish the general paradigm for equivalence, because we don’t use truth tables directly in proofs.  They are more like a guide for how the proof ought to flow.  And a rubric for what needs to be shown in order to prove the statement.  For this we need something called <em>the biconditional</em>.  Notationally the biconditional is often stated as:</p>
+<p>P is equivalent to Q</p>
+<p>OR</p>
+<p>P &lt;==&gt; Q.</p>
+<p>From a logical stand point, this is the same as, (P =&gt; Q) AND (Q =&gt; P).  Here is it’s truth table:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>Q</p></th>
+<th class="head"><p>P =&gt; Q</p></th>
+<th class="head"><p>Q =&gt; P</p></th>
+<th class="head"><p>(P =&gt; Q) AND (Q =&gt; P)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+</tbody>
+</table>
+<p>As you can see, the biconditional is true if both P AND Q are the same and false when they are different.  The careful reader will have noticed that the biconditional is equivalent to <em>another</em> logical operator we’ve already seen - XOR.</p>
+<p>Lemma:  P &lt;==&gt; Q is equivalent to P XOR Q.</p>
+<p>Proof:</p>
+<p>We need only write down the truth table to verify this:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>Q</p></th>
+<th class="head"><p>P =&gt; Q</p></th>
+<th class="head"><p>Q =&gt; P</p></th>
+<th class="head"><p>(P =&gt; Q) AND (Q =&gt; P)</p></th>
+<th class="head"><p>P XOR Q</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+</tbody>
+</table>
+<p>QED.</p>
+<p>Another way to prove this without relying on truth tables is to recall that, P =&gt; Q is equivalent to (~P) OR Q.  Let’s look at that proof, since it doesn’t relying on truth tables:</p>
+<p>Lemma: P &lt;==&gt; Q is equivalent to P XOR Q.</p>
+<p>Proof:</p>
+<p>We begin by making use of the fact that we know:</p>
+<p>P XOR is equivalent to (P AND Q) OR (~ P AND ~ Q), from our work above.</p>
+<p>So we need to show (P AND Q) OR (~ P AND ~ Q) &lt;==&gt; (P &lt;==&gt; Q).</p>
+<p>Whenever we are doing an equivalence proof, we need to show the implication in both directions, that is P =&gt; Q and then Q =&gt; P.  Let’s begin with P =&gt; Q:</p>
+<p>P &lt;==&gt; Q is equvalent to (P =&gt; Q) AND (Q =&gt; P). (by truth table in previous proof)</p>
+<p>P =&gt; Q is equivalent to (~ P) OR Q.  (by lemma above)</p>
+<p>Q =&gt; P is equivalent to ( ~Q) OR P.  (by lemma above)</p>
+<p>Therefore,</p>
+<p>P &lt;==&gt; Q is equivalent to (~ P OR Q) AND (~ Q OR P).</p>
+<p>We can rearrange (~ P OR Q) AND (~ Q OR P) to get (P AND Q) OR (~ P AND ~ Q).  Unfortunately, there are some laws we haven’t introduced yet, so we’ll need to use a truth table to verify this statement:</p>
+<p>We have truth table for (P AND Q) OR (~ P AND ~ Q) below:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>Q</p></th>
+<th class="head"><p>~P</p></th>
+<th class="head"><p>~Q</p></th>
+<th class="head"><p>P AND Q</p></th>
+<th class="head"><p>~P AND ~Q</p></th>
+<th class="head"><p>(P AND Q) OR (~P AND ~Q)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+</tbody>
+</table>
+<p>And we have the truth table for (~P OR Q) AND (~Q OR P)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>Q</p></th>
+<th class="head"><p>~P</p></th>
+<th class="head"><p>~Q</p></th>
+<th class="head"><p>~P OR Q</p></th>
+<th class="head"><p>~Q OR P</p></th>
+<th class="head"><p>(~P OR Q) AND (~Q OR P)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+</tbody>
+</table>
+<p>As you can see, the truth tables are equivalent.  This means that (P &lt;==&gt; Q) =&gt; (P AND Q) OR (~ P AND ~ Q).</p>
+<p>Next, to go backwards we begin with (P AND Q) OR (~ P AND ~ Q) and need to show we can follow a series of logical connectives to get back to P &lt;==&gt; Q.</p>
+<p>Beginning from (P AND Q) OR (~ P AND ~ Q):</p>
+<p>(P AND Q) OR (~ P AND ~ Q) is equivalent to (~ P OR Q) AND (~ Q OR P) (by above truth table).</p>
+<p>Next we can break up (~ P OR Q) AND (~ Q OR P):</p>
+<p>(~ P) OR Q  is equivalent to P =&gt; Q.  (by lemma above)</p>
+<p>(~ Q) OR P is equivalent to  Q =&gt; P.  (by lemma above)</p>
+<p>Therefore,</p>
+<p>(~ P OR Q) AND (~ Q OR P) is equivalent to (P =&gt; Q) AND (Q =&gt; P).</p>
+<p>And (P =&gt; Q) AND (Q =&gt; P) is equvalent to  P &lt;==&gt; Q (by definition).</p>
+<p>Therefore (P AND Q) OR (~P AND ~Q) =&gt; (P &lt;==&gt; Q).</p>
+<p>So, to sum up we have:</p>
+<p>(P AND Q) OR (~P AND ~Q) &lt;==&gt; (P &lt;==&gt; Q)!</p>
+<p>So P XOR Q &lt;==&gt; (P &lt;==&gt; Q).</p>
+<p>QED.</p>
+<p>While we did have to rely on <em>one</em> truth table still, we mostly could work off of primitives we already established to show that a <em>new</em> statement was true.</p>
+<p>Now that we have some mechanisms for equivalence, let’s talk about tautology and contradiction.</p>
+<p>In general, a tautology is a compound statement, where <em>every</em> value of the truth table is true.  Let’s look at some examples:</p>
+<p>Lemma: P OR ~P is a tautology.</p>
+<p>Proof:</p>
+<p>For this we will simply look at the truth table for P and ~P.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>~P</p></th>
+<th class="head"><p>P OR ~P</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+</tbody>
+</table>
+<p>QED.</p>
+<p>This means, the statement P OR ~P <em>will always be true</em>.  This is means <em>any</em> open statement or it’s negation will always be true.  In general tautologies that are compound statements should always be watched out for.  Because if a compound statement happens to take on the form of a tautology, we may simply need to notice that our statement is such to prove it.</p>
+<p>Hopefully in general it’s clear why P or ~P is a tautology - this comes down to the binary nature of truth.  In general, any statement can be either true or false, <em>but not both</em>.  So whenever the statement P is true, it’s negation will be false, and vice versa.</p>
+<p>Next let’s look at another less obvious tautology.</p>
+<p>Lemma:  ~Q OR (P =&gt; Q) is a tautology.</p>
+<p>Again we will simply look at the truth table to verify this:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>Q</p></th>
+<th class="head"><p>~Q</p></th>
+<th class="head"><p>P =&gt; Q</p></th>
+<th class="head"><p>(~Q) OR (P =&gt; Q)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+</tbody>
+</table>
+<p>QED.</p>
+<p>This one is a little easier to make sense of if we consider the more primative form of P =&gt; Q.  Namely, (~P) OR Q:</p>
+<p>(~ Q) OR (~ P OR Q) &lt;==&gt; ~ Q OR Q OR ~ P.</p>
+<p>To see this, we only need to drop the parentheses.  Then we can simply do this:</p>
+<p>(~Q OR Q) OR ~P.</p>
+<p>At this point, the tautology should be obvious - we have Q OR ~Q as one of our terms!  And since that’s joined to the ~P with an OR it <em>doesn’t matter</em> what the value of ~P is.  If one of the statements true, the whole thing is <em>always</em> true and Q OR ~Q is always true.</p>
+<p>Let’s see one more tautology involving our less primitive operators, this time we’ll look at the biconditional:</p>
+<p>Lemma: (Q OR P) OR (P &lt;==&gt; Q)</p>
+<p>As per usual, we’ll look at the truth table:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>Q</p></th>
+<th class="head"><p>Q OR P</p></th>
+<th class="head"><p>P &lt;==&gt; Q</p></th>
+<th class="head"><p>(Q OR P) OR (P &lt;==&gt; Q)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+</tbody>
+</table>
+<p>QED.</p>
+<p>This statement says either P is true, Q is true or P is equivalent to Q.  Not a particularly powerful statement, but certainly worth knowing.  There are <em>many</em> forms for a tautology to take.  And some of them are more obvious, while others are less so.  But if you can notice that a statement is in the form of a tautology, you can <em>automatically</em> prove it with a truth table rather than having to prove any of the actual open statements.  Pretty powerful!  Of course, this is only useful, in so far as the statements <em>themselves</em> are useful for us to know.  Some tautologies are very powerful, while others are essentially useless.  It all depends.</p>
+<p>Next we’ll look at contradiction:</p>
+<p>A contradiction is the opposite of a tautology, and comes up <em>a lot</em> in proofs.  In a contradiction, all the values are false, instead of all of them being true.  The simplest contradiction is P AND ~P.</p>
+<p>Lemma: P AND ~P is a contradiction.</p>
+<p>Proof:</p>
+<p>For this we will simply use a truth table, as is typical:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>~P</p></th>
+<th class="head"><p>P AND ~P</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+</tr>
+</tbody>
+</table>
+<p>QED.</p>
+<p>What this says is, P can be true or false, but <em>not</em> both.  Since P and ~P always have the opposite truth value, you can never have both being true at the same time.  Therefore, we always get a contradiction.  We leave as an exercise to the reader to come up with more examples of contradictions.</p>
+<p>Next let’s look at the “algebra” of AND and OR:</p>
+<p>Commutative Laws:</p>
+<ol class="simple">
+<li><p>P OR Q is equivalent to Q or P.</p></li>
+<li><p>P AND Q is equivalent to Q AND P.</p></li>
+</ol>
+<p>Associative Laws:</p>
+<ol class="simple">
+<li><p>P OR (Q OR R) is equivalent to (P OR Q) OR R</p></li>
+<li><p>P AND (Q AND R) is equivalent to (P AND Q) AND R</p></li>
+</ol>
+<p>Distributive Laws:</p>
+<ol class="simple">
+<li><p>P OR (Q AND R) is equivalent to (P OR Q) AND (P OR R)</p></li>
+<li><p>P AND (Q OR R) is equivalent to (P AND Q) OR (P AND R)</p></li>
+</ol>
+<p>DeMorgan’s Laws:</p>
+<ol class="simple">
+<li><p>~ (P OR Q) is equivalent to (~ P) AND (~ Q)</p></li>
+<li><p>~ (P AND Q) is equivalent to (~ P) OR (~ Q)</p></li>
+</ol>
+<p>We will leave it as an exercise to prove the above statements.</p>
+<p>This concludes the section on boolean operators.  Congradulations!  You just learned the basics of how to prove things.</p>
+</div>
+<div class="section" id="sets">
+<h2>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h2>
+<p>Now that we’ve learned about boolean operators and how to prove things, we are ready to introduce our next primitive, sets.  A set is a collection of objects.  In mathematicats this <em>usually</em> means numbers, but not always.  As we’ve seen from Python, we can put many things into collections.</p>
+<p>Some examples of collections we’ve seen so far:</p>
+<p>A list:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">listing</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A dictionary:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dicter</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span><span class="mi">4</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python even has a builtin set collection:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">set_of_numbers</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>One of the important differences between sets in Python and mathematical sets is, Python sets are <em>always</em> finite.  We have no such restriction in mathematics.  And in fact, <em>most</em> of the sets we’ll study are infinite.  The ‘smallest’ infinite set we’ll typically look at is the natural numbers, that is the set:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{N} = [0,1,2,3,4...]\]</div>
+<p>Notice that <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> starts with <span class="math notranslate nohighlight">\(0\)</span>.  Not all mathematicians believe this to be the case.  So, it’s important to check.  Most computer scientists start the <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> with 0, which is why we adopt this convention.</p>
+<p>But before we get into the typical stuff, let’s start with some primitives.</p>
+<p>Set theory is about <em>membership</em>.  By understand what elements are in a set and what elements are outside a set, then we can prove things about the set.  In Python the equivalence here is the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator.</p>
+<p>The proofs we will look at, will start by selecting a single “representative” element from a given set, and show how that element is contained or not contained in another set.  By doing so, the relationship between two sets will be understood.</p>
+<p>Now let’s look at some primitive operations on sets.  Consider the following diagram:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib_venn</span> <span class="kn">import</span> <span class="n">venn2_circles</span><span class="p">,</span> <span class="n">venn2</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">venn2</span><span class="p">(</span><span class="n">subsets</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Introduction_To_Proofs_25_0.png" src="../../_images/Introduction_To_Proofs_25_0.png" />
+</div>
+</div>
+<p>Here the numbers are just used as identifiers, and hold no numeric meaning.  Using the above diagram as a reference we can define the following subsets:</p>
+<p>The ‘5’ here represents the intersection of the two sets, written has A <span class="math notranslate nohighlight">\(\cap\)</span> B</p>
+<p>The ‘10’ here represents all the elements only in A, written A - B.</p>
+<p>The ‘11’ here represents all the elements only in B, written B - A</p>
+<p>And finally the union which is all the elements in A, B or in their intersection is written A <span class="math notranslate nohighlight">\(\cup\)</span> B</p>
+<p>Notice that A <span class="math notranslate nohighlight">\(\cup\)</span> B is always the largest of these four subsets of the diagram.  We cannot say the same for the smallest.  It could be any of A <span class="math notranslate nohighlight">\(\cap\)</span> B, A - B, or B - A.</p>
+<p>The above venn diagram is the most typical case, however sometimes all the elements in A are also in B, or vice versa.</p>
+<p>If B is a subset of A:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">venn2</span><span class="p">(</span><span class="n">subsets</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Introduction_To_Proofs_27_0.png" src="../../_images/Introduction_To_Proofs_27_0.png" />
+</div>
+</div>
+<p>In this case A <span class="math notranslate nohighlight">\(\cap\)</span> B = B.  If that’s the case then we write B <span class="math notranslate nohighlight">\(\subseteq\)</span> A, for B is a subset of A.</p>
+<p>Now let’s prove some basic facts about sets:</p>
+<p>Lemma: Let A and B be sets.  A <span class="math notranslate nohighlight">\(\cap\)</span> B <span class="math notranslate nohighlight">\(\subseteq\)</span> A <span class="math notranslate nohighlight">\(\cup\)</span> B.</p>
+<p>Proof:</p>
+<p>In this proof we have a few cases:</p>
+<ol class="simple">
+<li><p>A <span class="math notranslate nohighlight">\(\cap\)</span> B = <span class="math notranslate nohighlight">\(\emptyset\)</span>.</p></li>
+</ol>
+<p>The <span class="math notranslate nohighlight">\(\emptyset\)</span> is a short hand for the empty set, and means the set with no elements.</p>
+<ol class="simple">
+<li><p>A <span class="math notranslate nohighlight">\(\cap\)</span> B <span class="math notranslate nohighlight">\(\ne\)</span> <span class="math notranslate nohighlight">\(\emptyset\)</span></p></li>
+</ol>
+<p>In this case the intersection contains at least 1 element.</p>
+<p>Let’s do case 2 first, since it’s more typical:</p>
+<p>Assume that A <span class="math notranslate nohighlight">\(\cap\)</span> B <span class="math notranslate nohighlight">\(\ne\)</span> <span class="math notranslate nohighlight">\(\emptyset\)</span>.  Thus let us define x such that x <span class="math notranslate nohighlight">\(\in\)</span> A <span class="math notranslate nohighlight">\(\cap\)</span> B.  The <span class="math notranslate nohighlight">\(\in\)</span> operator indicates that our element is a <em>member</em> of some set.</p>
+<p>Now we have:</p>
+<p>x <span class="math notranslate nohighlight">\(\in\)</span> A <span class="math notranslate nohighlight">\(\cap\)</span> B (by assumption)</p>
+<p>Therefore x <span class="math notranslate nohighlight">\(\in\)</span> A and x <span class="math notranslate nohighlight">\(\in\)</span> B.</p>
+<p>From here there are a couple of cases:</p>
+<ol class="simple">
+<li><p>A <span class="math notranslate nohighlight">\(\subseteq\)</span> B</p></li>
+<li><p>B <span class="math notranslate nohighlight">\(\subseteq\)</span> A</p></li>
+<li><p>some of the elements of A and B overlap, but not all of them.</p></li>
+</ol>
+<p>If we are in case 3 then, the following picture is a good depiction:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib_venn</span> <span class="kn">import</span> <span class="n">venn2_circles</span><span class="p">,</span> <span class="n">venn2</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">venn2</span><span class="p">(</span><span class="n">subsets</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Introduction_To_Proofs_29_0.png" src="../../_images/Introduction_To_Proofs_29_0.png" />
+</div>
+</div>
+<p>In this case, then we can see x <span class="math notranslate nohighlight">\(\in\)</span> A <span class="math notranslate nohighlight">\(\cap\)</span> B, here labeled ‘5’.  We can also see clearly from the picture that the ‘or’ operator subsumes the ‘and’ operator.  In particular if x <span class="math notranslate nohighlight">\(\in\)</span> A <span class="math notranslate nohighlight">\(\cap\)</span> B, then it is in A and B, which doesn’t include the elements in the union of the form A - B or B - A.  Therefore, we can state:</p>
+<p>if x <span class="math notranslate nohighlight">\(\in\)</span> A <span class="math notranslate nohighlight">\(\cap\)</span> B =&gt; x <span class="math notranslate nohighlight">\(\in\)</span> A <span class="math notranslate nohighlight">\(\cup\)</span> B, but x <span class="math notranslate nohighlight">\(\notin\)</span> A - B and x <span class="math notranslate nohighlight">\(\notin\)</span> B - A.</p>
+<p>Let’s now consider the case where B <span class="math notranslate nohighlight">\(\subseteq\)</span> A:</p>
+<p>As before, we assume x <span class="math notranslate nohighlight">\(\in\)</span> A <span class="math notranslate nohighlight">\(\cap\)</span> B, but now we also know B <span class="math notranslate nohighlight">\(\subseteq\)</span> A, so we have:</p>
+<p>x <span class="math notranslate nohighlight">\(\in\)</span> A <span class="math notranslate nohighlight">\(\cap\)</span> B =&gt; x <span class="math notranslate nohighlight">\(\in\)</span> B.  Suppose for a moment that, x <span class="math notranslate nohighlight">\(\in\)</span> A - B, then x <span class="math notranslate nohighlight">\(\in\)</span> A, but then x <span class="math notranslate nohighlight">\(\notin\)</span> B, which would violate our assumption that x <span class="math notranslate nohighlight">\(\in\)</span> A <span class="math notranslate nohighlight">\(\cap\)</span> B.  Note, that the above logic assumes that, by definition of B <span class="math notranslate nohighlight">\(\subseteq\)</span> A, all the elements in B are also in A, but the reverse is not true.</p>
+<p>Finally, we consider case 1, A <span class="math notranslate nohighlight">\(\subseteq\)</span> B:</p>
+<p>As before, we assume x <span class="math notranslate nohighlight">\(\in\)</span> A <span class="math notranslate nohighlight">\(\cap\)</span> B, but now we also know A <span class="math notranslate nohighlight">\(\subseteq\)</span> B, so we have:</p>
+<p>x <span class="math notranslate nohighlight">\(\in\)</span> A <span class="math notranslate nohighlight">\(\cap\)</span> B =&gt; x <span class="math notranslate nohighlight">\(\in\)</span> A.  Suppose for a moment that, x <span class="math notranslate nohighlight">\(\in\)</span> B - A, then x <span class="math notranslate nohighlight">\(\in\)</span> B, but then x <span class="math notranslate nohighlight">\(\notin\)</span> A, which would violate our assumption that x <span class="math notranslate nohighlight">\(\in\)</span> A <span class="math notranslate nohighlight">\(\cap\)</span> B.</p>
+<p>Lastly, let us consider the case where A <span class="math notranslate nohighlight">\(\cap\)</span> B = <span class="math notranslate nohighlight">\(\emptyset\)</span>.</p>
+<p>In this case, there are no elements x <span class="math notranslate nohighlight">\(\in\)</span> A <span class="math notranslate nohighlight">\(\cap\)</span> B, therefore the proof is vaccuously true by</p>
+<p>False =&gt; True is True and False =&gt; False is True.  So there are no cases, where the proof false.</p>
+<p>In the above, since the element x was non-specific, we can apply all of the steps above to any element of the sets.  Therefore it is true for all the elements of the sets.</p>
+<p>QED.</p>
+<p>One of the things we observed in this proof is:</p>
+<p>A <span class="math notranslate nohighlight">\(\cup\)</span> B = (A <span class="math notranslate nohighlight">\(\cap\)</span> B) <span class="math notranslate nohighlight">\(\cup\)</span> (A - B) <span class="math notranslate nohighlight">\(\cup\)</span> (B - A).  While we have verified this by the venn diagram picture above, sometimes it is useful to simply restate.  This will end up being a very useful fact for many proofs.  It allows us to directly show certain cases without having to consider a representative element.</p>
+<p>Next let’s look at the following result:</p>
+<p>For every two sets A and B,</p>
+<p>A - B = A <span class="math notranslate nohighlight">\(\cap\)</span> <span class="math notranslate nohighlight">\(\bar{B}\)</span></p>
+<p>Here <span class="math notranslate nohighlight">\(\bar{B}\)</span> means the set of all the elements not in B.</p>
+<p>Proof:</p>
+<p>First we show that A - B <span class="math notranslate nohighlight">\(\subseteq\)</span> A <span class="math notranslate nohighlight">\(\cap\)</span> <span class="math notranslate nohighlight">\(\bar{B}\)</span>.</p>
+<p>Let x <span class="math notranslate nohighlight">\(\in\)</span> A - B.</p>
+<p>Then x <span class="math notranslate nohighlight">\(\in\)</span> A and x <span class="math notranslate nohighlight">\(\notin\)</span> B.  Since x <span class="math notranslate nohighlight">\(\notin\)</span> B, it follows that x <span class="math notranslate nohighlight">\(\in\)</span> <span class="math notranslate nohighlight">\(\bar{B}\)</span>.</p>
+<p>Therefore, x <span class="math notranslate nohighlight">\(\in\)</span> A and x <span class="math notranslate nohighlight">\(\in\)</span> <span class="math notranslate nohighlight">\(\bar{B}\)</span>, so x <span class="math notranslate nohighlight">\(\in\)</span> A <span class="math notranslate nohighlight">\(\cap\)</span> <span class="math notranslate nohighlight">\(\bar{B}\)</span>.  Hence,</p>
+<p>A - B <span class="math notranslate nohighlight">\(\subseteq\)</span> A <span class="math notranslate nohighlight">\(\cap\)</span> <span class="math notranslate nohighlight">\(\bar{B}\)</span>.</p>
+<p>Next we show that A <span class="math notranslate nohighlight">\(\cap\)</span> <span class="math notranslate nohighlight">\(\bar{B}\)</span> <span class="math notranslate nohighlight">\(\subseteq\)</span> A - B.</p>
+<p>Let x <span class="math notranslate nohighlight">\(\in\)</span> A <span class="math notranslate nohighlight">\(\cap\)</span> <span class="math notranslate nohighlight">\(\bar{B}\)</span>.</p>
+<p>Then x <span class="math notranslate nohighlight">\(\in\)</span> A and <span class="math notranslate nohighlight">\(\bar{B}\)</span>.  Since x <span class="math notranslate nohighlight">\(\in\)</span> <span class="math notranslate nohighlight">\(\bar{B}\)</span>, it follows that x <span class="math notranslate nohighlight">\(\notin\)</span> B.</p>
+<p>Therefore, x <span class="math notranslate nohighlight">\(\in\)</span> A and x <span class="math notranslate nohighlight">\(\notin\)</span> B, so x <span class="math notranslate nohighlight">\(\in\)</span> A - B.  Hence,</p>
+<p>A <span class="math notranslate nohighlight">\(\cap\)</span> <span class="math notranslate nohighlight">\(\bar{B}\)</span> <span class="math notranslate nohighlight">\(\subseteq\)</span> A - B.</p>
+<p>QED</p>
+<p>Notice that in this proof we used a similiar mechanism for equality that we used for equivalence when we were going over logic.</p>
+<p>Therefore there is an “equivalence” between P &lt;==&gt; Q and A = B.  Specifically, that:</p>
+<p>P =&gt; Q &lt;==&gt; A <span class="math notranslate nohighlight">\(\subseteq\)</span> B.</p>
+<p>Notice that, while these two operations are “equivalent” they are <em>not</em> equal.  That’s because P and Q are open statements, and A and B are <em>sets</em>.  These are different mathematical ‘objects’ and therefore equality is too strong a statement.</p>
+<p>There is a equivalent notion in Python for things that are similar but not the same:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">==</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="o">==</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>And yet,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="ow">is</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+&lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+&lt;ipython-input-4-63176c6536ac&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  1 is True
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="ow">is</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+&lt;&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+&lt;ipython-input-5-808c2f2e0e8d&gt;:1: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  0 is False
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>So even though <code class="docutils literal notranslate"><span class="pre">1</span></code> is <em>not</em> <code class="docutils literal notranslate"><span class="pre">True</span></code> in Python, it is equivalent!  And even though <code class="docutils literal notranslate"><span class="pre">0</span></code> is <em>not</em> <code class="docutils literal notranslate"><span class="pre">False</span></code>, it is also equivalent!</p>
+<p>For our next proof we will look at a statement related to something we’ve already used:</p>
+<p>Lemma: Let A and B be sets.  Then A <span class="math notranslate nohighlight">\(\cup\)</span> B = A if and only if B <span class="math notranslate nohighlight">\(\subseteq\)</span> A.</p>
+<p>Proof:</p>
+<p>First we show if A <span class="math notranslate nohighlight">\(\cup\)</span> B = A then B <span class="math notranslate nohighlight">\(\subseteq\)</span> A.  For this we’ll need a new technique: the contrapositive.</p>
+<p>Definition: <strong>Contrapositive</strong></p>
+<p>If P =&gt; Q, then the contrapositive is ~Q =&gt; ~P.  It has the following truth table:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>P</p></th>
+<th class="head"><p>Q</p></th>
+<th class="head"><p>~P</p></th>
+<th class="head"><p>~Q</p></th>
+<th class="head"><p>P =&gt; Q</p></th>
+<th class="head"><p>~Q =&gt; ~P</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>F</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>F</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+<td><p>T</p></td>
+</tr>
+</tbody>
+</table>
+<p>As you can see, the contrapositive has the same truth table as the implication, so the two statements are equivalent.</p>
+<p>Continuing with the proof:</p>
+<p>The contrapositive of A <span class="math notranslate nohighlight">\(\cup\)</span> B = A then B <span class="math notranslate nohighlight">\(\subseteq\)</span> A is:</p>
+<p>B <span class="math notranslate nohighlight">\(\subsetneq\)</span> A then A <span class="math notranslate nohighlight">\(\cup\)</span> B <span class="math notranslate nohighlight">\(\neq\)</span> A.</p>
+<p>So now we need to show the contrapositive:</p>
+<p>By B <span class="math notranslate nohighlight">\(\subsetneq\)</span> A we have there exists some element x <span class="math notranslate nohighlight">\(\in\)</span> B such that x <span class="math notranslate nohighlight">\(\notin\)</span> A.</p>
+<p>Since x <span class="math notranslate nohighlight">\(\in\)</span> B, it follows that x <span class="math notranslate nohighlight">\(\in\)</span> A <span class="math notranslate nohighlight">\(\cup\)</span> B.  However, since x <span class="math notranslate nohighlight">\(\notin\)</span> A, we have A <span class="math notranslate nohighlight">\(\cup\)</span> B <span class="math notranslate nohighlight">\(\neq\)</span> A.</p>
+<p>Next we prove the other direction:</p>
+<p>If B <span class="math notranslate nohighlight">\(\subseteq\)</span> A then A <span class="math notranslate nohighlight">\(\cup\)</span> B = A.  Here we use a direct proof:</p>
+<p>We begin by assuming B <span class="math notranslate nohighlight">\(\subseteq\)</span> A.  To verify that A <span class="math notranslate nohighlight">\(\cup\)</span> B = A, we need to show that A <span class="math notranslate nohighlight">\(\subseteq\)</span> A <span class="math notranslate nohighlight">\(\cup\)</span> B and A <span class="math notranslate nohighlight">\(\cup\)</span> B <span class="math notranslate nohighlight">\(\subseteq\)</span> A:</p>
+<p>First, A <span class="math notranslate nohighlight">\(\subseteq\)</span> A <span class="math notranslate nohighlight">\(\cup\)</span> B follows from x <span class="math notranslate nohighlight">\(\in\)</span> A then x <span class="math notranslate nohighlight">\(\in\)</span> A <span class="math notranslate nohighlight">\(\cup\)</span> B, by definition.</p>
+<p>Second, A <span class="math notranslate nohighlight">\(\cup\)</span> B <span class="math notranslate nohighlight">\(\subseteq\)</span> A.</p>
+<p>Here we begin with y <span class="math notranslate nohighlight">\(\in\)</span> A <span class="math notranslate nohighlight">\(\cup\)</span> B.  Thus y <span class="math notranslate nohighlight">\(\in\)</span> A or y <span class="math notranslate nohighlight">\(\in\)</span> B.</p>
+<p>Cases:</p>
+<ol class="simple">
+<li><p>y <span class="math notranslate nohighlight">\(\in\)</span> A</p></li>
+</ol>
+<p>In this case, we are already done, because if y <span class="math notranslate nohighlight">\(\in\)</span> A then A <span class="math notranslate nohighlight">\(\cup\)</span> B <span class="math notranslate nohighlight">\(\subseteq\)</span> A.</p>
+<ol class="simple">
+<li><p>y <span class="math notranslate nohighlight">\(\in\)</span> B</p></li>
+</ol>
+<p>In this case, we make use of the fact that, by assumption B <span class="math notranslate nohighlight">\(\subseteq\)</span> A, which implies y <span class="math notranslate nohighlight">\(\in\)</span> A, and therefore A <span class="math notranslate nohighlight">\(\cup\)</span> B <span class="math notranslate nohighlight">\(\subseteq\)</span> A.</p>
+<p>QED.</p>
+<p>This proof was different than a lot of the proofs we had seen so far, there were many cases, and a lot of techniques required to show each of the steps.  The number of “moving parts” was relatively large.  Whenever you end up in a proof like this, sometimes decomposing your logic into cases can be helpful and greatly reduce the amount of individual effort needed to prove each case.  This technique is useful as well for thinking about problem solving in computer science, as we will see throughout this book.</p>
+<p>As a finale to our section on set theory (for now) we will look at some fundamental properties:</p>
+<p>Let A, B, and C be sets.  Then the following laws are true:</p>
+<p>Commutative Laws:</p>
+<ol class="simple">
+<li><p>A <span class="math notranslate nohighlight">\(\cup\)</span> B is equivalent to B <span class="math notranslate nohighlight">\(\cup\)</span> A.</p></li>
+<li><p>A <span class="math notranslate nohighlight">\(\cap\)</span> B is equivalent to B <span class="math notranslate nohighlight">\(\cap\)</span> A.</p></li>
+</ol>
+<p>Associative Laws:</p>
+<ol class="simple">
+<li><p>A <span class="math notranslate nohighlight">\(\cup\)</span> (B <span class="math notranslate nohighlight">\(\cup\)</span> C) is equivalent to (A <span class="math notranslate nohighlight">\(\cup\)</span> B) <span class="math notranslate nohighlight">\(\cup\)</span> C</p></li>
+<li><p>A <span class="math notranslate nohighlight">\(\cap\)</span> (B <span class="math notranslate nohighlight">\(\cap\)</span> C) is equivalent to (A <span class="math notranslate nohighlight">\(\cap\)</span> B) <span class="math notranslate nohighlight">\(\cap\)</span> C</p></li>
+</ol>
+<p>Distributive Laws:</p>
+<ol class="simple">
+<li><p>A <span class="math notranslate nohighlight">\(\cup\)</span> (B <span class="math notranslate nohighlight">\(\cap\)</span> C) is equivalent to (A <span class="math notranslate nohighlight">\(\cup\)</span> B) AND (A <span class="math notranslate nohighlight">\(\cap\)</span> C)</p></li>
+<li><p>A <span class="math notranslate nohighlight">\(\cap\)</span> (B <span class="math notranslate nohighlight">\(\cup\)</span> C) is equivalent to (A <span class="math notranslate nohighlight">\(\cap\)</span> B) <span class="math notranslate nohighlight">\(\cup\)</span> (A <span class="math notranslate nohighlight">\(\cap\)</span> C)</p></li>
+</ol>
+<p>DeMorgan’s Laws:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\overline{P \cup Q}\)</span> is equivalent to <span class="math notranslate nohighlight">\(\bar{P} \cap \bar{Q}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\overline{A \cap B}\)</span> is equivalent to <span class="math notranslate nohighlight">\(\bar{A} \cup \bar{B}\)</span></p></li>
+</ol>
+<p>If these three sets of laws look familiar, <em>they should</em>.  These are the same laws for OR/AND/NOT when we were looking at logic.</p>
+<p>In general there are is a lot of overlap between logic and set theory.  In no small part this stems from how similar the primitives between the two branches of mathematics are.  To recap, those operators are:</p>
+<ul class="simple">
+<li><p>logical equivalence and equality</p></li>
+<li><p>AND and Intersection</p></li>
+<li><p>OR and Union</p></li>
+<li><p>Not and Complement (the <span class="math notranslate nohighlight">\(\bar{A}\)</span> operator).</p></li>
+</ul>
+<p>At the beginning of this section, I mentioned <em>membership</em> being a central theme of the proofs in set theory, but it goes deeper than that, membership is the main focus of study within set theory.  Though it may not be obvious, this is similar to the main focus of study in logic -&gt; the truth of a statement.</p>
+<p>We’ve already seen the reason why, from the Python code above:</p>
+<ul class="simple">
+<li><p>It’s because we can map True -&gt; 1</p></li>
+<li><p>And we can map False -&gt; 0</p></li>
+</ul>
+<p>So what does 1 mean?  Well, think about what a membership function would need?  It would need to take in an element and a set, and return 1 if the element is a member of the set, and 0 if it’s not.</p>
+<p>Let’s write down such a function in Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">membership</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">collection</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">element</span> <span class="ow">in</span> <span class="n">collection</span><span class="p">)</span>
+
+<span class="n">membership</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">membership</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>So our membership function maps elements to the set <code class="docutils literal notranslate"><span class="pre">{0,</span> <span class="pre">1}</span></code>.  Now to ask a very important question, is there anything <em>special</em> about the set <code class="docutils literal notranslate"><span class="pre">{0,</span> <span class="pre">1}</span></code>?  Or could the set <code class="docutils literal notranslate"><span class="pre">{False,</span> <span class="pre">True}</span></code> work just as well?  I’ve made the answer pretty obvious if you look at the code above, but just to really hit you over the head with the point:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">membership2</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">collection</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">collection</span>
+
+<span class="n">membership2</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">membership2</span></code> function uses <code class="docutils literal notranslate"><span class="pre">{False,</span> <span class="pre">True}</span></code> instead of <code class="docutils literal notranslate"><span class="pre">{0,</span> <span class="pre">1}</span></code>!  So what does this mean?  Well, it <em>means</em> that at a <em>fundamental level</em>, membership in a set is like the truth of a statement.  Both in terms of the semantics and the <em>syntax</em>.  That is sets are concerned at the most primitive level between mapping stuff to a set with two things, and logic is concerned with mapping stuff to a set with two things.</p>
+<p>This connection will be very important for considering the next stop on our tour through mathematics, the (mathematical) function, which we will build up to from relations.</p>
+</div>
+<div class="section" id="towards-functions">
+<h2>Towards Functions<a class="headerlink" href="#towards-functions" title="Permalink to this headline">¶</a></h2>
+<p>Before we get to (mathematical) functions, we need the language to get there.  If you are reading this book, you’ve probably seen functions for much of your life, but have you ever considered a definition of a function?  What are the central ideas that make a function a function?</p>
+<p>If you took mathematics through precalculus you’ve probably seen this picture before:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">elem</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">step_size</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">1000</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+    <span class="n">elem</span> <span class="o">+=</span> <span class="n">step_size</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">elem</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x7f94f2311190&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Introduction_To_Proofs_42_1.png" src="../../_images/Introduction_To_Proofs_42_1.png" />
+</div>
+</div>
+<p>The blue line is the value of the function <span class="math notranslate nohighlight">\(x^{3}\)</span> as it varies from -1 to 1.  But what about the <em>stuff</em> around the graph?  The <em>space</em> the graph is in.  Well that’s called the coordinate system.  Specifically the <em>cartesian coordinate system</em>.</p>
+<p>It turns out cartesian coordinates are <em>not</em> restricted to graphs like the above, but will work for <em>any</em> two sets.</p>
+<p>Let’s look at a definition for the cartesian product, which we will use to define a cartesian coordinate system:</p>
+<p>A x B = {(a, b): a <span class="math notranslate nohighlight">\(\in\)</span> A and b <span class="math notranslate nohighlight">\(\in\)</span> B}</p>
+<p>So suppose we had two sets:</p>
+<p>A = {1,2,3}
+B = {4,5}</p>
+<p>Then the cartesian product would be:</p>
+<p>A x B = {(1, 4), (2, 4), (3, 4), (1, 5), (2, 5), (3, 5)}</p>
+<p>If the elements in this set look familiar, it’s because we’ve seen them already in the last chapter, these are just tuples!  In a sense, this is just the most <em>natural</em> way to think about a tuple, as the elements of a discrete coordinate system.</p>
+<p>In general, we can think of the cartesian product as how we define the <em>space of the graph</em> that we used above.  The big difference being, in the typical graph we use the real numbers, <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> instead of the integers, <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>.</p>
+<p>In fact, when we look at a graph we usually say <span class="math notranslate nohighlight">\(\mathbb{R}^{2}\)</span> <em>because</em> a graph is usually <span class="math notranslate nohighlight">\(\mathbb{R} \text{ } x \text{ } \mathbb{R}\)</span>, but let’s digress.</p>
+<p>Let’s look at some results dealing with the cartesian product of two sets:</p>
+<p>Lemma: Let A, B, C, D be sets.  If A <span class="math notranslate nohighlight">\(\subseteq\)</span> C and B <span class="math notranslate nohighlight">\(\subseteq\)</span> D, then A x B <span class="math notranslate nohighlight">\(\subseteq\)</span> C x D.</p>
+<p>Proof:</p>
+<p>Let (x, y) <span class="math notranslate nohighlight">\(\in\)</span> A x B.  (by assumption A <span class="math notranslate nohighlight">\(\ne\)</span> <span class="math notranslate nohighlight">\(\emptyset\)</span>, B <span class="math notranslate nohighlight">\(\ne\)</span> <span class="math notranslate nohighlight">\(\emptyset\)</span>)</p>
+<p>Therefore x <span class="math notranslate nohighlight">\(\in\)</span> A and y <span class="math notranslate nohighlight">\(\in\)</span> B.  (by definition of cartesian product)</p>
+<p>Since A <span class="math notranslate nohighlight">\(\subseteq\)</span> and B <span class="math notranslate nohighlight">\(\subseteq\)</span> D, it follows that x <span class="math notranslate nohighlight">\(\in\)</span> C and y <span class="math notranslate nohighlight">\(\in\)</span> D. (by definition of subset)</p>
+<p>Hence, (x, y) <span class="math notranslate nohighlight">\(\in\)</span> C x D.</p>
+<p>QED.</p>
+<p>In general, proofs involving cartesian products aren’t different than proofs involving sets.  You simply need to carry out the steps for every set in the product.</p>
+<p>Now that we have the basic definitions and language to talk about a multidimensional space, we are ready to take the next step in our journey towards functions.  For this we will need the notion of a relation.  In general a relation is <em>more general</em> than a function and has fewer constraints on the types of properties it must have.  Informally, a relation describes how the elements of two sets <em>relate</em>.  If this <em>sounds</em> like a function, it does so for good reason, that’s because functions are just a special kind of relation.</p>
+<p>Definition:</p>
+<p>Let A and B be two sets.  By a relation R from A to B we mean a subset of A x B.  That is, R is a set of ordered pairs, where the first coordinate of the pair belongs to A and the second coordinate belongs to B.  If (a, b) <span class="math notranslate nohighlight">\(\in\)</span> R, then we say that a is related to b by R.  In general if a is related to b, we can write a R b.</p>
+<p>An example of a familiar relation may help to make this concrete.  Consider the sets A = <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>, B = <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>, and the relation is <span class="math notranslate nohighlight">\(&lt;\)</span>.</p>
+<p>With the relation <span class="math notranslate nohighlight">\(&lt;\)</span>, any two integers such that a &lt; b will be related, for example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">&lt;</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>So according to the relation <span class="math notranslate nohighlight">\(&lt;\)</span> 4 and 5 are related!  For this example, it would be impossible to write down all the ordered pairs of integers for which the relation <span class="math notranslate nohighlight">\(&lt;\)</span> is true.  Let’s consider a simpler example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we want all the pairs we can generate them as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pairs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">A</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">B</span><span class="p">:</span>
+        <span class="n">pairs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+        
+<span class="n">pairs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(1, 6),
+ (1, 7),
+ (1, 8),
+ (1, 9),
+ (1, 0),
+ (2, 6),
+ (2, 7),
+ (2, 8),
+ (2, 9),
+ (2, 0),
+ (3, 6),
+ (3, 7),
+ (3, 8),
+ (3, 9),
+ (3, 0),
+ (4, 6),
+ (4, 7),
+ (4, 8),
+ (4, 9),
+ (4, 0),
+ (5, 6),
+ (5, 7),
+ (5, 8),
+ (5, 9),
+ (5, 0)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, no ordered pair appears twice in our list, so we’ve captured the entire cartesian product.  Now, let’s use the relation <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, we can write down the relation as a subset of the pairs:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">relation</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">pairs</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">element</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">element</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="n">relation</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+        
+<span class="n">relation</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(1, 6),
+ (1, 7),
+ (1, 8),
+ (1, 9),
+ (2, 6),
+ (2, 7),
+ (2, 8),
+ (2, 9),
+ (3, 6),
+ (3, 7),
+ (3, 8),
+ (3, 9),
+ (4, 6),
+ (4, 7),
+ (4, 8),
+ (4, 9),
+ (5, 6),
+ (5, 7),
+ (5, 8),
+ (5, 9)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Does the relation hold for every element of the cartesian product?  We can answer that by counting the size of the relation, versus the size of the product:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">relation</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">pairs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Looks like there are fewer pairs in the relation than there are in the product, thus not every element is related via this relation.  As you can see, relations have a huge amount of value.  We can define them via the rule that describes what to do mechanically, or we can define them via the <em>set</em> they produce.  Suppose we return to the first example, is it possible to describe the <span class="math notranslate nohighlight">\(&lt;\)</span> relation on the set <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> x <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>?</p>
+<p>It turns out it is!  We can use a short hand notation for sets with infinitely many elements:</p>
+<p>R = { (a, b), a &lt; b : a <span class="math notranslate nohighlight">\(\in\)</span> <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> and b <span class="math notranslate nohighlight">\(\in\)</span> <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> }</p>
+<p>If this notation looks familar its because it is!  This is <em>almost</em> the same notation that we used with the list comprehension.  In general, computer science and mathematics borrow heavily from each other, and much of the syntax you find in programming languages comes directly from mathematics.  Especially Python.</p>
+<p>Now that we have a few examples of relations, let’s consider the various properties that relations can follow:</p>
+<ul class="simple">
+<li><p>reflexive:</p></li>
+</ul>
+<p>A relation R defined on a set A is called reflexive if x R x for every x <span class="math notranslate nohighlight">\(\in\)</span> A.</p>
+<p>So for example, the relation <span class="math notranslate nohighlight">\(&lt;\)</span> is <em>not</em> reflexive.  For instance, consider the set <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>, then we have:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because 5 is <em>not</em> less than itself, or because 5&lt;5 is False, the relation is not reflexive.  Notice, that finding <em>one</em> counter example is enough to prove a property is <em>not</em> true.  However, to prove a statement <em>is</em> true requires we show it for all elements in the set, a much harder feat usually.</p>
+<p>Let’s look at the next property:</p>
+<ul class="simple">
+<li><p>symmetry:</p></li>
+</ul>
+<p>A relation R defined on a set A is called symmetric if whenever x R y, then y R x for all x, y <span class="math notranslate nohighlight">\(\in\)</span> A.</p>
+<p>Let’s look at another example.  Here we will consider the relation <span class="math notranslate nohighlight">\(=\)</span> and the set <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>.  In order to prove that if x = y, then y = x, we will need some formalism:</p>
+<p>Lemma: The relation <span class="math notranslate nohighlight">\(=\)</span> is symmetric on <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>.</p>
+<p>Proof:</p>
+<p>let x, y <span class="math notranslate nohighlight">\(\in\)</span> <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>.</p>
+<p>if x = y, then x is the same as y, so we can substitute x for y,</p>
+<p>therefore we have, x = x.</p>
+<p>And since x = y, y is the same as x, so we can substitute y for x,</p>
+<p>therefore we have y = x.</p>
+<p>QED.</p>
+<p>Next let’s prove that <span class="math notranslate nohighlight">\(=\)</span> is reflexive.</p>
+<p>Lemma: The relation <span class="math notranslate nohighlight">\(=\)</span> is reflexive on <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>.</p>
+<p>Suppose to the contrary that there exists some x <span class="math notranslate nohighlight">\(\in\)</span> <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> such that x <span class="math notranslate nohighlight">\(\neq\)</span> x.</p>
+<p>But this is in it of itself a contradiction, because it is impossible for a number to not equal itself.</p>
+<p>Therefore <span class="math notranslate nohighlight">\(=\)</span> is reflexive on <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>.</p>
+<p>Let’s look at the last property:</p>
+<ul class="simple">
+<li><p>transitivity:</p></li>
+</ul>
+<p>A relation R defined on a set A is called transitive if whenever x R y and y R z, then x R z, for all x, y, z <span class="math notranslate nohighlight">\(\in\)</span> A.</p>
+<p>Example:</p>
+<p>For this, let’s use <span class="math notranslate nohighlight">\(&lt;\)</span> and <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>.</p>
+<p>Lemma: The relation <span class="math notranslate nohighlight">\(&lt;\)</span> is transitive on <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>.</p>
+<p>Proof:</p>
+<p>Let x, y, z <span class="math notranslate nohighlight">\(\in\)</span> A.</p>
+<p>if x &lt; y and y &lt; z, and by the fact that y = y we have:</p>
+<p>x &lt; y &lt; z.</p>
+<p>Therefore, x &lt; z, by the fact that there exists a number y which always seperates x and z.  There is another reason why x &lt; z, given that there exists a number y between them such that y &gt; x and y &lt; z, the integers are an <em>ordered</em> set.  That means we can always indicate which element is larger of two elements in the set.  In otherwords, there is a notion of size.</p>
+<p>In general, there is a property called the well ordering property, which we will prove later in the chapter which will help clarify <em>why</em> the above proof works.  For now, hopefully this intuition is enough to satisfy you, the reader.  Feel free to skip to the end and read the well ordering property now, if you feel unconvinced.</p>
+<p>In general, for the set <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> and for most of the typical relations it is simply <em>obvious</em> which relations have which properties.  However, these properties are not <em>always</em> obvious.</p>
+<p>Now let’s consider some relations on discrete sets.</p>
+<p>Consider the set = {a, b, c} and the following relations:</p>
+<p><span class="math notranslate nohighlight">\(R_{1}\)</span> = { (a,b), (b, a), (c, a) }</p>
+<p><span class="math notranslate nohighlight">\(R_{2}\)</span> = { (a,b), (b,b), (b,c), (c,b), (c,c) }</p>
+<p><span class="math notranslate nohighlight">\(R_{3}\)</span> = { (a,a), (a,c), (b,b), (c,a), (c,c) }</p>
+<p><span class="math notranslate nohighlight">\(R_{4}\)</span> = { (a,a), (a,b), (b,b), (b,c), (a,c) }</p>
+<p><span class="math notranslate nohighlight">\(R_{5}\)</span> = { (a,a), (a,b) }</p>
+<p><span class="math notranslate nohighlight">\(R_{6}\)</span> = { (a,b), (a,c) }</p>
+<p>Which relations are flexibe?</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_{1}\)</span> is not because a is not related to a, b is not related to b, and c is not related to c.</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_{2}\)</span> is not because a is not related to a.</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_{3}\)</span> is because (a,a), (b,b), (c,c) are all members of the relation set.</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_{4}\)</span> is not because c is not related to c.</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_{5}\)</span> is not because c is not related to c and b is not related to b.</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_{6}\)</span> is not because c is not related to c, b is not related to b, and a is not related to a.</p></li>
+</ul>
+<p>Which relations are symmetric?</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_{1}\)</span> is not because c R a but a (not R) c.</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_{2}\)</span> is not because a R b but b (not R) a.</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_{3}\)</span> is symmetric notice that b not R c but that’s okay because c not R b.  Symmetry is about <em>pairs</em> of relations.</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_{4}\)</span> is not because a R b but b (not R) a, c R a, but a (not R) c, and b R c, but c (not R) b).</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_{5}\)</span> is not because a R b but b (not R) a.</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_{6}\)</span> is not because a R b but b (not R) a, a R c, but c (not R) a.</p></li>
+</ul>
+<p>Which relations are transitive?</p>
+<p>Transitivity is the <em>hardest</em> to show for discrete sets.  This is because we can have the following valid transitive relationship:</p>
+<p>(a,a)</p>
+<p>That’s all we need!  How is that possible?  Well the definition of transitivity states:</p>
+<p>if whenever x R y and y R z, then x R z, for all x, y, z <span class="math notranslate nohighlight">\(\in\)</span> A.</p>
+<p>So just plug a into x, y, and z:</p>
+<p>If a R a and a R a then a R a.</p>
+<p>It’s true.  But it’s <em>unsatisfying</em>.  Even tricker we can have:</p>
+<p>(b, a), (a, a)</p>
+<p>Why does this work?!</p>
+<p>Well just put b into x and a into y and z:</p>
+<p>If b R a and a R a then b R a.</p>
+<p>It’s <em>certainly</em> true.  But very unintuitive.  Did we <em>even</em> learn anything new with this property?  In this case and the case above, not really.  These are the <em>trivial</em> cases.  They are true, but in a sense, who cares?  All that has been shown is <em>what we already know</em>.  Mathematics is <em>full</em> of trivial cases.  The word gets thrown around a lot, and leads to a ton of hurt feelings most of the time, but in this case <em>it’s appropriate</em>.  It may not be obvious <em>why</em> the above two examples even <em>need</em> to be stated.  But, once you’ve seen them, it should be clear why they are called trivial.</p>
+<p>In general, the way we prove that a relation is transitive or not is if the resulting final pair is in the relation.</p>
+<p>So for <span class="math notranslate nohighlight">\(R_{1}\)</span> we have:</p>
+<p>(a,b), (b, a), which means we have a R b and b R a, therefore a R a should be in the relation.  It’s not so <span class="math notranslate nohighlight">\(R_{1}\)</span> is not transitive.  The reader should verify which other pairs lead to failures in this relation.</p>
+<p>For <span class="math notranslate nohighlight">\(R_{2}\)</span> we have:</p>
+<p>(a,b), (b,c), which means a R b and b R c, therefore a R c should be in the relation.  It’s not so <span class="math notranslate nohighlight">\(R_{2}\)</span> is not transitive.  The reader should verify which other pairs lead to failures in this relation.</p>
+<p>For <span class="math notranslate nohighlight">\(R_{3}\)</span> we will have to verify transitivity across all pairs because the relation is transitive:</p>
+<ul class="simple">
+<li><p>(a,a)</p></li>
+<li><p>(b,b)</p></li>
+<li><p>(c,c)</p></li>
+</ul>
+<p>By the general analysis we did above.  Next we move onto the more complex ones:</p>
+<ul class="simple">
+<li><p>(a,c), (c,a):</p></li>
+</ul>
+<p>If a R c and c R a then (a,a) (and it is in the relation).
+If c R a and a R c then (c,c) (and it is in the relation).
+If a R c and c R c then (a,c) (and it is in the relation).
+If c R a and a R a then (a,a) (and it is in the relation).</p>
+<p>Thus <span class="math notranslate nohighlight">\(R_{3}\)</span> is transitive.</p>
+<p>For <span class="math notranslate nohighlight">\(R_{4}\)</span> we have:</p>
+<ul class="simple">
+<li><p>(a,a)</p></li>
+<li><p>(b,b)</p></li>
+</ul>
+<p>By the general analysis we did above.  Next we move onto the more complex ones:</p>
+<ul class="simple">
+<li><p>(a,b)</p></li>
+</ul>
+<p>If a R b and b R b then (a,b) (and it is in the relation).
+If a R b and b R c then (a,c) (and it is in the relation).</p>
+<ul class="simple">
+<li><p>(b,c)</p></li>
+</ul>
+<p>If b R b and b R c then (b,c) (and it is in the relation).</p>
+<ul class="simple">
+<li><p>(a,c)</p></li>
+</ul>
+<p>If a R a and a R c then (a,c) (and it is in the relation).</p>
+<p>So <span class="math notranslate nohighlight">\(R_{4}\)</span> is transitive.</p>
+<p>For <span class="math notranslate nohighlight">\(R_{5}\)</span> we have:</p>
+<ul class="simple">
+<li><p>(a,a)</p></li>
+</ul>
+<p>By the general analysis we did above.  Next we move onto the more complex one:</p>
+<ul class="simple">
+<li><p>(a,b)</p></li>
+</ul>
+<p>If a R a and a R b then (a,b) (and it is in the relation).</p>
+<p>So <span class="math notranslate nohighlight">\(R_{6}\)</span> is transitive.</p>
+<ul class="simple">
+<li><p>(a,b)</p></li>
+</ul>
+<p>Since nothing starts with b there is nothing to check.</p>
+<ul class="simple">
+<li><p>(a,c)</p></li>
+</ul>
+<p>Since nothing starts with c there is nothing to check.</p>
+<p>So <span class="math notranslate nohighlight">\(R_{6}\)</span> is transitive.</p>
+<p>Some of these proofs likely felt unsatisifying either because they were trivial or because there was nothing to really check.  But this is the nature of mathematics sometimes.  Mathematics is about being precise, and sometimes that means being mechanical.  You might think of it like doing the paperwork before you get to go on a fun adventure.  Some of mathematics is truly deep and will lead you to vistas or truth that you never thought possible.  But other parts are incredibly mundane.  There are branches of mathematics that attempt to hide the mundanity through abstraction or by creating proof systems which “automatically” include checks for the mundane.  The author personally likes the mundane.  Trivial examples are important.  Mechanicistically checking cases can help develop intuitiion.  Thus it is the author’s personal opinion - don’t run from trivial examples, embrace them.  Because all humans learn by examples first, then see the light of theorems.  Mathematics has always come from the discret and weird sub-cases to the general, or at least most of the time, and certainly in the beginning.  Don’t run from that, it may be the most important thing you do to gain understanding of the deeper truth.</p>
+<p>Before we leave this section.  There is one final point to be made in detail:</p>
+<p>Relations <em>are</em> sets.</p>
+<p>This fact may not feel surprising given how we’ve worked with sets in this section.  That said, when you think about the relations:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></li>
+</ul>
+<p>Do you see a set?  If your answer is ‘no’, and for most people it probably isn’t ‘yes’, then a natural question forms:</p>
+<p>Relations are sets, but not on their own.  So what kind of sets are they?</p>
+<p>They are sets that <em>come from</em> other sets.  Or rather, are defined in <em>terms</em> of other sets.  We specify the ‘from’ set and the ‘to’ set.  We can also think about these sets as the full possible range of values for the first and second parameter of the relation.</p>
+<p>If we were treating these relations as Python functions we might do something like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">less_than</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span>
+
+<span class="n">less_than</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first parameter, a, has to come from <em>somewhere</em>.  And when we are dealing with the numbers, we should really specify <em>what</em> numbers.  There are lots of different <em>kinds</em> of numbers, as we’ll see in detail soon.  So by specifying the sets ahead of time, we are actually doing something <em>very</em> computer science-y; we are specifying the <em>types</em> of numbers we can pass.</p>
+<p>We already saw a little bit of types in the last section with integers, floats and booleans, all <em>types of numbers</em>.  But now we take the first step towards making it explicit <em>why</em> we should specify types.  There are some technical reasons, to be sure.  For instance, integers and floats are different in terms of storage cost on a machine.  But that’s just a superficial reason.</p>
+<p>The <em>real</em> reason for specifying types on a relation or as we’ll see on a function is because the relations and functions <em>behave differently</em> depending on what type of number you give it.</p>
+<p>That means, passing in the <em>wrong</em> type, will lead to <em>wrong</em> answers.  And this is a very important notion.  It’s one that has led to many systemic failures of systems.  Knowing what to pass in and why it works is an imperative.</p>
+<p>For instance, suppose that one of the parameters in your function <em>had</em> to be an integer.  Let’s look at an example where that matters from a purely computer science/programmer perspective.  Suppose we had the following algorithm for multiplication:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multiplication</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">product</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+        <span class="n">product</span> <span class="o">+=</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="n">product</span>
+
+<span class="n">multiplication</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30
+</pre></div>
+</div>
+</div>
+</div>
+<p>Seems like this works well enough.  Well what happens if we pass in 3.4 for b?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multiplication</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">e87275cc5584</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">multiplication</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-2-364c7427f312&gt;</span> in <span class="ni">multiplication</span><span class="nt">(a, b)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">multiplication</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">product</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="n">product</span> <span class="o">+=</span> <span class="n">a</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">product</span>
+
+<span class="ne">TypeError</span>: &#39;float&#39; object cannot be interpreted as an integer
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code breaks!  Luckily the error was caught by the Python interpreter.  But we may not <em>always</em> be so lucky.  In any event, we’ll see a lot more from types.  Deciding what types work with certain relations and functions matter.  And they can lead to catastrophic failures in some cases.  Especially when they create silent errors.</p>
+<p>Returning to the original point, relations are sets that are specified from <em>other</em> sets.  That means we can think of a relation as a kind of subset of two other sets.  Or the way in which the two other sets <em>relate</em>.  If you recall from the beginning of this section, there was a graph:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">elem</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">step_size</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">1000</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+    <span class="n">elem</span> <span class="o">+=</span> <span class="n">step_size</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">elem</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x7f9ce93409a0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Introduction_To_Proofs_62_1.png" src="../../_images/Introduction_To_Proofs_62_1.png" />
+</div>
+</div>
+<p>We can think of the x-axis as our first set, the y-axis as our second set and the <em>blue line</em> as the relationship between our two sets.  This graphical representation doesn’t make sense by accident.  It is the visualization of the above idea.  This revelation allows us to ask an interesting question:</p>
+<p>What does the relation look like, when the sets on the x and y axis change?  That idea is left to the reader to think about.  But know this, there is an answer.  And it can lead to more surprising and interesting notions than perhaps many would believe.</p>
+<p>To close out this section we conclude with the following:</p>
+<p>Suppose R is a relation such that, a R b and a <span class="math notranslate nohighlight">\(\in\)</span> A, b <span class="math notranslate nohighlight">\(\in\)</span> B.</p>
+<p>For each element in A, characterized here by a, there are four possible cases:</p>
+<ol class="simple">
+<li><p>a is related to all the elements b <span class="math notranslate nohighlight">\(\in\)</span> B.</p></li>
+<li><p>a is related to some of the elements b <span class="math notranslate nohighlight">\(\in\)</span> B.</p></li>
+<li><p>a is related to one of the elements b <span class="math notranslate nohighlight">\(\in\)</span> B.  That is there is a unique b <span class="math notranslate nohighlight">\(\in\)</span> B such that a R b.</p></li>
+<li><p>a is related to <em>non</em> of the elements b <span class="math notranslate nohighlight">\(\in\)</span> B.</p></li>
+</ol>
+<p>In the extreme cases:</p>
+<p>If a is related to none of the elements in B, then R is <span class="math notranslate nohighlight">\(\emptyset\)</span>.</p>
+<p>If a is related to all of the elements in B, then R is A x B, in other words, R is the cartesian product that we saw at the beginning of this section.</p>
+<p>Finally, we consider case 3.  If a is related to exactly one of the elements b <span class="math notranslate nohighlight">\(\in\)</span> B, then R is a <em>function</em>.</p>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<p>Let’s start with a formal definition.</p>
+<p>Let A and B be nonempty sets.  By a function f from A to B, written <span class="math notranslate nohighlight">\(f: A \rightarrow B\)</span>, we mean a relation from A to B with the property that every element a <span class="math notranslate nohighlight">\(\in\)</span> A is the first coordinate of exactly one ordered pair in <span class="math notranslate nohighlight">\(f\)</span>.  Since <span class="math notranslate nohighlight">\(f\)</span> is a relation, the set A in this case is the domain of <span class="math notranslate nohighlight">\(f\)</span>.  The set B is called the codomain of <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>For a function <span class="math notranslate nohighlight">\(f: A \rightarrow B\)</span>, let (a,b) <span class="math notranslate nohighlight">\(\in\)</span> <span class="math notranslate nohighlight">\(f\)</span>, if (a,c) also <span class="math notranslate nohighlight">\(\in\)</span> <span class="math notranslate nohighlight">\(f\)</span> then b=c.  An example here might help.</p>
+<p>Example:</p>
+<p>Let A = <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, B = <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, and let <span class="math notranslate nohighlight">\(f\)</span>= <span class="math notranslate nohighlight">\(x^{2}\)</span>.</p>
+<p>Then what is <span class="math notranslate nohighlight">\(f(5)=\)</span>?  Well it’s 25.  Are there any <em>other</em> valid answers for <span class="math notranslate nohighlight">\(f(5)\)</span>?  In other words, can we plug in 5 to the parameter of our function and <em>ever</em> expect a different answer?  Nope.  That’s what it means for something to be a function!</p>
+<p>So, in the case of dealing with a function, we can say:</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> is a function, <span class="math notranslate nohighlight">\(f(a)=b\)</span>, and <span class="math notranslate nohighlight">\(f(a)=c\)</span> then b = c.  In fact, it <em>must</em> by definition.</p>
+<p>Stepping backward for a second, suppose we asked the same question of a relation, could we find a relation such that some element a maps to possibly more than one place?  Well, yes!  Let’s define one right now:</p>
+<div class="math notranslate nohighlight">
+\[R = \{ (a,a), (a,b) \}\]</div>
+<p>That’s a valid relation (in fact it was one of our previous examples.  And it takes a to not one but <em>two</em> places.  Can we think of any typical relations such that this is works?  An obvious example is: <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>.  Let’s look at an example in Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&lt;=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&lt;=</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>So 5 &lt;= 5, but <em>also</em> 5 &lt;= 6.  That means that both, (5,5) and (5,6) are in the relation <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>.  In fact, every relation we’ve seen other than <code class="docutils literal notranslate"><span class="pre">==</span></code> will have a similar behavior.  For instance with <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is an important point that must be made, but in order to do that, we’ll need to introduce a few definitions.</p>
+<p>Definition:</p>
+<p>Image - If <span class="math notranslate nohighlight">\(f: A \rightarrow B\)</span>, for a <span class="math notranslate nohighlight">\(\in\)</span> A, b <span class="math notranslate nohighlight">\(\in\)</span> B, if <span class="math notranslate nohighlight">\(f(a) = b\)</span> then <span class="math notranslate nohighlight">\(b\)</span> is the <em>image</em> of <span class="math notranslate nohighlight">\(a\)</span> under <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Preimage - If <span class="math notranslate nohighlight">\(f: A \rightarrow B\)</span>, for a <span class="math notranslate nohighlight">\(\in\)</span> A, b <span class="math notranslate nohighlight">\(\in\)</span> B, if <span class="math notranslate nohighlight">\(f(a) = b\)</span> then <span class="math notranslate nohighlight">\(a\)</span> is the <em>preimage</em> of <span class="math notranslate nohighlight">\(b\)</span> under <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Now, an important point to note from one of the functions we saw earlier:</p>
+<p>Although it is the case that everything in the domain necessarily has <em>exactly</em> one image, the reverse is not <em>necessarily</em> true.  Namely, everything in the codomain does not necessarily have to have <em>exactly</em> one preimage.</p>
+<p>Specifically, let’s look at the example of <span class="math notranslate nohighlight">\(f(x) = x^{2}\)</span>.</p>
+<p>Consider the graph of the function for a moment:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">elem</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">step_size</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="mi">1000</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+    <span class="n">elem</span> <span class="o">+=</span> <span class="n">step_size</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">elem</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x7f9dc86aa880&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Introduction_To_Proofs_70_1.png" src="../../_images/Introduction_To_Proofs_70_1.png" />
+</div>
+</div>
+<p>What do you see when you look at the graph?  Well one thing that might stand out is that negative and positive versions of <em>any</em> number go to the same place.</p>
+<p>That is for, <span class="math notranslate nohighlight">\(f(x) = x^{2}\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(f(a) = f(-a)\)</span>, <span class="math notranslate nohighlight">\(\forall a\)</span> <span class="math notranslate nohighlight">\(\in\)</span> <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
+<p>As an aside, the <span class="math notranslate nohighlight">\(\forall\)</span> is read <em>for all</em>.</p>
+<p>So, in particular that means <span class="math notranslate nohighlight">\(f(5) = f(-5)\)</span> and so on.  And <em>any</em> function like this, is a <em>valid</em> function.</p>
+<p>Given that some functions have this looseness, we can specify properties such that our functions map elements to one and <em>only</em> one place.</p>
+<p>Definition:</p>
+<p>Injective - A function <span class="math notranslate nohighlight">\(f: A \rightarrow B\)</span> is called injective if every two distinct elements of A have distinct images in B.</p>
+<p>Lemma:</p>
+<p>Let <span class="math notranslate nohighlight">\(f: \mathbb{R} \rightarrow \mathbb{R}\)</span> be defined by <span class="math notranslate nohighlight">\(f(x) = 3x - 5\)</span>.  Then <span class="math notranslate nohighlight">\(f\)</span> is injective.</p>
+<p>Proof:</p>
+<p>Assume that <span class="math notranslate nohighlight">\(f(a) = f(b)\)</span>, where <span class="math notranslate nohighlight">\(a\)</span>,<span class="math notranslate nohighlight">\(b\)</span> <span class="math notranslate nohighlight">\(\in\)</span> <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.  Then,</p>
+<p><span class="math notranslate nohighlight">\(3a - 5 = 3b - 5\)</span>.</p>
+<p>3a - 5 + 5 = 3b - 5 + 5</p>
+<p>3a = 3b</p>
+<p><span class="math notranslate nohighlight">\(\frac{1}{3}\)</span> * 3a = <span class="math notranslate nohighlight">\(\frac{1}{3}\)</span> * 3b</p>
+<p>a = b.</p>
+<p>So f is injective.</p>
+<p>QED</p>
+<p>Here we started off by assuming that our elements in our codomain were equal.  If they produced distinct elements in our domain, in otherwords if our preimage mapped to different places, then we wouldn’t have an injective function.  That’s <em>why</em> we ‘undid’ the operations of the function <span class="math notranslate nohighlight">\(f(x) = 3x - 5\)</span> to both sides.  We <em>applied</em> the preimage to the function.  Otherwise known as the inverse of a function.</p>
+<p>When dealing with proofs of injectivity we always go backwards, this is because, since we are dealing with a function, we already know that mapping from the domain to the image will guarantee uniqueness.  It’s the going backwards, the inverse, that we aren’t sure about.  So that’s what we need to prove, in general.</p>
+<p>Definition:</p>
+<p>Surjective - A function <span class="math notranslate nohighlight">\(f: A \rightarrow B\)</span> is called surjective if every element of B is the image of some element of A.</p>
+<p>In general, functions can <em>miss</em> part of the codomain.  We saw this when we looked at the graph of <span class="math notranslate nohighlight">\(f(x) = x^{2}\)</span>.  In specific, any number less than 0 doesn’t show up in the codomain.  So that function is <em>not</em> surjective.  Now let’s prove that a certain function is surjective.</p>
+<p>Lemma:</p>
+<p>Let <span class="math notranslate nohighlight">\(f: \mathbb{R} \rightarrow \mathbb{R}\)</span> be defined by <span class="math notranslate nohighlight">\(f(x) = 3x - 5\)</span>.  Then <span class="math notranslate nohighlight">\(f\)</span> is surjective.</p>
+<p>Proof:</p>
+<p>Let <span class="math notranslate nohighlight">\(r\)</span> <span class="math notranslate nohighlight">\(\in\)</span> <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.  We show that there exists <span class="math notranslate nohighlight">\(x\)</span> <span class="math notranslate nohighlight">\(\in\)</span> <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> such that <span class="math notranslate nohighlight">\(f(x) = r\)</span>.  We can ‘construct’ our x to equal r by first applying the <em>inverse</em> of <span class="math notranslate nohighlight">\(f(y) = 3y - 5\)</span>, namely <span class="math notranslate nohighlight">\(g(y) = \frac{y + 5}{3}\)</span> to x.  Note: we <em>do not</em> claim that the inverse g is an actualy function, merely that it reverses the mechanical operations of the function f.  For right now, we only claim that g is a rule for reversing <span class="math notranslate nohighlight">\(f\)</span>.  Moving on, we have:</p>
+<div class="math notranslate nohighlight">
+\[ x = g(r) = \frac{r + 5}{3} \]</div>
+<div class="math notranslate nohighlight">
+\[ f(x) = f(\frac{r + 5}{3}) = 3(\frac{r + 5}{3}) - 5 \]</div>
+<div class="math notranslate nohighlight">
+\[ r + 5 - 5 \]</div>
+<div class="math notranslate nohighlight">
+\[ r \]</div>
+<p>Since we could find an x that produces r and because x and r were <em>generic</em> elements of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> this means <span class="math notranslate nohighlight">\(\forall\)</span> elements this is true.  Therefore <em>every</em> element in our codomain has a corresponding element in the domain.</p>
+<p>Definition:</p>
+<p>Bijective - A function <span class="math notranslate nohighlight">\(f: A \rightarrow B\)</span> is called bijective if every element of B is the image of some element of A and if every two distinct elements of A have distinct images in B.  In other words, if <span class="math notranslate nohighlight">\(f\)</span> is injective and surjective, it is bijective.</p>
+<p>A bijective function just means that’s it’s inverse is <em>also</em> a function.  Let’s look at a counterexample first:</p>
+<p>Consider the function <span class="math notranslate nohighlight">\(f(x) = x^{2}\)</span>, is it’s inverse also a function?</p>
+<p>We can show it’s not by considering it’s preimage and looking at some specific examples.</p>
+<p>Consider the following elements:</p>
+<p>(5, 25), (-5, 25).</p>
+<p>Clearly,  <span class="math notranslate nohighlight">\((5, 25), (-5, 25) \in f\)</span>.</p>
+<p>So to get the <em>preimage</em> of <span class="math notranslate nohighlight">\(f\)</span> we simply need to reverse the order of our coordinates.</p>
+<p>Thus we have <span class="math notranslate nohighlight">\(f^{-1}\)</span> (said as f inverse) with elements:</p>
+<p><span class="math notranslate nohighlight">\((25, 5), (25, -5) \in f^{-1}\)</span>.</p>
+<p>But now we have 25 -&gt; 5 AND 25 -&gt; -5.  So <span class="math notranslate nohighlight">\(f^{-1}\)</span> is <em>definitely not</em> a function.  In fact, we could have said:</p>
+<div class="math notranslate nohighlight">
+\[ (a, a^{2}), (-a, a^{2}) \in f \]</div>
+<p>And then looked at the inverse, <span class="math notranslate nohighlight">\(f^{-1}\)</span>:</p>
+<p><span class="math notranslate nohighlight">\((a^{2}, a), (a^{2}, -a) \in f^{-1}\)</span>.</p>
+<p>So there are <em>infinitely</em> many counterexamples of <span class="math notranslate nohighlight">\(f\)</span> failing to be bijective.</p>
+<p>Note: Much of this section was inspired by A Transition To Advanced Mathematics by Gary Chartrand, Albert D. Polimeni and Ping Zhang.  Many of the examples are directly lifted from that text.  The words are the authors’ own, even if the mathematics is not always.  We believe good examples are hard to find, and need to be celebrated when they are.  A Transition To Advanced Mathematics is well worth your money and time.  Since much of the work is outrite lifted this text will always be free, and intends only to educate the reader.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./01/2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../1/Introduction_to_Python.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Introduction To Python</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../3/Counterexamples_and_Testing.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Counter Examples and Testing</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

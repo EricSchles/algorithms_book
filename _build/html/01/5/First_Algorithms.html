@@ -1,0 +1,466 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First Algorithms &#8212; The Analysis Of Algorithms</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Statistical Analysis of Algorithms" href="../6/statistical_analysis_of_algorithms.html" />
+    <link rel="prev" title="Types" href="../4/Types_and_Induction.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">The Analysis Of Algorithms</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../plan.html">
+   Analysis Of Algorithms
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../chapter_one_intro.html">
+   Algorithms Foundations
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1/Introduction_to_Python.html">
+     Introduction To Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2/Introduction_To_Proofs.html">
+     Introduction To Proofs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3/Counterexamples_and_Testing.html">
+     Counter Examples and Testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4/Types_and_Induction.html">
+     Types
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     First Algorithms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6/statistical_analysis_of_algorithms.html">
+     Statistical Analysis of Algorithms
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/01/5/First_Algorithms.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/01/5/First_Algorithms.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="first-algorithms">
+<h1>First Algorithms<a class="headerlink" href="#first-algorithms" title="Permalink to this headline">¶</a></h1>
+<p>We are ready to start!  It may have felt like a long journey getting to this point - all the mathematics, proofs, and programming we had to cover just to get to analyzing our first algorithm, but it will be worth it to have gone through that earlier material.  Some books don’t cover all that stuff, but <em>expect you to know it</em>.  It is the author’s view that doing that to the reader is unfair!  So hopefully all the work was worth it to be at this point.</p>
+<p>Now that we’ve talked about all that stuff, let’s talk formally about what an algorithm is.  As we saw in the last section the computables were used to approximate various mathematical types.  This theme of approximation within a computational system extends to an algorithm as well.  At a fundamental level, algorithms approximate relations and functions.  Algorithms do this through the programming primitives we discussed in the Introduction_to_Python section.  Specifically through the use of the programming primitives:</p>
+<ul class="simple">
+<li><p>control flow</p></li>
+<li><p>iteration</p></li>
+<li><p>variable assignment</p></li>
+<li><p>closure</p></li>
+</ul>
+<p>And the data primitives:</p>
+<ul class="simple">
+<li><p>integer</p></li>
+<li><p>float</p></li>
+<li><p>boolean</p></li>
+<li><p>string</p></li>
+</ul>
+<p>We are able to express relations and functions as algorithms.  Because algorithms express these mathematical constructs through a lower level set of primitives we can express the same rules and behaviors via many implementations that all do the same thing.  Thus algorithms necessarily vary in how well they are able to approximate the underlying mathematical concept and how fast they are able to compute new values given input data.  The questions of correctness and asymptotic behavior will be central to our study of algorithms.  As you may recall from the las section Types_and_Induction, we discussed the asymptotic behavior of the logarithm function, and specifically that it has finite growth.  This leveling off point will be highly desirable in constructing our algorithms.  Therefore, often our algorithms have a few goals:</p>
+<ol class="simple">
+<li><p>Approximate the underlying mathematics as well as possible</p></li>
+<li><p>Approximate the running time, the amount of time the algorithm takes to run for input of size N, as close to a logarithmic function as possible</p></li>
+<li><p>Ensure that the algorithm is as clear and easy to read as possible</p></li>
+</ol>
+<p>As you may have guessed constructing an algorithm to have a logarithmic running time will not always be easy, and in some cases is impossible.  Sometimes the best we will be able to do is a polynomial running time - that is an algorithm that runs in the following form:</p>
+<div class="math notranslate nohighlight">
+\[O(N^{x}) = c_{0}N^{x} + c_{1}N^{x-1} + c_{2}N^{x-2} + ... + c_{x-1}N + c_{N} \]</div>
+<p>Such an algorithm is approximated by the largest term in it’s running time for notational convenience and because the highest order power <em>tends</em> to dominate the running time of any given algorithm.</p>
+<p>Let’s begin our study of algorithms by looking at an example algorithm and the analysis of it’s correctness and running time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fizz_buzz</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;fizz buzz&quot;</span>
+    <span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;fizz&quot;</span>
+    <span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;buzz&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">number</span>
+    
+<span class="k">def</span> <span class="nf">test_fizz_buzz</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">fizz_buzz</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;fizz buzz&quot;</span>
+    <span class="k">assert</span> <span class="n">fizz_buzz</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;fizz&quot;</span>
+    <span class="k">assert</span> <span class="n">fizz_buzz</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;buzz&quot;</span>
+    <span class="k">assert</span> <span class="n">fizz_buzz</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span> <span class="o">==</span> <span class="mi">22</span>
+    
+<span class="n">test_fizz_buzz</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The above test gives us some confidence of the corretness of the algorithm <code class="docutils literal notranslate"><span class="pre">fizz_buzz</span></code>.  Now what about the running time?</p>
+<p>Well we can use the following analysis.  We begin by annotating the code of the algorithm:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fizz_buzz</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>   <span class="n">𝑐1</span>
+        <span class="k">return</span> <span class="s2">&quot;fizz buzz&quot;</span>                    <span class="n">𝑐2</span>
+    <span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>                     <span class="n">𝑐3</span>
+        <span class="k">return</span> <span class="s2">&quot;fizz&quot;</span>                         <span class="n">𝑐4</span>
+    <span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>                     <span class="n">𝑐5</span>
+        <span class="k">return</span> <span class="s2">&quot;buzz&quot;</span>                         <span class="n">𝑐6</span>
+    <span class="k">else</span><span class="p">:</span>                                     <span class="n">𝑐7</span>
+        <span class="k">return</span> <span class="n">number</span>                         <span class="n">𝑐8</span>
+</pre></div>
+</div>
+<p>Now we can add up the running times of each of the above:</p>
+<div class="math notranslate nohighlight">
+\[c =  c_{1} + c_{2} + c_{3} + c_{4} + c_{5} + c_{6} + c_{7} + c_{8} \]</div>
+<p>Please note that 𝑐1 = <span class="math notranslate nohighlight">\(c_{1}\)</span> and so forth.  The reason for the change in notation is due to limitations in markdown.</p>
+<p>Here each of the <span class="math notranslate nohighlight">\(c_{i}\)</span> stand for constants.  Every line of code will always have <em>at least</em> a constant term because everything must do some <em>unit</em> of work.  Notice, we have different subscripts on each of the constants.  That’s because although each line of code may run consistently in the same time, we cannot be sure how fast that will be.  This could be, because of the specifics of the programming language, the specifics of the hardware the program is running on or <em>any other number of factors</em>.  Since the specifics of these constants is <em>often</em> not important and will only vary the running time of a program in a very small way, we typically <em>mostly</em> ignore them.  Settling on denoting each line with it’s own constant amount of running time.</p>
+<p>When we add up all the above constants, we get yet another constant, which we refer to as <span class="math notranslate nohighlight">\(c\)</span>, the total constant running time.  From a notational standpoint we typically denote this as:</p>
+<div class="math notranslate nohighlight">
+\[ O(1)\]</div>
+<p>Where O is a function of the running time of the algorithm and the <span class="math notranslate nohighlight">\(1\)</span> here means constant time.  The choice of <span class="math notranslate nohighlight">\(1\)</span> as the notation for <span class="math notranslate nohighlight">\(1\)</span> is standard practice, hence it’s use.  Some conventions we must all just live with.</p>
+<p>For our next algorithm we will look at one which works in linear time:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">integer_multiplication</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">product</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">b</span><span class="p">)):</span>
+        <span class="n">product</span> <span class="o">+=</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="n">product</span>
+
+<span class="k">def</span> <span class="nf">test_integer_multiplication</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5000</span><span class="p">)</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5000</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">integer_multiplication</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+        
+<span class="n">test_integer_multiplication</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We now have some sense of correctness, since we checked against the multiplication Python implements, which for the sake of argument we are going to trust as correct implementation for integer multiplication.</p>
+<p>Now let’s analyze the algorithm:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">integer_multiplication</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>   
+    <span class="n">product</span> <span class="o">=</span> <span class="mi">0</span>                      <span class="n">𝑐1</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">b</span><span class="p">)):</span>          <span class="n">𝑐2</span> <span class="n">b</span>
+        <span class="n">product</span> <span class="o">+=</span> <span class="n">a</span>                 <span class="n">𝑐3</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">product</span>                   <span class="n">𝑐4</span>
+</pre></div>
+</div>
+<p>Our running time will now be:</p>
+<div class="math notranslate nohighlight">
+\[ c_{1} + c_{2}b + c_{3}b + c_{4}\]</div>
+<p>Thus our algorithm takes <span class="math notranslate nohighlight">\(O(b)\)</span> time to run.</p>
+<p>Next we will look at an algorithm for sorting a list of elements in ascending order.  Sorting is a fundamental notion in the design of algorithms and will help inform many of the techniques we will study throughout the book.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">simple_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">arr</span>
+
+<span class="k">def</span> <span class="nf">test_simple_sort</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500000000</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span>
+        <span class="n">sorted_arr</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[:]</span>
+        <span class="n">sorted_arr</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="n">simple_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">==</span> <span class="n">sorted_arr</span>
+
+<span class="n">test_simple_sort</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see from the test, our sorting algorithm at least appears to be correct.  We could actually calculate the probability of a 1000 random arrays of 1000 elements each being sorted by chance. This would give us a measure of how confident we should be in the correctness of our algorithm.  This will be done in the final section of this chapter along with curve fitting.</p>
+<p>In any event, let’s analyze this algorithm:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>def simple_sort(arr): 
+    for i in range(len(arr)):                    𝑐1 n           
+        for j in range(len(arr)):                𝑐2 ∑𝑡𝑗
+            if arr[i] &lt; arr[j]:                  𝑐3
+                arr[i], arr[j] = arr[j], arr[i]  𝑐4
+    return arr                                   𝑐5
+</pre></div>
+</div>
+<p>Note that here <span class="math notranslate nohighlight">\(t_{j}\)</span> is a shorthand for another constant.</p>
+<p>The full formula for the running time for the above algorithm is:</p>
+<div class="math notranslate nohighlight">
+\[ c_{1}n + c_{2}\sum_{j=1}^{n}t_{j} + c_{3} + c_{4} + c_{5} \]</div>
+<p>You might be tempted to simply assume this means the running time is <span class="math notranslate nohighlight">\(O(n)\)</span>.  However, let’s consider</p>
+<div class="math notranslate nohighlight">
+\[c_{2}\sum_{j=1}^{n}t_{j}\]</div>
+<p>Recall that in general,</p>
+<div class="math notranslate nohighlight">
+\[ \sum_{i=1}^{n}i = \frac{n(n+1)}{2}\]</div>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[c_{2}\sum_{j=1}^{n}t_{j} = c_{2}\frac{n(n+1)}{2} = c_{2}\frac{n^{2} + n}{2}\]</div>
+<p>So our total running time will be:</p>
+<div class="math notranslate nohighlight">
+\[ c_{1}n + \frac{c_{2}}{2}(n^{2} + n) + c_{3} + c_{4} + c_{5} \]</div>
+<p>So our algorithm runs in <span class="math notranslate nohighlight">\(O(n^{2})\)</span>.</p>
+<p>Taking a step back so far we’ve seen how to analyze an algorithm’s running time:</p>
+<ol class="simple">
+<li><p>figure out how many steps each line will take</p></li>
+<li><p>sum all steps</p></li>
+<li><p>reduce any summation notations to the relevant closed form solution.</p></li>
+<li><p>find the highest order term which will dominate the equation.</p></li>
+</ol>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./01/5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../4/Types_and_Induction.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Types</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../6/statistical_analysis_of_algorithms.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Statistical Analysis of Algorithms</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

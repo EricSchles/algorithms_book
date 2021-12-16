@@ -1,0 +1,1194 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Types &#8212; The Analysis Of Algorithms</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="First Algorithms" href="../5/First_Algorithms.html" />
+    <link rel="prev" title="Counter Examples and Testing" href="../3/Counterexamples_and_Testing.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">The Analysis Of Algorithms</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../plan.html">
+   Analysis Of Algorithms
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../chapter_one_intro.html">
+   Algorithms Foundations
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1/Introduction_to_Python.html">
+     Introduction To Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2/Introduction_To_Proofs.html">
+     Introduction To Proofs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3/Counterexamples_and_Testing.html">
+     Counter Examples and Testing
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5/First_Algorithms.html">
+     First Algorithms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../6/statistical_analysis_of_algorithms.html">
+     Statistical Analysis of Algorithms
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/01/4/Types_and_Induction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/01/4/Types_and_Induction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#proofs-in-the-integers">
+   Proofs in the Integers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#towards-equivalence-classes">
+     Towards Equivalence Classes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#equivalence-classes">
+     Equivalence Classes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#proofs-in-the-rationals">
+   Proofs in the Rationals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#proofs-in-the-irrationals">
+   Proofs in the Irrationals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#proofs-in-the-reals">
+   Proofs in the Reals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exponentials-and-logarithms">
+   Exponentials and Logarithms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#proof-by-induction">
+   Proof by induction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-proof-by-induction">
+   Using Proof By Induction
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="types">
+<h1>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h1>
+<p>Throughout this chapter we’ve talked about types.  Here we will remind the reader of their significance and importance.</p>
+<p>Let us begin by looking at types in Python.  Recall we have the following primitive types:</p>
+<ul class="simple">
+<li><p>integers</p></li>
+<li><p>floats</p></li>
+<li><p>booleans</p></li>
+<li><p>strings</p></li>
+</ul>
+<p>Examples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mf">5.8172</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is a string&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+5.8172
+True
+This is a string
+</pre></div>
+</div>
+</div>
+</div>
+<p>Each of these ‘types’ of data represent subsets of a set of numbers called the computables.  The computable numbers are those that can be stores or represented in a finite way.  All of them map to an internal binary representation.  As we saw in the last section, here is an algorithm to map from integer to binary:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">integer_to_binary</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="n">biggest_power_of_two</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">biggest_power_of_two</span> <span class="o">==</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">biggest_power_of_two</span><span class="p">):</span>
+        <span class="n">upper_bound</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">biggest_power_of_two</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">upper_bound</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">biggest_power_of_two</span><span class="p">)</span>
+    <span class="n">binary_representation</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">upper_bound</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">power_of_two</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">power_of_two</span> <span class="o">&gt;</span> <span class="n">number</span><span class="p">:</span>
+            <span class="n">binary_representation</span> <span class="o">+=</span> <span class="s2">&quot;0&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">binary_representation</span> <span class="o">+=</span> <span class="s2">&quot;1&quot;</span>
+            <span class="n">number</span> <span class="o">-=</span> <span class="n">power_of_two</span>
+    <span class="k">return</span> <span class="n">binary_representation</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="n">integer_to_binary</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">integer_to_binary</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16 10000
+3 11
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we are interested in mapping from boolean to binary, the algorithm is trivial:</p>
+<p>True -&gt; 1
+False -&gt; 0</p>
+<p>Thus we can implement the boolean_to_binary function as:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">boolean_to_binary</span><span class="p">(</span><span class="n">boolean</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">boolean</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;True:&quot;</span><span class="p">,</span> <span class="n">boolean_to_binary</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;False:&quot;</span><span class="p">,</span> <span class="n">boolean_to_binary</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True: 1
+False: 0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Floating point can be represented as binary using the same algorithm as we did for the integers, just with a ‘.’ representing before and after the decimal point.  Therefore we do the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">float_to_binary</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">str_repr</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="n">left_hand_side</span><span class="p">,</span> <span class="n">right_hand_side</span> <span class="o">=</span> <span class="n">str_repr</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+    <span class="n">left_hand_side</span><span class="p">,</span> <span class="n">right_hand_side</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">left_hand_side</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">right_hand_side</span><span class="p">)</span>
+    <span class="n">left_hand_side</span> <span class="o">=</span> <span class="n">integer_to_binary</span><span class="p">(</span><span class="n">left_hand_side</span><span class="p">)</span>
+    <span class="n">right_hand_side</span> <span class="o">=</span> <span class="n">integer_to_binary</span><span class="p">(</span><span class="n">right_hand_side</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">left_hand_side</span><span class="p">,</span> <span class="n">right_hand_side</span><span class="p">])</span>
+
+<span class="n">float_to_binary</span><span class="p">(</span><span class="mf">5.846</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;101.1101001110&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note: Because floating point numbers, all numbers are already computable, so we need not worry about infinite real numbers.  Recall that floating point numbers can approximate the irrationals and the transcendental numbers, but cannot represent them with absolute precision.</p>
+<p>The final binary representation we need to consider is string to binary.  For this, we simply need to consider, what makes up a string?  It is an array of characters.  And each character comes with a mapping to an integer.  In Python the way we do this is with the <code class="docutils literal notranslate"><span class="pre">ord</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>97
+</pre></div>
+</div>
+</div>
+</div>
+<p>From there, we simply map the integer representation of the character to the binary representation.  Thus to map a string to binary we do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">string_to_binary</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">binary</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">string</span><span class="p">:</span>
+        <span class="n">binary</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">integer_to_binary</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">elem</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">binary</span>
+
+<span class="n">string_to_binary</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1001000&#39;,
+ &#39;1100101&#39;,
+ &#39;1101100&#39;,
+ &#39;1101100&#39;,
+ &#39;1101111&#39;,
+ &#39;100000&#39;,
+ &#39;1010111&#39;,
+ &#39;1101111&#39;,
+ &#39;1110010&#39;,
+ &#39;1101100&#39;,
+ &#39;1100100&#39;,
+ &#39;100001&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice we need to store each character as elements of an array otherwise it will be impossible to recover which part of the binary maps to which character.</p>
+<p>Each of the above functions drives towards a point - all the ‘primitive’ types in programming actually have a bijection to the binary numbers.  Therefore in a sense, the types we’ve seen so far implemented in a programming language actually comprise just one type, the computables.  The way the computables are used indicates we are attempting an <em>approximation</em> at a much richer space of types, the mathematical types.  However, since this is only an approximation, it fails in ways that may be unpredictable in real applications.  And we are limited in what we can approximate by the specific hardware and software available to us as scientists.</p>
+<p>Fortunately, the human mind has no such limitation.  We are able to see passed the finite and consider the infinite.  As stated in previous sections, there are problems that machines simply cannot solve, because they can only approximate the infinite.  Here we introduce a rich set of infinite types which will aid us in coming up with algorithms which we will use to approximate results through the computables.  These types will be:</p>
+<ul class="simple">
+<li><p>The natural numbers <span class="math notranslate nohighlight">\(\mathbb{N}\)</span></p></li>
+</ul>
+<p>The natural numbers can be thought of as the counting numbers, starting at 0 and heading to infinity one at a time.  So the sequence starts off as:</p>
+<p>0, 1, 2, 3, …</p>
+<ul class="simple">
+<li><p>The integers <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span></p></li>
+</ul>
+<p>The integers are the counting numbers, plus their negative equivalents in terms of order of magnitude, heading both to positive and negative infinity one at a time.  So the sequence centered at zero looks like:</p>
+<p>…, -3, -2, -1, 0, 1, 2, 3, ….</p>
+<ul class="simple">
+<li><p>The rational numbers <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span></p></li>
+</ul>
+<p>The rational numbers are ratios of integers in lowest terms.  So all the integers are a subset of the rationals if you consider the rational equivalent to be an integer over one like:</p>
+<div class="math notranslate nohighlight">
+\[\frac{5}{1}\]</div>
+<p>Of course, not all rational numbers are of this form, for instance:</p>
+<div class="math notranslate nohighlight">
+\[\frac{3}{4}\]</div>
+<p>Is a perfectly reasonable rational number, but has no integer equivalence.  In this sense, the rationals represent a ‘larger’ infinity because there are an infinite number of rational numbers between each integer.</p>
+<ul class="simple">
+<li><p>The irrational numbers <span class="math notranslate nohighlight">\(\mathbb{P}\)</span></p></li>
+</ul>
+<p>Just as there are rational numbers that cannot be represented as integers, there are numbers that cannot be expressed as ratios in lowest terms, and yet they are numbers.  An example of this is <span class="math notranslate nohighlight">\(\sqrt{2}\)</span>.  While clearly a number, and one that comes up <em>often</em>.  It is not rational.  We will see a proof of this fact later on in the chapter and prove it’s generalization.</p>
+<ul class="simple">
+<li><p>The real numbers <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p></li>
+</ul>
+<p>Finally, we have the real numbers which includes the integers, rationals, irrationals and a set called the transcendental numbers.  Those are numbers that we cannot even approximate with finite representations of numbers.  For instance, <span class="math notranslate nohighlight">\(\sqrt{2}\)</span> is irrational, so we cannot write down an ‘exact’ numeric representation, but we can at least write down <span class="math notranslate nohighlight">\(\sqrt{2}\)</span>.  But with the transcendentals, like <span class="math notranslate nohighlight">\(\pi\)</span> or <span class="math notranslate nohighlight">\(e\)</span> we cannot even do that.  There are formulas that approximate both and they do so very, very well.  If you are interested in understanding that approximation deeper, please check out <a class="reference external" href="https://www.youtube.com/watch?v=gMlf1ELvRzc&amp;ab_channel=Veritasium">veritasium video</a>.</p>
+<p>There are some other notable sets that we likely won’t have time to discuss:</p>
+<ul class="simple">
+<li><p>The complex numbers <span class="math notranslate nohighlight">\(\mathbb{C}\)</span></p></li>
+</ul>
+<p>Here is <a class="reference external" href="https://en.wikipedia.org/wiki/Complex_number">the wikipedia for the complex numbers</a></p>
+<ul class="simple">
+<li><p>The Quaternion numbers <span class="math notranslate nohighlight">\(\mathbb{H}\)</span></p></li>
+</ul>
+<p>And <a class="reference external" href="https://en.wikipedia.org/wiki/Quaternion">the wikipedia for the Quaternions</a></p>
+<p>For the remainder of this chapter we introduce a set of proofs and proof techniques for dealing with each of these types.  These proofs will not be an exhaustive set of proofs, but give a rough sense of the flavor of proofs in each type.</p>
+<p>The reason we can categorize proofs by types is the structural nature of the proofs are based on facts we know about the type in question.  This leads to a standard structure for each proof, based on type, dependent on the property or statement of inquiry.  So for instance, if we want to prove a property of the integers, like that two even integers always produce a third even integer, then we can decompose the proof into the following meta elements:</p>
+<ul class="simple">
+<li><p>type: integers</p></li>
+<li><p>generic class: equivalence class closure</p></li>
+</ul>
+<p>This allows us to observe the pattern for how to not only prove the statement, but also <em>similar</em> statements.</p>
+<div class="section" id="proofs-in-the-integers">
+<h2>Proofs in the Integers<a class="headerlink" href="#proofs-in-the-integers" title="Permalink to this headline">¶</a></h2>
+<p>We begin by showing the above example and then generalize to other similar statements:</p>
+<p>Result:</p>
+<p>let <span class="math notranslate nohighlight">\(\forall\)</span> a, b <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span> if a,b even then a+b=c such that c <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span> and c is even.</p>
+<p>In order to prove this we’ll need a lemma:</p>
+<p>Lemma:</p>
+<p><span class="math notranslate nohighlight">\(\forall\)</span> a,b <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>, a+b=c such that c <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>.</p>
+<p>Proof:</p>
+<p>We will prove the above result with a proof by contradiction.  Thus we begin by assuming a+b=c and c <span class="math notranslate nohighlight">\(\notin \mathbb{Z}\)</span>.</p>
+<p>If this is the case then, a + b = c <span class="math notranslate nohighlight">\(\iff\)</span> b = c - a.  But since c <span class="math notranslate nohighlight">\(\notin \mathbb{Z}\)</span> this must mean b <span class="math notranslate nohighlight">\(\notin \mathbb{Z}\)</span>, which is a contradiction.  Therefore c <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>.</p>
+<p>Q.E.D.</p>
+<p>Proof:</p>
+<p>Recall the definition of an even integer x, x = 2k, for k <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>.</p>
+<p>Thus we can directly apply the definition:</p>
+<p>a = 2j for j <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>.
+b = 2i for i <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>.</p>
+<p>And a + b = 2j + 2i = 2(j + i).</p>
+<p>Since j, i <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>, j + i <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span> by lemma and we can call the summation, j+i=k.  Thus,</p>
+<p>a + b = 2j + 2i = 2k such that <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span> and the summation is even by definition of an even integer.</p>
+<p>Q.E.D.</p>
+<p>Let’s look at another similar result,</p>
+<p>Result:</p>
+<p>let <span class="math notranslate nohighlight">\(\forall\)</span> a, b <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span> if a,b odd then a+b=c such that c <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span> and c is even.</p>
+<p>Proof:</p>
+<p>Recall the definition of an odd integer x, x = 2k + 1, for k <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>.</p>
+<p>Thus we can directly apply the definition:</p>
+<p>a = 2j + 1 for j <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>.
+b = 2i + 1 for i <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>.</p>
+<p>And a + b = 2j + 1 + 2i + 1 = 2(j + i + 1).</p>
+<p>Since j, i <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>, j + i <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span> by lemma and we can call the summation, j+i+1=k.  Thus,</p>
+<p>a + b = 2j + 2i + 2= 2k such that <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span> and the summation is even by definition of an even integer.</p>
+<p>Q.E.D.</p>
+<p>Notice - that the proof and structure were essentially identical.  Any proof involving parity, or the generalization equivalence classes, will look very similar.  Thus we have identified the necessary <em>structure</em> of the result to prove a large set of results.  In theory this set of results is <em>infinite</em>, since now we can answer questions about any multiplicative factor of an even or odd number plus any multiplicative factor of an even or odd number.  To be clear, the ‘class’ of results is very limited.  But within that class we can verify any statement.</p>
+<p>It is left to the reader to verify some other statements within this generic class of results regarding even and odd numbers.</p>
+<p>Now that we’ve informally mentioned equivalence classes.  Let’s discuss them formally.</p>
+<div class="section" id="towards-equivalence-classes">
+<h3>Towards Equivalence Classes<a class="headerlink" href="#towards-equivalence-classes" title="Permalink to this headline">¶</a></h3>
+<p>Recall from Introduction_To_Proofs the term relation -</p>
+<p>A relation is a set R from A to B, such that <span class="math notranslate nohighlight">\(R:A \rightarrow B\)</span>.  Recall that relations are mappings from A to B, but don’t require much else.  There are some extra properties that relations can have:</p>
+<ul class="simple">
+<li><p>reflexive:</p></li>
+</ul>
+<p>let x <span class="math notranslate nohighlight">\(\in\)</span> A, then for <span class="math notranslate nohighlight">\(R: A \rightarrow A\)</span>, x R x <span class="math notranslate nohighlight">\(\forall x \in A\)</span></p>
+<ul class="simple">
+<li><p>symmetric:</p></li>
+</ul>
+<p>let x,y <span class="math notranslate nohighlight">\(\in\)</span> A, for <span class="math notranslate nohighlight">\(R: A \rightarrow A\)</span>, if x R y then y R x,  <span class="math notranslate nohighlight">\(\forall x,y \in A\)</span></p>
+<ul class="simple">
+<li><p>transitive:</p></li>
+</ul>
+<p>let x,y,z <span class="math notranslate nohighlight">\(\in\)</span> A, for <span class="math notranslate nohighlight">\(R: A \rightarrow A\)</span>, if x R y and y R z, then x R z <span class="math notranslate nohighlight">\(\forall x,y,z \in A\)</span></p>
+<p>Definition:</p>
+<p>An <strong>equivalence relation</strong> is a relation that is reflexive, symmetric and transitive.</p>
+</div>
+<div class="section" id="equivalence-classes">
+<h3>Equivalence Classes<a class="headerlink" href="#equivalence-classes" title="Permalink to this headline">¶</a></h3>
+<p>We are now ready to begin discussing equivalence with respect to relations.</p>
+<p>Definition:</p>
+<p>For an equivalence relation R defined on a set A for a <span class="math notranslate nohighlight">\(\in\)</span> A, the set</p>
+<div class="math notranslate nohighlight">
+\[[a] = \{x \in A: x R a\}\]</div>
+<p>then <span class="math notranslate nohighlight">\([a]\)</span> is an <strong>equivalence class</strong>.</p>
+<p>Thus, we can represent a subset of a set by it’s equivalence under some equivalence relation.</p>
+<p>In order to provide examples of equivalence classes, we’ll need to define integer division:</p>
+<p>a | b (read a divides b) if and only if b = ac.</p>
+<p>We can define integer division in Python fairly easily:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">int_divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">original_b</span> <span class="o">=</span> <span class="n">b</span>
+    <span class="k">while</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">b</span> <span class="o">-=</span> <span class="n">a</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">assert</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> does not evenly divide </span><span class="si">{</span><span class="n">original_b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">count</span>
+
+<span class="n">int_divide</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice - we only consider integer solutions in this case.  So if we did:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">int_divide</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">786</span><span class="n">f44eed5af</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">int_divide</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-16-a925b2fc7fc2&gt;</span> in <span class="ni">int_divide</span><span class="nt">(a, b)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="n">b</span> <span class="o">-=</span> <span class="n">a</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">7</span>     <span class="k">assert</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> does not evenly divide </span><span class="si">{</span><span class="n">original_b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="k">return</span> <span class="n">count</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> 
+
+<span class="ne">AssertionError</span>: 3 does not evenly divide 7
+</pre></div>
+</div>
+</div>
+</div>
+<p>Which would be the ‘wrong’ answer for the real numbers, but is correct because we limit ourselves to integer solutions only.  Specifically, there is no c, such that b = ac when b = 7 and a = 3.</p>
+<p>Next let’s look at a related construct to division, modulo.  We’ll use modulo to construct a naive notion of equivalence.</p>
+<p>Definition:</p>
+<p>For integers a,b with n <span class="math notranslate nohighlight">\(\ge\)</span> 2, we say that a is equivalent to b modulo n, written <span class="math notranslate nohighlight">\(a = b (mod n)\)</span> if <span class="math notranslate nohighlight">\(n | (a - b)\)</span>.</p>
+<p>So for instance,</p>
+<p>8 = 4 (mod 2) because</p>
+<p><span class="math notranslate nohighlight">\(2 | (8 - 4)\)</span>, namely,</p>
+<p><span class="math notranslate nohighlight">\(8 - 4 = 4\)</span> and <span class="math notranslate nohighlight">\(2 | 4\)</span> because <span class="math notranslate nohighlight">\(2*2 = 4\)</span>.</p>
+<p>In Python it is easy to check if two numbers are equivalent modulo some other number:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">int_equivalence</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">%</span> <span class="n">n</span> <span class="o">==</span> <span class="n">b</span> <span class="o">%</span> <span class="n">n</span>
+
+<span class="n">int_equivalence</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>In Python things work a little differently, the modulo operator in Python <code class="docutils literal notranslate"><span class="pre">%</span></code> takes the remainder from the standard division algorithm:</p>
+<div class="math notranslate nohighlight">
+\[b = aq + r\]</div>
+<p>where a is the number being divided, q is the quotient and r is the remainder.</p>
+<p>We can actually show that the two formulations are equivalent:</p>
+<p>Result:</p>
+<div class="math notranslate nohighlight">
+\[a = b \text{ }(mod\text{ } n) \iff a \text{ }(mod\text{ } n) = b \text{ }(mod\text{ } n)\]</div>
+<p>Proof:</p>
+<p>(<span class="math notranslate nohighlight">\(\rightarrow\)</span>)</p>
+<p>First assume,</p>
+<div class="math notranslate nohighlight">
+\[a = b \text{ }(mod\text{ } n)\]</div>
+<p>Since <span class="math notranslate nohighlight">\(n | (a - b)\)</span>, <span class="math notranslate nohighlight">\(\exists k \in \mathbb{Z}\)</span> such that <span class="math notranslate nohighlight">\(a - b = nk\)</span>.</p>
+<p>Let a mod n = r.</p>
+<p>Then, by the division algorithm, <span class="math notranslate nohighlight">\(\exists q \in \mathbb{Z}\)</span> such that a = nq + r.</p>
+<p>Using <span class="math notranslate nohighlight">\(a = nq + r\)</span> to replace a in <span class="math notranslate nohighlight">\(a - b = nk\)</span>, we get:</p>
+<div class="math notranslate nohighlight">
+\[nq + r - b = nk \iff nq - nk + r = b \iff n(q -k) +r = b\]</div>
+<p>This shows that r is the remainder when n| b  so,</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}b\text{ } (mod\text{ } n) = r$$ and,\\$$a\text{ } (mod\text{ } n) = r\end{aligned}\end{align} \]</div>
+<p>(<span class="math notranslate nohighlight">\(\leftarrow\)</span>)</p>
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[r = a\text{ } (mod\text{ } n) = b\text{ } (mod\text{ } n)\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[a = nq_{1} + r\]</div>
+<div class="math notranslate nohighlight">
+\[b = nq_{2} + r\]</div>
+<p>then,</p>
+<div class="math notranslate nohighlight">
+\[a - b = nq_{1} + r - (nq_{2} + r) \iff n(q_{1} - q_{2})\]</div>
+<p>Thus,</p>
+<p><span class="math notranslate nohighlight">\(m | (a - b)\)</span> so <span class="math notranslate nohighlight">\(a = b\text{ } (mod\text{ } n)\)</span>.</p>
+<p>Q.E.D.</p>
+<p>We are now ready for our first example equivalence class, even numbers.</p>
+<p>Example:</p>
+<p>For <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> <span class="math notranslate nohighlight">\([2]\)</span> is an equivalence class under integer division.</p>
+<p>Proof:</p>
+<p><span class="math notranslate nohighlight">\(\forall\)</span> a, b <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span> such that a, b even, they belong to the same equivalence class.</p>
+<p>We begin by noting that:</p>
+<p>a = 2k such that k <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>.</p>
+<p>b = 2j such that j <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>.</p>
+<p>Therefore,</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} m = k - j $$.\\$$ 2m = 2(k - j) \end{aligned}\end{align} \]</div>
+<div class="math notranslate nohighlight">
+\[ 2 | 2(k - j) \]</div>
+<div class="math notranslate nohighlight">
+\[ 2| (a - b) \]</div>
+<p>By m an integer, 2 | (a - b).</p>
+<p>Thus a = b (mod 2), and further more, a (mod 2) = b (mod 2).</p>
+<p>Thus all even numbers are in the same equivalence class and <span class="math notranslate nohighlight">\(x \text{ }(mod\text{ } 2)\)</span> is the equivalence relation.</p>
+<p>We’ll now prove <span class="math notranslate nohighlight">\(x \text{ }(mod\text{ } 2)\)</span> is an equivalence relation:</p>
+<p>Reflexive:</p>
+<div class="math notranslate nohighlight">
+\[x R x \rightarrow x (mod 2) = x (mod 2) \iff x = x\text{ } (mod\text{ } 2 \iff 2 | (x - x) \iff 2 | 0\]</div>
+<div class="math notranslate nohighlight">
+\[ 2 | 0 \iff 0 = 2*0\]</div>
+<p>The final statement should be obvious, this R is reflexive.</p>
+<p>Symmetric:</p>
+<p>if x R y, then y R x.</p>
+<p>Statement to Prove:</p>
+<div class="math notranslate nohighlight">
+\[x = y \text{ }(mod\text{ } 2) \rightarrow y = x\text{ } (mod\text{ } 2)\]</div>
+<div class="math notranslate nohighlight">
+\[x = y\text{ } (mod\text{ }2) \iff 2 | (x - y) \iff x = 2m + y\]</div>
+<p>Now we have some cases:</p>
+<p><span class="math notranslate nohighlight">\(x = y\)</span>:</p>
+<p>If x = y, then we are actually back in case one and therefore we are done.</p>
+<p><span class="math notranslate nohighlight">\(x \ne y\)</span>:</p>
+<p>this means that if m &gt; 0 for x = 2m + y, then y = 2(-m) + x.  However this is not a problem since we are dealing with <em>equivalence</em>, not equality.  Specifically,</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}a\text{ } (mod\text{ } n) = -a\text{ } (mod\text{ } n) $$.\\Another way to see this is, if n| a, then n | -a.\\Lemma:\\If n | a, then n | -a.\\$$n | a \rightarrow a = nq \rightarrow -a = n(-q) \rightarrow n|-a$$.\\Getting back to our proof we have:\\$$y = 2(-m) + x \iff y - x = 2(-m) \iff 2 | (y - x) \iff y = x\text{ } (mod\text{ } 2)\end{aligned}\end{align} \]</div>
+<p>Q.E.D.</p>
+<p>Finally, we need only prove the transitive property:</p>
+<p>If x R y, and y R z then x R z.</p>
+<p>Given that:</p>
+<div class="math notranslate nohighlight">
+\[ x R y \rightarrow x = y\text{ } (mod\text{ } 2)\]</div>
+<div class="math notranslate nohighlight">
+\[ y R z \rightarrow y = z\text{ } (mod\text{ } 2)\]</div>
+<div class="math notranslate nohighlight">
+\[\rightarrow\]</div>
+<div class="math notranslate nohighlight">
+\[ 2 | (x - y), 2 | (y - z) \]</div>
+<div class="math notranslate nohighlight">
+\[\rightarrow\]</div>
+<div class="math notranslate nohighlight">
+\[x - y = 2q\]</div>
+<div class="math notranslate nohighlight">
+\[y - z = 2p \rightarrow y = 2p - z\]</div>
+<p>Now we substitute in equation 2 into equation 1:</p>
+<div class="math notranslate nohighlight">
+\[ x - (2p -z) = 2q\]</div>
+<div class="math notranslate nohighlight">
+\[\rightarrow\]</div>
+<div class="math notranslate nohighlight">
+\[ x + z = 2(q + p)\]</div>
+<div class="math notranslate nohighlight">
+\[\rightarrow\]</div>
+<div class="math notranslate nohighlight">
+\[ 2 | (x + z) \]</div>
+<div class="math notranslate nohighlight">
+\[ x = z \text{ }(mod\text{ } 2)\]</div>
+<p>Q.E.D.</p>
+<p>We leave it to the reader to prove the following generalization:</p>
+<p>The following is an equivalence relation:</p>
+<div class="math notranslate nohighlight">
+\[y = x\text{ } (mod\text{ } p)\]</div>
+<p>Where x, y <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span> and p is a prime.</p>
+<p>Note, the proofs are essentially exactly the same as the above.</p>
+</div>
+</div>
+<div class="section" id="proofs-in-the-rationals">
+<h2>Proofs in the Rationals<a class="headerlink" href="#proofs-in-the-rationals" title="Permalink to this headline">¶</a></h2>
+<p>Now that we’ve explored the integers let’s move onto the rational numbers.  As stated previously, a rational number is of the form:</p>
+<div class="math notranslate nohighlight">
+\[\frac{a}{b}\]</div>
+<p>such that a, b <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>.</p>
+<p>Let’s start off this section with a reasonably straight forward set of proofs:</p>
+<ul class="simple">
+<li><p>addition is closed in <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span></p></li>
+<li><p>multiplication is closed in <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span></p></li>
+<li><p>the distributive property holds in <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>.</p></li>
+</ul>
+<ol class="simple">
+<li><p>Addition is closed in <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>:</p></li>
+</ol>
+<p>Proof:</p>
+<p>Assume we have q and r such that <span class="math notranslate nohighlight">\(q = \frac{a}{b}\)</span>, <span class="math notranslate nohighlight">\(r = \frac{c}{d}\)</span> such that a,b,c,d <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>.  Now we simply ‘apply’ the definition of addition:</p>
+<div class="math notranslate nohighlight">
+\[q + r = \frac{a}{b} + \frac{c}{d} = \frac{a+c}{b+d}\]</div>
+<p>by a,b,c,d <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>, a+c and b+d <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>.</p>
+<p>Therefore <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> closed under addition.</p>
+<p>Q.E.D.</p>
+<ol class="simple">
+<li><p>Multiplication is closed in <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>.</p></li>
+</ol>
+<p>This proof goes very much the same way.</p>
+<p>Proof:</p>
+<p>Assume we have q and r such that <span class="math notranslate nohighlight">\(q = \frac{a}{b}\)</span>, <span class="math notranslate nohighlight">\(r = \frac{c}{d}\)</span> such that a,b,c,d <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>.  Now we simply ‘apply’ the definition of multiplication:</p>
+<div class="math notranslate nohighlight">
+\[q + r = \frac{a}{b} * \frac{c}{d} = \frac{a*c}{b*d}\]</div>
+<p>by a,b,c,d <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>, <span class="math notranslate nohighlight">\(a*c\)</span> and <span class="math notranslate nohighlight">\(b*d\)</span> <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>.</p>
+<p>Therefore <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> closed under multiplication.</p>
+<ol class="simple">
+<li><p>The distributive property holds in <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>.</p></li>
+</ol>
+<p>This proof goes slightly differently.  But it is more or less the same.</p>
+<p>Proof:</p>
+<p>Assume we have p, q and r such that <span class="math notranslate nohighlight">\(q = \frac{a}{b}\)</span>, <span class="math notranslate nohighlight">\(r = \frac{c}{d}\)</span>, and <span class="math notranslate nohighlight">\(p = \frac{e}{f}\)</span> such that a,b,c,d,e,f <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>.  Now we simply ‘apply’ the definitions of multiplication and addition:</p>
+<div class="math notranslate nohighlight">
+\[p(q + r) = \frac{e}{f}(\frac{a}{b} + \frac{c}{d}) = \frac{e}{f}(\frac{a+c}{b+d}) = \frac{ae + ce}{bf+df}\]</div>
+<p>by a,b,c,d,e,f <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>, <span class="math notranslate nohighlight">\(ae + ce\)</span> and <span class="math notranslate nohighlight">\(bf+df\)</span> <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>.</p>
+<p>Therefore the distributive property holds in <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>.</p>
+</div>
+<div class="section" id="proofs-in-the-irrationals">
+<h2>Proofs in the Irrationals<a class="headerlink" href="#proofs-in-the-irrationals" title="Permalink to this headline">¶</a></h2>
+<p>As you can see, there isn’t a lot of ‘new’ stuff in the basic properties of the rationals.  However, there are certainly interesting proofs here.  One of the classic proofs involves the irrationality of the <span class="math notranslate nohighlight">\(\sqrt{2}\)</span>.  This proof poses a major digression from the proofs we’ve seen before.  If you are reading this book, you’ve liked used the consequences of this theorem for a very long time, for instance, if you’ve ever taken calculus.  But it is worth to take a moment and realize that the irrationality of <span class="math notranslate nohighlight">\(\sqrt{2}\)</span> was once <em>hottly debated</em>.  This is because this irrational number comes up <em>naturally</em> in a lot of the mathematics that has been known since the days of Pythagoras.  Consider the Pythagorian formula for distance:</p>
+<p>First recall the general distance formula:</p>
+<div class="math notranslate nohighlight">
+\[ c = \sqrt{a^{2} + b^{2}} \]</div>
+<p>Now set a = b = 1:</p>
+<div class="math notranslate nohighlight">
+\[ \sqrt{1^{2} + 1^{2}} = \sqrt{2}\]</div>
+<p>There were many who insisted that <span class="math notranslate nohighlight">\(\sqrt{2}\)</span> must be measurable in a precise way, and that this quantity was therefore rational.  And yet, an exact mathematical number alluded scholars until this proof was discovered.  The acceptance of the irrational numbers was a breakthrough in mathematics.  Without the irrationals, we would not have had the calculus in it’s current form.  And that may have meant countless scientific and engineering discoveries never occur.  This proof is a forebarer for much of the innovation over the course of human history.</p>
+<p>Without further ado, the irrationality of the square root of 2:</p>
+<p>Theorem: The square root of two is irrational.</p>
+<p>Proof:</p>
+<p>We begin by assuming to the contrary that <span class="math notranslate nohighlight">\(\sqrt{2}\)</span> is rational.  Thus we can express it as <span class="math notranslate nohighlight">\(\sqrt{2} = \frac{m}{n}\)</span> such that m, n <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span> and m,n are in lowest terms.</p>
+<p>We can now observe:</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{2} = \frac{m}{n} \iff \sqrt{2}^{2} = (\frac{m}{n})^{2}\]</div>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[ 2 = \frac{m^{2}}{n^{2}} \]</div>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[ 2*n^{2} = m^{2} \]</div>
+<p>Therefore <span class="math notranslate nohighlight">\(m^{2}\)</span> is even.</p>
+<p>Lemma:</p>
+<p>if <span class="math notranslate nohighlight">\(a^{2}\)</span> even then a is even.</p>
+<p>Proof:</p>
+<p>We prove the contrapositive:</p>
+<p>If a is odd, then <span class="math notranslate nohighlight">\(a^{2}\)</span> is odd:</p>
+<p>a = 2k + 1, k <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[ a^{2} = (2k+1)(2k+1) = 4k^{2} + 4k + 1 = 2(2k^{2} + 2k) + 1 \]</div>
+<p>by k <span class="math notranslate nohighlight">\(\in \mathbb{Z}\)</span>, 2(2k^{2} + 2k) + 1 is odd.</p>
+<p>Q.E.D.</p>
+<p>Returning to our proof, by the above lemma we have m even by <span class="math notranslate nohighlight">\(m^{2}\)</span> even.</p>
+<p>Thus m = 2q.</p>
+<p>Therefore we have,</p>
+<div class="math notranslate nohighlight">
+\[(2q)^{2} = 2n^{2}\]</div>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[ 4q^{2} = 2n^{2}\]</div>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[n^{2} = 2q^{2}\]</div>
+<p>Thus <span class="math notranslate nohighlight">\(n^{2}\)</span> is even and by the above lemma, therefore n is even.  This implies that both,</p>
+<p>m and n are even.  Therefore,</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \frac{m}{n} = {2q}{2p} $$.\\However this is a contradiction because we assumed that $\frac{m}{n}$ were a fraction in _lowest terms_.  That is, they have no common factors.  Therefore we always can find a term to divide out, forever.  There is no possible lowest terms ratio.  And since we cannot express the number $\sqrt{2}$ as a ratio of two integers, it is not rational.\\Q.E.D.\\It turns out that any number for the form $\sqrt{p}$ where p is prime will be irrational.  Therefore there are _infinitely_ many irrational numbers.  You may be tempted at this point to think that there are fewer irrational numbers than rational ones.  But the reverse happens to be true.  There is an _initially_ sparser set of irrationals, however, we can also do the following:\\$$ ab + c\end{aligned}\end{align} \]</div>
+<p>Where a, c <span class="math notranslate nohighlight">\(\in \mathbb{Q}\)</span> and b <span class="math notranslate nohighlight">\(\in \mathbb{P}\)</span>.  Thus we can take <em>combinations</em> of rational numbers together with an irrational number.  Of course, the above construction is just the simplest one.  We can have <em>n</em> many terms that are irrational.  Thus the <em>size</em> of the irrational numbers is much larger than the size of the rationals.  In fact, there is a <em>countable</em> infinity of rational numbers but an <em>uncountable</em> infinity of irrational numbers.</p>
+<p>In general, countability is general benchmark of cardinality within infinite sets.  If a set is infinite but countable then there is a bijection to the natural numbers.  However, if the cardinality is uncountable no such bijection exists.  The irrationals is the first set we are discussing for which this is the case.  To some extent this is a watershed moment.  Here we leave the familiar primitive notions of counting that have guided mankind in it’s infancy.  Now we tread on new ground, in a land beyond the comfortable, where intuition can and will often fail.  In this new land, mathematical objects will need to be treated with care and assumptions will have to be checked and studied carefully.  Here there be dragons.</p>
+</div>
+<div class="section" id="proofs-in-the-reals">
+<h2>Proofs in the Reals<a class="headerlink" href="#proofs-in-the-reals" title="Permalink to this headline">¶</a></h2>
+<p>Now that we’ve gone through the irrationals, next we are ready to talk about the real numbers.  Alas, we cannot yet engage in a discussion regarding how to come up with formulas for transcendental numbers, so we’ll have to take them as a given in the set of reals, <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
+<p>We shall begin by looking at some straight forward proofs involving the reals, to get a flavor for how to prove things when real numbers are involved.</p>
+<p>Result:</p>
+<p>if x and y are real numbers such that xy = 0, then x = 0 or y = 0.</p>
+<p>Proof:</p>
+<p>Assume that xy = 0.  We consider two cases:</p>
+<ul class="simple">
+<li><p>x = 0</p></li>
+<li><p>x <span class="math notranslate nohighlight">\(\ne\)</span> 0</p></li>
+</ul>
+<p>Case 1. x = 0.  Then we have the desired result.</p>
+<p>Case 2. x <span class="math notranslate nohighlight">\(\ne\)</span> 0.  Multiplying xy = 0 by <span class="math notranslate nohighlight">\(\frac{1}{x}\)</span>, we obtain,</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{x}(xy) = 0 \frac{1}{x}\]</div>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[y = 0\]</div>
+<p>Q.E.D.</p>
+<p>Result:</p>
+<p>Let <span class="math notranslate nohighlight">\(\in \mathbb{R}\)</span>.  If <span class="math notranslate nohighlight">\(x^{3} - 5x^{2} + 3x = 15\)</span>, then x = 5.</p>
+<p>Proof.</p>
+<p>This is a straight forward plug and chug proof:</p>
+<div class="math notranslate nohighlight">
+\[x^{3} - 5x^{2} + 3x - 15 = 0\]</div>
+<p>therefore,</p>
+<div class="math notranslate nohighlight">
+\[x^{2}(x - 5) + 3(x - 5) = 0\]</div>
+<p>thus,</p>
+<div class="math notranslate nohighlight">
+\[(x^{2} + 3)(x - 5) = 0\]</div>
+<div class="math notranslate nohighlight">
+\[x = \sqrt{-3}\]</div>
+<p>And</p>
+<div class="math notranslate nohighlight">
+\[x = 5\]</div>
+<p>Are solutions.</p>
+<p>Q.E.D.</p>
+<p>Result</p>
+<p>For every two real numbers x and y,</p>
+<div class="math notranslate nohighlight">
+\[| x + y | \le |x| + |y|\]</div>
+<p>Proof:</p>
+<p>We will prove this by cases.  If x or y is zero then we are done, so we can safely assume they are non-zero.</p>
+<p>Case 1. x &gt; 0 and y &gt; 0.  Then x + y &gt; 0 and</p>
+<div class="math notranslate nohighlight">
+\[ |x + y| = x + y = |x| + |y| \]</div>
+<p>Case 2. x &lt; 0 and y &lt; 0.  Then x + y &lt; 0 and</p>
+<div class="math notranslate nohighlight">
+\[ |x + y| = -(x + y) = -x + -y = |x| + |y|\]</div>
+<p>Case 3. x &gt; 0 and y &lt; 0.  There are technically two cases here, but without loss of generality, we only consider the one.</p>
+<p>Sub-case 3.1:</p>
+<div class="math notranslate nohighlight">
+\[ x + y \ge 0\]</div>
+<div class="math notranslate nohighlight">
+\[ |x| + |y| = x - y &gt; x + y = |x + y| \]</div>
+<p>Sub-case 3.2:</p>
+<div class="math notranslate nohighlight">
+\[ x + y \le 0 \]</div>
+<div class="math notranslate nohighlight">
+\[ |x| + |y| = x - y &gt; -x - y = -(x + y) = |x + y|\]</div>
+<p>Thus for all cases, the inequality holds.</p>
+<p>Q.E.D.</p>
+<p>Now that we’ve considered some warmup proofs, time for some ‘important’ proofs.</p>
+<p>Result:</p>
+<p>There is no smallest positive real number.</p>
+<p>Proof:</p>
+<p>Assume, to the contrary, that there is a smallest positive real number, x.  Since,</p>
+<div class="math notranslate nohighlight">
+\[ 0 &lt; \frac{x}{2} &lt; x \]</div>
+<p>It follows that <span class="math notranslate nohighlight">\(\frac{x}{2}\)</span> is a positive real number that is smaller than x.  This however is a contradiction.</p>
+<p>In fact, our choice of 2 was not special.  <em>Any</em> real number could be used to create a ‘smaller’ real number then our ‘so called smallest’.</p>
+<p>Q.E.D.</p>
+</div>
+<div class="section" id="exponentials-and-logarithms">
+<h2>Exponentials and Logarithms<a class="headerlink" href="#exponentials-and-logarithms" title="Permalink to this headline">¶</a></h2>
+<p>We will now consider a set of operators that are best studied in the reals and other similar infinite sets.  The first of these two operators is exponentials.</p>
+<p>We begin with a simple definition:</p>
+<p>We can view the operation of exponentiation first through the lens of repeated division.  Let’s look at an implementation in Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exponentiation</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">*=</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">exponentiation</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<p>In mathematical notation, the above would appear as:</p>
+<div class="math notranslate nohighlight">
+\[ b^{a} \]</div>
+<p>Here <span class="math notranslate nohighlight">\(b\)</span> would be referred to as the base, whereas <span class="math notranslate nohighlight">\(a\)</span> would be the power.</p>
+<p>Here are some additional rules regarding exponents:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(b^{0} = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b^{1} = b\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b^{-1} = \frac{1}{b}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((b^{a})^{n} = b^{an}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((b^{a})^{n} = (b^{n})^{a}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b^{m}b^{n} = b^{m+n}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((bc)^{n} = b^{n}c^{n}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{b^{a}}{b^{c}} = b^{a-c}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{b^{a}}{c^{a}} = (\frac{b}{c})^{a}\)</span></p></li>
+</ul>
+<p>Unfortunately we lack the mathematical proof technique to prove any of the above rules.  However, we will remedy that soon.</p>
+<p>Moving on, another important operator, one we will use <em>incredibly</em> often in the analysis of algorithms is the logarithm.  The reason we will be analyzing the logarithm is because as a function, it has desirable properties that we will want in our algorithms.  Specifically, logarithms exhibit <em>asymptotic</em> behavior, that is, eventually <em>they stop growing</em>.  Thus we can observe that there is an upper bound how to long it will take a certain algorithm to run, up to a constant factor based partially on hardware constraints, <em>regardless of input size</em>.</p>
+<p>That means we can guarantee that once N is sufficiently large, for any algorithm that is logarithmic, it will <em>always</em> take approximately that long.  This is of course subject to the input not overwhelming the memory of the machine.</p>
+<p>Now let’s look at the picture of the standard logarithm and exponential functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">domain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="n">logs</span> <span class="o">=</span> <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)]</span>
+<span class="n">exps</span> <span class="o">=</span> <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">logs</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">exps</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Types_and_Induction_23_0.png" src="../../_images/Types_and_Induction_23_0.png" />
+<img alt="../../_images/Types_and_Induction_23_1.png" src="../../_images/Types_and_Induction_23_1.png" />
+</div>
+</div>
+<p>As you can see the log and exponential exhibit the opposite behavior as their input size grows.  In fact, they form a bijection.  That is:</p>
+<div class="math notranslate nohighlight">
+\[ log(e^{x}) = x \]</div>
+<p>Given this we can thing of a logarithm sort of as repeated division:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exponentiation</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">product</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+        <span class="n">product</span> <span class="o">*=</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="n">product</span>
+
+<span class="k">def</span> <span class="nf">logarithm</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">result</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">/=</span> <span class="n">base</span>
+        <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">counter</span>
+
+<span class="n">powers_of_2</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+    <span class="n">powers_of_2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">exponentiation</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">30</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">logarithm</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">powers_of_2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">!=</span> <span class="n">i</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;failed&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The other rules for logarithms include:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a = b^{log_{b}a}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(log_{c}(ab) = log_{c}a + log_{c}b\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(log_{b}a^{n} = n log_{b}a\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(log_{b}a = \frac{log_{c}a}{log_{c}b}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(log_{b}(\frac{1}{a}) = -log_{b}a\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(log_{b}a = \frac{1}{log_{a}b}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a^{log_{b}c} = c^{log_{b}a}\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="proof-by-induction">
+<h2>Proof by induction<a class="headerlink" href="#proof-by-induction" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have introduced all the necessary rules for exponentiation and the logarithm, it’s time to learn how to prove results related to those two functions.  For this and many of the proofs we’ll see regarding algorithms we’ll need a proof technique called induction.</p>
+<p>Induction works because of a property called well ordering.</p>
+<p>Definition:</p>
+<p>If a set is well ordered then every nonempty subset has a least element.</p>
+<p>Examples of subsets of the real numbers that are well ordered include:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbb{N}\)</span> - the natural numbers</p></li>
+<li><p>any closed interval of the real numbers</p></li>
+<li><p>any clopen interval of the real numbers where the lower bound is closed.</p></li>
+</ul>
+<p>Aside:</p>
+<p>A clopen set is one that is half open, half closed.</p>
+<p>Counter examples of well ordered sets include:</p>
+<ul class="simple">
+<li><p>any open interval of the real numbers</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> - the integers</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> - the rationals</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{P}\)</span> - the irrationals</p></li>
+</ul>
+<p>We now introduces some proofs which will help us contextualize the notion of well ordering, which we will need for induction.</p>
+<p>Theorem:</p>
+<p>If a set A of real numbers has a least element, then A has a unique least element.</p>
+<p>Proof:</p>
+<p>Let <span class="math notranslate nohighlight">\(m_{1}\)</span> and <span class="math notranslate nohighlight">\(m_{2}\)</span> be least elements of A.  Since <span class="math notranslate nohighlight">\(m_{1}\)</span> is a least element, <span class="math notranslate nohighlight">\(m_{2} \ge m_{1}\)</span>; while since <span class="math notranslate nohighlight">\(m_{2}\)</span> is a least element, <span class="math notranslate nohighlight">\(m_{1} \ge m_{2}\)</span>.  Therefore, <span class="math notranslate nohighlight">\(m_{1} = m_{2}\)</span>.</p>
+<p>Q.E.D.</p>
+<p>Next we need to introduce a new set, <span class="math notranslate nohighlight">\(\mathbb{N}_{m}\)</span>:</p>
+<p>For <span class="math notranslate nohighlight">\(m \in \mathbb{Z}\)</span>, we define the set <span class="math notranslate nohighlight">\(\mathbb{N}_{m}\)</span> by</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{N}_{m} = \{ x \in \mathbb{Z}: x \ge m \} = \{m, m+1, m+2, .. \}\]</div>
+<p>Theorem:</p>
+<p>For every integer m, the set <span class="math notranslate nohighlight">\(\mathbb{N}_{m}\)</span> is well-ordered.</p>
+<p>Proof:</p>
+<p>We need only show that every nonempty subset of <span class="math notranslate nohighlight">\(\mathbb{N}_{m}\)</span> has a least element.  So let S be a nonempty subset of <span class="math notranslate nohighlight">\(\mathbb{N}_{m}\)</span>.  If S is a subset of <span class="math notranslate nohighlight">\(\mathbb{N}\)</span>, then, by the well ordering principal, S has a least element.  Hence we may assume that S is not a subset of <span class="math notranslate nohighlight">\(\mathbb{N}\)</span>.  Thus S - <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> is a finite nonempty set and so contains a least element t.  Since <span class="math notranslate nohighlight">\(t \le 0\)</span>, it follows that <span class="math notranslate nohighlight">\(t \le x\)</span> for all <span class="math notranslate nohighlight">\(x \in S\)</span>; so t is a least element of S.</p>
+<p>The fact that <span class="math notranslate nohighlight">\(\mathbb{N}_{m}\)</span> is well ordered will be of paramount importance as we will see in the next proof:</p>
+<p>Theorem - Mathematical induction</p>
+<p>Let <span class="math notranslate nohighlight">\(m \in \mathbb{Z}\)</span>, and let S be a subset of <span class="math notranslate nohighlight">\(\mathbb{N}_{m}\)</span> such that</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(m \in S\)</span>; and</p></li>
+<li><p>whenever <span class="math notranslate nohighlight">\(k \in S\)</span>, then <span class="math notranslate nohighlight">\(k + 1 \in S\)</span>.</p></li>
+</ul>
+<p>Then S = <span class="math notranslate nohighlight">\(\mathbb{N}_{m}\)</span>.</p>
+<p>Proof:</p>
+<p>Assume, to the contrary, that</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}S \ne \mathbb{N}_{m}$$.  \\Then,\\$$S \subset \mathbb{N}_{m}\end{aligned}\end{align} \]</div>
+<p>Define,</p>
+<div class="math notranslate nohighlight">
+\[ T = \mathbb{N}_{m} - S\]</div>
+<p>Therefore,</p>
+<div class="math notranslate nohighlight">
+\[T \ne \emptyset\]</div>
+<p>Hence, <span class="math notranslate nohighlight">\(\mathbb{N}_{m}\)</span> is partitioned into S and T.  Since T is a nonempty subset of <span class="math notranslate nohighlight">\(\mathbb{N}_{m}\)</span>, and <span class="math notranslate nohighlight">\(\mathbb{N}_{m}\)</span> is well ordered, T has a least element <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>Since <span class="math notranslate nohighlight">\(x \ge m\)</span> for every <span class="math notranslate nohighlight">\(x \in \mathbb{N}_{m}\)</span> and <span class="math notranslate nohighlight">\(m \in S\)</span>, it follows that <span class="math notranslate nohighlight">\(t &gt; m\)</span>;</p>
+<p>so <span class="math notranslate nohighlight">\(t \ge m + 1\)</span></p>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[ t - 1 \ge m\]</div>
+<p>And by definition of <span class="math notranslate nohighlight">\(\mathbb{N}_{m}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[ t - 1 \in \mathbb{N}_{m}\]</div>
+<p>Since t is the smallest element of T,</p>
+<div class="math notranslate nohighlight">
+\[ t - 1 \in S \]</div>
+<p>However by the second property,</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}(t - 1) + 1 = t \in S$$.\\But,\\$$ t \in T\end{aligned}\end{align} \]</div>
+<p>Which is a contradiction!</p>
+<p>Q.E.D.</p>
+<p>Thus, we cannot partition <span class="math notranslate nohighlight">\(\mathbb{N}_{m}\)</span> into two subsets, therefore if there exists some base case (the first property) and if whenever k is in the set, then k+1 is in the set, then the <em>whole</em> set ‘greater than’ that base case will be in the same set.</p>
+<p>This property would not be possible without the well ordering principal - which states there is a smallest element for the subset.  Recall that sets, relations and functions can all be thought of the same way.  This notion of a smallest element means there is a smallest element for which rules can be true.  Which is at the heart of proof by induction.</p>
+<p>The other major component is the notion of increase - by showing that a given kth element and the k+1st element are both in the set, then all the larger elements are also.  This property is surprising and often hard to digest for those new to the subject.</p>
+<p>The above proof does illustrate why - we cannot construct a set that bounds S above, assuming properties one and two hold.  The inability to bound S above is <em>why</em> induction works.</p>
+</div>
+<div class="section" id="using-proof-by-induction">
+<h2>Using Proof By Induction<a class="headerlink" href="#using-proof-by-induction" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have shown proof by induction works, let’s use it to prove some stuff!</p>
+<p>Result:</p>
+<div class="math notranslate nohighlight">
+\[ 1 + 2 + 3 + .... + n = \frac{n(n+1)}{2}\]</div>
+<p>We can write this equivalently as,</p>
+<div class="math notranslate nohighlight">
+\[ \sum_{i=1}^{n}i = \frac{n(n+1)}{2}\]</div>
+<p>Proof:</p>
+<p>base case:</p>
+<div class="math notranslate nohighlight">
+\[ 1 = \frac{1(1+1)}{2} = 1\]</div>
+<p>Thus we have shown the base case.</p>
+<p>Now we assume the kth case:</p>
+<div class="math notranslate nohighlight">
+\[ \sum_{i=1}^{k}i = \frac{k(k+1)}{2}\]</div>
+<p>And then we prove the k+1 case, using the kth case:</p>
+<div class="math notranslate nohighlight">
+\[ \sum_{i=1}^{k+1}i = \sum_{i=1}^{k}i + k+1 = \frac{k(k+1)}{2} + (k + 1) = \frac{k(k+1)}{2} + \frac{2(k + 1)}{2}\]</div>
+<div class="math notranslate nohighlight">
+\[\rightarrow\]</div>
+<div class="math notranslate nohighlight">
+\[ \frac{k(k+1) + 2(k + 1)}{2} = \frac{k^{2} + 3k + 2}{2} = \frac{(k + 1)(k + 2)}{2}\]</div>
+<p>Thus by the inductive hypothesis,</p>
+<div class="math notranslate nohighlight">
+\[ 1 + 2 + 3 + .... + n = \frac{n(n+1)}{2}\]</div>
+<p>Q.E.D.</p>
+<p>Next let’s look at a similar but sufficiently different result:</p>
+<div class="math notranslate nohighlight">
+\[ \sum_{i=2}^{n}(i-1) = \frac{n(n-1)}{2}\]</div>
+<p>base case:</p>
+<p>i=2</p>
+<div class="math notranslate nohighlight">
+\[2-1 + 1-1 = \frac{2(1)}{2} \rightarrow 1 = 1\]</div>
+<p>Now we assume the kth case:</p>
+<div class="math notranslate nohighlight">
+\[ \sum_{i=2}^{n}(i-1) = \frac{n(n-1)}{2}\]</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./01/4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../3/Counterexamples_and_Testing.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Counter Examples and Testing</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../5/First_Algorithms.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">First Algorithms</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
