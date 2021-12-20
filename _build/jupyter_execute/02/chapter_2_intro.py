@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Chapter 2
+# # Sorting And Recursion
 # 
 # In this chapter we will be looking at sorting algorithms in detail.  Throughout the chapter we will analyze the algorithms in question using the techniques presented in chapter 1.
 # 
