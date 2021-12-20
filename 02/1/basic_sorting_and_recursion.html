@@ -1,0 +1,671 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Sorting &#8212; The Analysis Of Algorithms</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Recursive Sorting And Data Structures" href="../2/recursive_sorting_and_data_structures.html" />
+    <link rel="prev" title="Chapter 2" href="../chapter_2_intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">The Analysis Of Algorithms</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../plan.html">
+   Analysis Of Algorithms
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01/chapter_one_intro.html">
+   Algorithms Foundations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01/1/Introduction_to_Python.html">
+     Introduction To Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01/2/Introduction_To_Proofs.html">
+     Introduction To Proofs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01/3/Counterexamples_and_Testing.html">
+     Counter Examples and Testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01/4/Types_and_Induction.html">
+     Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01/5/First_Algorithms.html">
+     First Algorithms
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../chapter_2_intro.html">
+   Chapter 2
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Basic Sorting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2/recursive_sorting_and_data_structures.html">
+     Recursive Sorting And Data Structures
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/02/1/basic_sorting_and_recursion.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/02/1/basic_sorting_and_recursion.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recursion">
+   Recursion
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="basic-sorting">
+<h1>Basic Sorting<a class="headerlink" href="#basic-sorting" title="Permalink to this headline">¶</a></h1>
+<p>In this section we will look at three basic sorting algorithms that will aid in practicing the analysis of algorithms.  The first algorithm we will look at is simple sort from chapter 1:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">simple_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">arr</span>
+
+<span class="k">def</span> <span class="nf">test_simple_sort</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500000000</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+        <span class="n">sorted_arr</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[:]</span>
+        <span class="n">sorted_arr</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="n">simple_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">==</span> <span class="n">sorted_arr</span>
+        
+<span class="n">test_simple_sort</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Though admittedly very straight forward, simple_sort gives us a window into how sorting works.  The fundamental operations that all sorting algorithms must perform is:</p>
+<ul class="simple">
+<li><p>comparison, seen with the line:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>swaps, seen with the line:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>That’s <em>all</em> sorting algorithms are.  Everything else we’ll see in the remainder of this chapter on sorting is really more about how to make these simple ideas as efficient as possible.  And since sorting is such a simple notion, we can build up the complexity making the sorting interesting through the lens of efficiency.  That said, every sorting algorithm just boils down to these two lines.</p>
+<p>Since we already carried out the running time analysis for the above algorithm at the end of chapter 1, we’ll now move onto our next sorting algorithm.  Now we’ll look at insertion sort, which works on the same principal as simple sort, but in reverse.  Let’s look at an implementation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">insertion_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+        <span class="n">pivot</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">):</span>
+            <span class="n">arr</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">pivot</span>
+    <span class="k">return</span> <span class="n">arr</span>
+
+<span class="k">def</span> <span class="nf">test_insertion_sort</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500000000</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+        <span class="n">sorted_arr</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[:]</span>
+        <span class="n">sorted_arr</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="n">insertion_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">==</span> <span class="n">sorted_arr</span>
+        
+<span class="n">test_insertion_sort</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>First let’s identify the comparison and swap lines in the algorithm.</p>
+<ul class="simple">
+<li><p>comparison happens here:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this code a while loop is used instead of an if statement, but while and if have similar behavior since they both check a condition.  Thus the difference is <em>artificial</em>.</p>
+<ul class="simple">
+<li><p>swap happens here:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>And swap also happens here:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">pivot</span>
+</pre></div>
+</div>
+<p>Additionally, you can see the swap happens in two places - the first swap happens based on the comparison condition:
+<code class="docutils literal notranslate"><span class="pre">(i</span> <span class="pre">&gt;=</span> <span class="pre">0)</span> <span class="pre">and</span> <span class="pre">(arr[i]</span> <span class="pre">&gt;</span> <span class="pre">pivot)</span></code>.  While the final swap places the pivot back into the array at the index before all the elements that were just swapped.</p>
+<p>There is one sort of new idea here that we didn’t see in the last algorithm, the notion of a pivot.  Implicitly simple sort had a pivot, if you took the outer loop as the pivot, but this wasn’t made explicit.  By explicitly selecting a pivot element as the reference to build our sorting routinue around, we only need to worry about one element.  In a sense, all the other elements in the array ‘pivot’ around this element and are reorganized with respect to the pivot element.  Once all the other elements have been reorganized, the pivot element can be placed in sorted order <em>before</em> the other elements that were just sorted with respect to the current pivot.</p>
+<p>Next let’s analyze the running time of insertion sort:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>def insertion_sort(arr: list) -&gt; list:
+    for j in range(1, len(arr)):              𝑐1 n
+        pivot = arr[j]                        𝑐2 n - 1
+        i = j - 1                             𝑐3 n - 1
+        while (i &gt;= 0) and (arr[i] &gt; pivot):  𝑐4 ∑𝑡𝑗
+            arr[i + 1] = arr[i]               𝑐5 ∑𝑡𝑗−1
+            i -= 1                            𝑐6 ∑𝑡𝑗−1
+        arr[i + 1] = pivot                    𝑐7 n - 1
+    return arr
+</pre></div>
+</div>
+<p>In total this turns out to be:</p>
+<div class="math notranslate nohighlight">
+\[ c_{1}n + c_{2}(n-1) + c_{3}(n - 1) + c_{4}\sum_{j=2}{n}t_{j} + c_{5}\sum_{j=2}{n}(t_{j} - 1) + c_{6}\sum_{j=2}{n}(t_{j} - 1) + c_{7}(n-1) \]</div>
+<p>We can use the result we proved in the last chapter to update this to be:</p>
+<div class="math notranslate nohighlight">
+\[ c_{1}n + c_{2}(n-1) + c_{3}(n - 1) + c_{4}(\frac{n^{2} + n}{2} - 1) + c_{5}\frac{n^{2}-n}{2} + c_{6}\frac{n^{2}-n}{2} + c_{7}(n-1) \]</div>
+<div class="math notranslate nohighlight">
+\[ c_{1}n + c_{2}n - c_{2} + c_{3}n - c_{3} + c_{4}\frac{n^{2} + n - 2}{2} + c_{5}\frac{n^{2}-n}{2} + c_{6}\frac{n^{2}-n}{2} + c_{7}n-c_{7} \]</div>
+<div class="math notranslate nohighlight">
+\[ n(c_{1} + c_{2} + c_{7} + c_{3}) + c_{4}\frac{n^{2} + n - 2}{2} + c_{5}\frac{n^{2}-n}{2} + c_{6}\frac{n^{2}-n}{2} -(c_{2} + c_{3} + c_{7}) \]</div>
+<p>From here it should be clear that <span class="math notranslate nohighlight">\(n^{2}\)</span> terms dominate the sum and thus the running time will be <span class="math notranslate nohighlight">\(O(n^{2})\)</span>.  The next algorithm we will look at will be similar to the last two we observered, it’s name is selection sort.  First let’s look at an implementation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">selection_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+        <span class="n">pivot</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">index</span>
+        <span class="n">smallest</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">smallest_index</span> <span class="o">=</span> <span class="n">j</span>
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">smallest</span><span class="p">:</span>
+                <span class="n">smallest</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+                <span class="n">smallest_index</span> <span class="o">=</span> <span class="n">j</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">smallest</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">smallest_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">pivot</span>
+        <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">arr</span>
+
+<span class="k">def</span> <span class="nf">test_selection_sort</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500000000</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+        <span class="n">sorted_arr</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[:]</span>
+        <span class="n">sorted_arr</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="n">selection_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">==</span> <span class="n">sorted_arr</span>
+
+<span class="n">test_selection_sort</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>First let’s identify the comparisons:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">smallest</span>
+</pre></div>
+</div>
+<p>As you can see, selection works off the idea of finding the smallest possible value within a range of indices.</p>
+<p>Now let’s look at the swap:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">smallest</span>
+<span class="n">arr</span><span class="p">[</span><span class="n">smallest_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">pivot</span>
+</pre></div>
+</div>
+<p>Here the swap occurs, where the smallest value is swapped with the current index and then the pivot is swapped with the smallest index.  You may be tempted to think:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">smallest</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+<span class="n">smallest_index</span> <span class="o">=</span> <span class="n">j</span>
+</pre></div>
+</div>
+<p>Is also a swap, but because we aren’t exchanging any values within the array, it is not.  That is we are only mutating a place holder value, preparing it for swapping.</p>
+<p>While insertion sort is a somewhat specific pattern, the pattern of finding a value based on a condition, is one we’ll see over and over again.  As an aside we can pull out the pattern found in selection sort to make two new algorithms:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_biggest</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">biggest</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="n">biggest</span><span class="p">:</span>
+            <span class="n">biggest</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="k">return</span> <span class="n">biggest</span>
+
+<span class="n">get_biggest</span><span class="p">([</span><span class="mi">71</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">19273</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19273
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_smallest</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">smallest</span> <span class="o">=</span> <span class="mi">99999999999</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="n">smallest</span><span class="p">:</span>
+            <span class="n">smallest</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="k">return</span> <span class="n">smallest</span>
+
+<span class="n">get_smallest</span><span class="p">([</span><span class="mi">71</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">19273</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Returning to the original problem, let’s calculate the running time for selection sort:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>def selection_sort(arr: list) -&gt; list:
+    index = 0                                     𝑐1
+    while index &lt; len(arr):                       𝑐2 n - 1
+        pivot = arr[index]                        𝑐3 n - 1
+        j = index                                 𝑐4 n -1
+        smallest = arr[j]                         𝑐5 n - 1
+        smallest_index = j                        𝑐6 n - 1
+        while j &lt; len(arr):                       𝑐7 ∑𝑡𝑗-index
+            if arr[j] &lt; smallest:                 𝑐8 ∑𝑡𝑗-index
+                smallest = arr[j]                 𝑐9 ∑𝑡𝑗-index
+                smallest_index = j                𝑐10 ∑𝑡𝑗-index
+            j += 1                                𝑐11 ∑𝑡𝑗-index
+        arr[index] = smallest                     𝑐12 n - 1
+        arr[smallest_index] = pivot               𝑐13 n - 1
+        index += 1                                𝑐14 n - 1
+    return arr
+</pre></div>
+</div>
+<p>Summing up as per usual we find:</p>
+<div class="math notranslate nohighlight">
+\[c_{1} + (n - 1)(c_{2} + c_{3} + c_{4} + c_{5} + c_{6} + c_{12} + c_{13} + c_{14}) + \frac{n(n+1)}{2}(c_{7} + c_{8} + c_{9} + c_{10} + c_{11})\]</div>
+<p>Thus the worst case running time is <span class="math notranslate nohighlight">\(O(n^{2})\)</span>.</p>
+<p>Something to note in the above analysis - it’s not clear if <span class="math notranslate nohighlight">\(c_{9}\)</span> and <span class="math notranslate nohighlight">\(c_{10}\)</span> will not always have ∑𝑡𝑗-index running time.  However, they will in the <em>worst case</em>, that is, if the element is completely unsorted.</p>
+<p>Now that we’ve covered the basics on sorting algorithms it’s time to introduce a new programming technique which we will make use of to implement a new class of sorting algorithms.</p>
+<div class="section" id="recursion">
+<h2>Recursion<a class="headerlink" href="#recursion" title="Permalink to this headline">¶</a></h2>
+<p>The idea behind recursion appears confusing at first to almost everyone.  It is a powerful tool, but that doesn’t make it any easier to grasp.  That said, we will try to break it down into steps and motivate the idea to make it as clear as possible.</p>
+<p>Definition:</p>
+<p>Recursion is a programming technique that uses repeated calls to the same function, rather than a loop to iterate over the contents of a data structure.</p>
+<p>The term recursion is related to self reference.  In writing it means to each step you will take will feed into the next.  Any thing that is recursive is defined in part by it’s previous part.  At this point an example may help:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_largest</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">largest</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">largest</span><span class="p">:</span>
+        <span class="n">largest</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">largest</span>
+    <span class="k">return</span> <span class="n">get_largest</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">largest</span><span class="p">)</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">largest</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">get_largest</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">largest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<p>The above example shows how recursion traverses an array.  Now let’s go over the structure of a recursive algorithm.  In some sense, recursion is similar to induction, except in the opposite direction.  In induction, your base case is your starting point, then you assume your kth case and prove your k+1st case.  In recursion, your base case is your end state.  Additionally, you write down your kth case and then use a function call to get to your k-1st case.  In otherwords, you start at the end of your array and go down to the first element <em>always</em>.</p>
+<p>In the above code the base case is defined here:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">largest</span>
+</pre></div>
+</div>
+<p>What this says, is if we are in the beginning of the array, there are no more elements to check and we should return.  The return from the base case, in this case will exit the function.  However, <em>that is not always the case</em>.</p>
+<p>Next let’s look at what happens in the kth step:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">largest</span><span class="p">:</span>
+    <span class="n">largest</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This is the actual <em>work</em> of the recursive algorithm.  Here we are checking the array at the index to see if that element is larger than our current value of largest.  If it is, we update our value for largest.</p>
+<p>Finally we have our code for getting to the k-1st case:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="n">get_largest</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">largest</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is the single hardest step to grasp, if any of this is easy, because it’s the most foreign.  Here you will pass the array, unchanged, and <em>decrement</em> the index.  By decrementing the index your next call will check the array all over again, but at the <em>next smallest index</em>.  Finally, the current value of largest is passed to the array.  From the ‘kth step’ part, we see that this value <em>may have changed</em> during the function call.  So we keep track of it’s current state and pass it into the next call of the function.</p>
+<p>After we’ve reached the base case, some more stuff happens.  For most ‘simple’ recursive algorithms there is no more work to do and we can functionally think of the function returning and leaving the scope of the function.  But for complex recursive algorithms, like the ones we’ll use to sort arrays, we need to actually be aware of this next step.<br />
+What happens after recursion is, <em>every other function call returns</em>.  So when you get to the base case, which we will call the kth function call, you then return <em>up to</em> the k-1st function call, which then returns up to the k-2nd function call, and so on, until you get to the <em>very first function call that was made</em>.  And that function call exits the function closure.</p>
+<p>You might be thinking - that sounds like a lot of extra work, why would you ever want to do that?  Well it turns out for some specific problems the ability to recurse is <em>very useful</em>.</p>
+<p>Since recursion is such a confusing topic for those new to it, the author recommends taking some code that uses a single for loop and creating a recursive version of the code.  Since recursion is just a kind of iteration, any code that you can write with a for or while loop can be converted to a recursive version.  It’s worth it to practice, as hard as recursion is, it’s a valuable tool in the design of efficient algorithms.</p>
+<p><em>That said</em>, outside of an algorithms course there is <em>very little</em> use of recursion.  The reason being, if we have a recursive algorithm, we can <em>always</em> convert it to one with a for or while loop.  We will see how to do this when we cover dynamic programming.  Finally, it’s worth it to state, learning recursion does have value, it teaches you in an intimate way how the machine works.  And the underlying semantics of function calls in a deep way.  Plus the notions that one can express recursively have merit.  Enough digressions though, let’s see some more examples.</p>
+<p>Next let’s look at an algorithm we’ve already seen, in an iterative form:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">factorial_recursive</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span><span class="o">*</span><span class="n">factorial_recursive</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">listing</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">listing</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">listing</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">listing</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">test_factorial_recursive</span><span class="p">():</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="n">factorial_recursive</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    
+<span class="n">test_factorial_recursive</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This function, <code class="docutils literal notranslate"><span class="pre">factorial_recursive</span></code> does the same thing as the factorial we implemented in chapter one.  In fact, the recursive version is typically what students see first.  Notice the points of comparison:</p>
+<p>The return statement found in factorial recursive:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="n">n</span><span class="o">*</span><span class="n">factorial_recursive</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Is virtually the same as the append line:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">listing</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">listing</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The difference is, the list in <code class="docutils literal notranslate"><span class="pre">factorial</span></code> stores the previous results and we <em>dynamically</em> resize the array to account for the added input.</p>
+<p>Also note the bases cases are identical:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">return</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>is equivalent to:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">listing</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Let’s see one more example where we are just working with the code.  After this, we’ll go back and analyzing the above algorithms to get the running times:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we see an algorithm where our function calls matter, because we are making <em>multiple</em>.  This means <code class="docutils literal notranslate"><span class="pre">fibonacci</span></code> happens in stages.</p>
+<p>Stage 1:</p>
+<p>Make all the recursive function calls, until you get to the base case.</p>
+<p>Stage 2:</p>
+<p>propage up the ‘tree’ of function calls, adding each intermediate result and then returning up to the next function call.</p>
+<p>In otherwords, since the function is recursive to figure out what fibonacci(3) is, we need to know what fibonacci(2) and fibonacci(1) are.  And to know what fibonacci(2) is we also need two other copies of fibonacci(1).  Each call to the function is not aware of any other function calls with the same input value, so we need to evaluate down to the base case for <em>each</em> call, before we can carry out the sum and return ‘up’ to the next function call.</p>
+<p>If you need a visual representation to understand the above, I recommend the <a class="reference external" href="https://www.youtube.com/watch?v=dxyYP3BSdcQ&amp;ab_channel=mycodeschool">following video</a> which walks through a function call to fibonacci(5).</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./02/1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../chapter_2_intro.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Chapter 2</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../2/recursive_sorting_and_data_structures.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Recursive Sorting And Data Structures</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
