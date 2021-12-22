@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Primer On Calculus &#8212; The Analysis Of Algorithms</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Statistical Analysis of Algorithms" href="../7/statistical_analysis_of_algorithms.html" />
+    <link rel="prev" title="First Algorithms" href="../5/First_Algorithms.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">The Analysis Of Algorithms</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../plan.html">
+   Analysis Of Algorithms
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../chapter_one_intro.html">
+   Algorithms Foundations
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1/Introduction_to_Python.html">
+     Introduction To Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2/Introduction_To_Proofs.html">
+     Introduction To Proofs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../3/Counterexamples_and_Testing.html">
+     Counter Examples and Testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../4/Types_and_Induction.html">
+     Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../5/First_Algorithms.html">
+     First Algorithms
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     A Primer On Calculus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../7/statistical_analysis_of_algorithms.html">
+     Statistical Analysis of Algorithms
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../02/chapter_2_intro.html">
+   Sorting And Recursion
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02/1/basic_sorting_and_recursion.html">
+     Basic Sorting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02/2/recursive_sorting_and_data_structures.html">
+     Recursive Sorting And Data Structures
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/01/6/A_Primer_on_Calculus.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/01/6/A_Primer_on_Calculus.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-results">
+   Set Results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#function-results">
+   Function Results
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="a-primer-on-calculus">
+<h1>A Primer On Calculus<a class="headerlink" href="#a-primer-on-calculus" title="Permalink to this headline">¶</a></h1>
+<p>As with everything we’ve done thus far in this book, we will intersperse theory, application, and programming.  An honest attempt will be made to motivate the calculus and it’s various operators, borrowing heavily from a course on real variables.</p>
+<p>Before we move into the primer there is a bit of mathematical notation and a few definitions we’ll need.  These are minor bits and pieces that don’t fit in anywhere into the content, but will be important for us to understand.</p>
+<div class="section" id="set-results">
+<h2>Set Results<a class="headerlink" href="#set-results" title="Permalink to this headline">¶</a></h2>
+<p>Just as we can take the sum of n many numbers via:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i=0}^{n}i\]</div>
+<p>We can take the union of n many sets via:</p>
+<div class="math notranslate nohighlight">
+\[ A = \bigcup_{i=0}^{n} A_{i}\]</div>
+<p>Likewise we can take the intersection of n many sets via:</p>
+<div class="math notranslate nohighlight">
+\[ A = \bigcap_{i=0}^{n} A_{i}\]</div>
+<p>Next, recall that:</p>
+<div class="math notranslate nohighlight">
+\[ A \setminus B = \{x \in A : x \notin B \} \]</div>
+<p>Then the following theorems are true:</p>
+<div class="math notranslate nohighlight">
+\[ A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C) \]</div>
+<div class="math notranslate nohighlight">
+\[ A \setminus (B \cap C) = (A \setminus B) \cup (A \setminus C) \]</div>
+<p>Proof:</p>
+<p>We begin by showing every element of</p>
+<div class="math notranslate nohighlight">
+\[A \setminus (B \cup C) \subseteq (A \setminus B) \cap (A \setminus C)\]</div>
+<p>If <span class="math notranslate nohighlight">\(x \in A \setminus (B \cup C)\)</span>, then <span class="math notranslate nohighlight">\(x \in A\)</span>, <span class="math notranslate nohighlight">\(x \notin (B \cup C)\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\iff\)</span></p>
+<p><span class="math notranslate nohighlight">\(x \in A\)</span>, <span class="math notranslate nohighlight">\(x \notin B\)</span>, <span class="math notranslate nohighlight">\(x \notin C\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\iff\)</span></p>
+<p><span class="math notranslate nohighlight">\(x \in (A \setminus B)\)</span> and <span class="math notranslate nohighlight">\(x \in (A \setminus C)\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\iff\)</span></p>
+<div class="math notranslate nohighlight">
+\[x \in (A \setminus B) \cap (A \setminus C)\]</div>
+<p>Because we used <span class="math notranslate nohighlight">\(\iff\)</span> we can trace the proof back up and end up with the desired result.  The same logic essentially works for the other case with only very minor modification.  Thus without loss of generality, the above is true.</p>
+<p>Next we’ll look at the <strong>symmetric difference</strong>:</p>
+<div class="math notranslate nohighlight">
+\[ D = (A \setminus B) \cup (B \setminus A) \]</div>
+<p>Here the set D is all the elements that belong to either A or B but both.  This is equivalent to the XOR operator we saw earlier.</p>
+</div>
+<div class="section" id="function-results">
+<h2>Function Results<a class="headerlink" href="#function-results" title="Permalink to this headline">¶</a></h2>
+<p>Now that we’ve covered all the necessary minor extensions to our knowledge within set theory, it’s time to extend our knowledge of functions.</p>
+<p>We begin by looking at restrictions and extensions:</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> is a function with domain <span class="math notranslate nohighlight">\(D(f)\)</span> and <span class="math notranslate nohighlight">\(D_{1}\)</span> is a subset of <span class="math notranslate nohighlight">\(D(f)\)</span>, it is often useful to define a new function <span class="math notranslate nohighlight">\(f_{1}\)</span> with domain <span class="math notranslate nohighlight">\(D_{1}\)</span> by <span class="math notranslate nohighlight">\(f_{1}(x) := f(x)\)</span> <span class="math notranslate nohighlight">\(\forall x \ in D_{1}\)</span>.  This function <span class="math notranslate nohighlight">\(f_{1}\)</span> is called the restriction of f to the set <span class="math notranslate nohighlight">\(D_{1}\)</span>.</p>
+<p>Thus we have:</p>
+<div class="math notranslate nohighlight">
+\[ f _{1} := \{(a, b) \in f : a \in D_{1} \} \]</div>
+<p>Sometimes we may write <span class="math notranslate nohighlight">\(f_{1} = f | D_{1}\)</span> to mean the restriction.  There is a secondary notion called extension which sort of ‘goes the other way’.  If <span class="math notranslate nohighlight">\(g\)</span> is a function with domain <span class="math notranslate nohighlight">\(D(g)\)</span> and <span class="math notranslate nohighlight">\(D(g) \subseteq D_{2}\)</span>, then any function <span class="math notranslate nohighlight">\(g_{2}\)</span> with domain <span class="math notranslate nohighlight">\(D_{2}\)</span> such that <span class="math notranslate nohighlight">\(g_{2}(x) = g(x)\)</span> <span class="math notranslate nohighlight">\(\forall x \in D(x)\)</span> is called an extension of <span class="math notranslate nohighlight">\(g\)</span> to the set <span class="math notranslate nohighlight">\(D_{2}\)</span>.</p>
+<p>Next let’s look at a notion called <strong>composition</strong>:</p>
+<p>Let <span class="math notranslate nohighlight">\(f\)</span> be a function with a domain <span class="math notranslate nohighlight">\(D(f)\)</span> in A and range <span class="math notranslate nohighlight">\(R(f)\)</span> in B and let <span class="math notranslate nohighlight">\(g\)</span> be a function with domain <span class="math notranslate nohighlight">\(D(g)\)</span> in B and range <span class="math notranslate nohighlight">\(R(g)\)</span> in C.  Then the <strong>composition</strong> <span class="math notranslate nohighlight">\(g \circ f\)</span> is the function from A to C, such that</p>
+<div class="math notranslate nohighlight">
+\[g \circ f:A \rightarrow C\]</div>
+<p>Note: Our definitions of restriction and extensions apply naturally to function composition.  If you could compose two functions, assuming they had the same  <span class="math notranslate nohighlight">\(R(f)\)</span> and <span class="math notranslate nohighlight">\(D(g)\)</span> except <span class="math notranslate nohighlight">\(D(g) \subset R(f)\)</span>, we can then restrict <span class="math notranslate nohighlight">\(R(f)\)</span> such that <span class="math notranslate nohighlight">\(R(f) = D(g)\)</span>, thus allowing for the composition.</p>
+<p>Now let’s look at a slight modification to our understanding of injective, surjective and bijective functions.</p>
+<p>Facts:</p>
+<ul class="simple">
+<li><p>Given an injective function we can define an inverse <span class="math notranslate nohighlight">\(f^{-1}\)</span> by restricting the <span class="math notranslate nohighlight">\(D(f)\)</span> to <span class="math notranslate nohighlight">\(R(f)\)</span> such that <span class="math notranslate nohighlight">\(D_{R} = \{ x \in D(f) : f(x) \in R(f) \}\)</span>.  This gives us a function <span class="math notranslate nohighlight">\(f^{-1}: R(f) \rightarrow D_{R}(f)\)</span>.</p></li>
+</ul>
+<p>In what follows let <span class="math notranslate nohighlight">\(f : A \rightarrow B\)</span>, such that <span class="math notranslate nohighlight">\(A = D(f)\)</span> and <span class="math notranslate nohighlight">\(B = R(f)\)</span>.  We do not assume <span class="math notranslate nohighlight">\(f\)</span> is injective.</p>
+<ul>
+<li><p>If <span class="math notranslate nohighlight">\(E \subseteq A\)</span>, then the <strong>direct image</strong> of E under <span class="math notranslate nohighlight">\(f\)</span> is the subet <span class="math notranslate nohighlight">\(f(E)\)</span> of B given by</p>
+<div class="math notranslate nohighlight">
+\[ f(E) := \{f(x) : x \in E \} \]</div>
+</li>
+<li><p>If H is a subset of B, then the <strong>inverse image</strong> of H under <span class="math notranslate nohighlight">\(f\)</span> is the subset <span class="math notranslate nohighlight">\(f^{-1}(H)\)</span> of A given by</p>
+<div class="math notranslate nohighlight">
+\[ f^{-1}(H) := \{x : f(x) \in H \} \]</div>
+</li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./01/6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../5/First_Algorithms.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">First Algorithms</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../7/statistical_analysis_of_algorithms.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Statistical Analysis of Algorithms</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
