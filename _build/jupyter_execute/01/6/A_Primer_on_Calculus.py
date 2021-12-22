@@ -100,6 +100,95 @@
 #     
 #     $$ f^{-1}(H) := \{x : f(x) \in H \} $$
 # 
+# ## The Real Numbers
+# 
+# Until now we have only provided a naive view of the real numbers.  Now we will need precise axiomatic understanding of the reals in order to build towards the calculus.  We begin by noting that the reals are a "complete ordered field".  We will rigourously define what that means piece by piece during the next section.  
+# 
+# Informally,
+# 
+# * A field has to do with the algebraic properties of addition and multiplication within the set.
+# * An ordered set is one in which you can say whether or not a given element is larger than any other element in the set.  So we have a relations <,>,<=,>=,== defined on the set, such that those operations are always defined for any pair of elements.
+# * Finally completeness has to do with 'holes' in the set.  Since R has no 'holes' it is complete.  We've already seen an example hole in the rationals, trying to define $sqrt{2}$ as a rational.  The reals have no 'holes' in this sense.  That isn't to say it is the _largest_ possible complete set.  This is an informal definition and should provide only naive understanding.
+# 
+# ### Algebraic Properties of the Reals 
+# 
+# In this section we will define what a field is in the context of the reals.  The reals have the following algebraic properties based on the standard definition of addition and multiplication.
+# 
+# Addition properties:
+# * (A1) a + b = b + a $\forall a,b \in \mathbb{R}$
+# * (A2) (a + b) + c = a + (b + c) $\forall a,b,c \in \mathbb{R}$
+# * (A3) There exists an element 0 in R such that 0 + a = a and a + 0 = a $\forall a \in \mathbb{R}$
+# * (A4) For each $a \in \mathbb{R}$, $\exists \text{ }(-a) \in \mathbb{R}$ such that a + (-a) = 0 and (-a) + a = 0
+# 
+# Multiplication properties:
+# * (M1) a * b = b * a $\forall a,b \in \mathbb{R}$
+# * (M2) (a * b) * c = a * (b * c) $\forall a,b,c \in \mathbb{R}$
+# * (M3) There exists an element 1 in R such that 1 * a = a and a * 1 = a $\forall a \in \mathbb{R}$
+# * (M4) For each $a \neq 0 \in \mathbb{R}$, $\exists \text{ }\frac{1}{a} \in \mathbb{R}$ such that $a * \frac{1}{a} = 1$ and $\frac{1}{a} * a = 1$
+# 
+# Distributive property:
+# 
+# * (D) a * (b + c) = (a * b) + (a * c) and (b + c) * a = (b * a) + (c * a) $\forall a,b,c \in \mathbb{R}$
+# 
+# Notice that we _implicitly_ have subtraction and division as the inverses of addition and multiplication, respectively.  
+# 
+# We will now present the following proofs to show how to prove results in the reals, making use of the above assumptions.
+# 
+# Theorem:
+# 
+# (a) if $z, a \in \mathbb{R}$ such that z + a = a, then z = 0.
+# (b) if $u, b \in \mathbb{R}$, $b \neq 0$ such that u * b = b, then u = 1.
+# 
+# The above theorem may seem like two distinct theorems, but it is not.  We verify the same property, but for two seperate operators.
+# 
+# Proof.
+# 
+# (a)
+# 
+# $0 = a + (-a)$ (by A4)
+# 
+# $(z + a) + (-a)$ (by assumption)
+# 
+# $z + (a + (-a))$ (by A2)
+# 
+# $z + 0$ (by A4)
+# 
+# $z$ (by A3)
+# 
+# Thus, $0 = z$.
+# 
+# Q.E.D.
+# 
+# (b)
+# 
+# $1 = b * \frac{1}{b}$ (by M4)
+# 
+# $(u * b) * \frac{1}{b}$ (by assumption)
+# 
+# $u * (b * \frac{1}{b})$ (by M2)
+# 
+# $u * 1$ (by M4)
+# 
+# $u$ (by M3)
+# 
+# Thus, $1 = u$.
+# 
+# Q.E.D.
+# 
+# As you can see, we can freely make use of the axioms and this gives us the power to easily prove a number of results with relative easy and with only minor justification.  That is what axiomatic proof systems, like the reals so enticing.  The elegance of such systems allows us to take as primitive a number of helpful results to prove a broader range of proofs.  In general, this is how mathematical progress is made, by identifying a set of results which can work to prove a large number of results, or make it trivial to prove a large number of results.  Such knowledge allows us to 'build out' our knowledge rapidly.  For instance, the programming primitives:
+# 
+# * flow of control
+# * variable assignment
+# * functions
+# * classes
+# * primitive types
+# * boolean operators
+# 
+# Is all we really need to construct a programming language.  And from there we can construct a staggering number of programs.  By establishing certain mathematical results, we can too, prove a very large set of results with relative ease.  By intelligently proving certain results, we can extend to whole new fields of study.  The art of discovering which proofs are important and how they lead to a large set of comparatively trivial results is unfortunately, mostly an art.  There are some tools that mathematicians have come up with to try and make this more procedural and straight forward, but due to the incompleteness theorems, you'll never know when you'll run into a 'sharp edge' (an unprovable result that happens to be true).  
+# 
+# ### The Order Properties of the Reals
+# 
+# 
 
 # In[ ]:
 
