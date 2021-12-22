@@ -8,7 +8,8 @@ chapters:
   - file: 01/3/Counterexamples_and_Testing.ipynb
   - file: 01/4/Types_and_Induction.ipynb
   - file: 01/5/First_Algorithms.ipynb
-  - file: 01/6/statistical_analysis_of_algorithms.ipynb
+  - file: 01/6/A_Primer_on_Calculus.ipynb
+  - file: 01/7/statistical_analysis_of_algorithms.ipynb
 - file: 02/chapter_2_intro.ipynb
   sections:
   - file: 02/1/basic_sorting_and_recursion.ipynb
