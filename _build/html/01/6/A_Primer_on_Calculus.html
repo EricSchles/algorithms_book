@@ -272,6 +272,16 @@
      The Order Properties of the Reals
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#theorem-bernoulii-s-inequality">
+     Theorem - Bernoulii’s Inequality
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#theorem-cauchy-s-inequality">
+     Theorem - Cauchy’s Inequality
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -423,6 +433,103 @@
 </div>
 <div class="section" id="the-order-properties-of-the-reals">
 <h3>The Order Properties of the Reals<a class="headerlink" href="#the-order-properties-of-the-reals" title="Permalink to this headline">¶</a></h3>
+<p>Now we shall go through the order properties of the real numbers.  These allow us to talk about relations on the reals like, <span class="math notranslate nohighlight">\(&lt;\)</span>, <span class="math notranslate nohighlight">\(&gt;\)</span> and <span class="math notranslate nohighlight">\(=\)</span>.</p>
+<p>There is a non-empty subset <span class="math notranslate nohighlight">\(P\)</span> of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, called the set of strictly positive real numbers, that satisfies the following properties:</p>
+<ol class="simple">
+<li><p>If a,b belong to <span class="math notranslate nohighlight">\(P\)</span>, then <span class="math notranslate nohighlight">\(a + b\)</span> belongs to <span class="math notranslate nohighlight">\(P\)</span>.</p></li>
+<li><p>If a,b belong to <span class="math notranslate nohighlight">\(P\)</span>, then ab belongs to <span class="math notranslate nohighlight">\(P\)</span>.</p></li>
+<li><p>If a belongs to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, then exactly one of the following holds:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[a \in P, a = 0, -a \in P\]</div>
+<p>Let’s look at a few proofs that make use of the relations over the reals.</p>
+<p>Theorem:</p>
+<p>Let <span class="math notranslate nohighlight">\(a, b, c \in \mathbb{R}\)</span>, if a &gt; b and b &gt; c, then a &gt; c</p>
+<p>Proof:</p>
+<p>If,</p>
+<div class="math notranslate nohighlight">
+\[a - b \in P \text{ } and \text{ } b - c \in P\]</div>
+<p>Then,</p>
+<p><span class="math notranslate nohighlight">\((a - b) + (b - c) = a - c \in P\)</span> (by order property 1)</p>
+<p>Therefore, a &gt; c.</p>
+<p>Theorem:</p>
+<p>Let <span class="math notranslate nohighlight">\(a, b, c \in \mathbb{R}\)</span>, exactly one of the following holds, a &gt; b, a = b, a &lt; b.</p>
+<p>Proof:</p>
+<p>By property (3), one of:</p>
+<div class="math notranslate nohighlight">
+\[ a - b \in P \text{ },\text{ } a-b = 0, \text{ }-(a - b) = b - a \in P\]</div>
+<p>Theorem:</p>
+<p>If <span class="math notranslate nohighlight">\(a \ge b\)</span> and  <span class="math notranslate nohighlight">\(b \ge a\)</span>, then a = b.</p>
+<p>Proof:</p>
+<p>If <span class="math notranslate nohighlight">\(a \ne b\)</span>, then <span class="math notranslate nohighlight">\(a - b \ne 0\)</span>, so from the previous proof, we have either <span class="math notranslate nohighlight">\(a - b \notin P\)</span> or <span class="math notranslate nohighlight">\(b - a \in P\)</span>, thus a &gt; b or b &gt; a.</p>
+<p>In either case this is a contradiction, thus a = b.</p>
+<p>Theorem:</p>
+<p>If <span class="math notranslate nohighlight">\(a,b \in \mathbb{R}\)</span> and if <span class="math notranslate nohighlight">\(a &gt; b\)</span>, then <span class="math notranslate nohighlight">\(a &gt; \frac{1}{2}(a + b) &gt; b\)</span>.</p>
+<p>Proof:</p>
+<p>Since,</p>
+<div class="math notranslate nohighlight">
+\[a &gt; b\]</div>
+<p>If follows that,</p>
+<div class="math notranslate nohighlight">
+\[2a = a + a &gt; a + b\]</div>
+<p>and,</p>
+<div class="math notranslate nohighlight">
+\[a + b &gt; b + b = 2b\]</div>
+<p>From this we have,</p>
+<div class="math notranslate nohighlight">
+\[2a &gt; a + b &gt; 2b\]</div>
+<p>We can now divide the inequality by 2.</p>
+<div class="math notranslate nohighlight">
+\[a &gt; \frac{1}{2}(a + b) &gt; b\]</div>
+<p>Q.E.D.</p>
+<p>Corollary:</p>
+<p>If <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(a &gt; 0\)</span>, then <span class="math notranslate nohighlight">\(a &gt; \frac{1}{2}a &gt; 0\)</span>.</p>
+<p>We can use the previous result and set b = 0, which gives us:</p>
+<p><span class="math notranslate nohighlight">\(a &gt; \frac{1}{2}(a + 0) &gt; 0\)</span></p>
+<p>Q.E.D.</p>
+<p>Theorem:</p>
+<p>If <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span> such that <span class="math notranslate nohighlight">\(0 \le a &lt; \epsilon\)</span> for every strictly positive <span class="math notranslate nohighlight">\(\epsilon \in \mathbb{R}\)</span>, then a = 0.</p>
+<p>Proof:</p>
+<p>Suppose to the contrary that a &gt; 0.</p>
+<p>Then by the above:</p>
+<div class="math notranslate nohighlight">
+\[a &gt; \frac{1}{2}a &gt; 0\]</div>
+<p>If we take <span class="math notranslate nohighlight">\(\epsilon_{0} := \frac{1}{2}a\)</span>, then we obtain <span class="math notranslate nohighlight">\(a &gt; \epsilon_{0} &gt; 0\)</span> so that it is false that <span class="math notranslate nohighlight">\(a &lt; \epsilon, \text{ } \forall \epsilon &gt; 0\)</span>.  Thus we have a contradiction, so a = 0.</p>
+</div>
+<div class="section" id="theorem-bernoulii-s-inequality">
+<h3>Theorem - Bernoulii’s Inequality<a class="headerlink" href="#theorem-bernoulii-s-inequality" title="Permalink to this headline">¶</a></h3>
+<p>If x &gt; -1 then</p>
+<div class="math notranslate nohighlight">
+\[(1 + x)^{n} \ge 1 + nx \text{  }\forall n \in \mathbb{N}\]</div>
+<p>Proof.</p>
+<p>Base case:</p>
+<p>n = 1:</p>
+<p>plugging in n = 1.</p>
+<div class="math notranslate nohighlight">
+\[(1 + x)  \ge 1 + x\]</div>
+<p>We assume the kth case and prove the k+1st case:</p>
+<div class="math notranslate nohighlight">
+\[(1 + x)^{k + 1} \ge 1 + (k + 1)x\]</div>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span></p>
+<div class="math notranslate nohighlight">
+\[(1 + x)^{k} (1 + x) \ge 1 + xk + x\]</div>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span></p>
+<div class="math notranslate nohighlight">
+\[(1 + kx)(1 + x) \ge 1 + xk + x\]</div>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span></p>
+<div class="math notranslate nohighlight">
+\[1 + x + kx + kx^{2} \ge 1 + xk + x\]</div>
+<p>by <span class="math notranslate nohighlight">\(x^{2} \ge 0\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span></p>
+<div class="math notranslate nohighlight">
+\[1 + x + kx + kx^{2} \ge 1 + xk + x\]</div>
+<p>Thus by the inductive hypothesis,</p>
+<div class="math notranslate nohighlight">
+\[(1 + x)^{n} \ge 1 + nx\]</div>
+<p>Q.E.D.</p>
+</div>
+<div class="section" id="theorem-cauchy-s-inequality">
+<h3>Theorem - Cauchy’s Inequality<a class="headerlink" href="#theorem-cauchy-s-inequality" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>

@@ -188,6 +188,152 @@
 # 
 # ### The Order Properties of the Reals
 # 
+# Now we shall go through the order properties of the real numbers.  These allow us to talk about relations on the reals like, $<$, $>$ and $=$.
+# 
+# There is a non-empty subset $P$ of $\mathbb{R}$, called the set of strictly positive real numbers, that satisfies the following properties:
+# 
+# 1. If a,b belong to $P$, then $a + b$ belongs to $P$.
+# 2. If a,b belong to $P$, then ab belongs to $P$.
+# 3. If a belongs to $\mathbb{R}$, then exactly one of the following holds:
+# 
+# $$a \in P, a = 0, -a \in P$$
+# 
+# Let's look at a few proofs that make use of the relations over the reals.
+# 
+# Theorem:
+# 
+# Let $a, b, c \in \mathbb{R}$, if a > b and b > c, then a > c
+# 
+# Proof:
+# 
+# If,
+# 
+# $$a - b \in P \text{ } and \text{ } b - c \in P$$
+# 
+# Then,
+# 
+# $(a - b) + (b - c) = a - c \in P$ (by order property 1)
+# 
+# Therefore, a > c.
+# 
+# Theorem:
+# 
+# Let $a, b, c \in \mathbb{R}$, exactly one of the following holds, a > b, a = b, a < b.
+# 
+# Proof:
+# 
+# By property (3), one of:
+# 
+# $$ a - b \in P \text{ },\text{ } a-b = 0, \text{ }-(a - b) = b - a \in P$$
+# 
+# Theorem:
+# 
+# If $a \ge b$ and  $b \ge a$, then a = b.
+# 
+# Proof:
+# 
+# If $a \ne b$, then $a - b \ne 0$, so from the previous proof, we have either $a - b \notin P$ or $b - a \in P$, thus a > b or b > a.  
+# 
+# In either case this is a contradiction, thus a = b.
+# 
+# Theorem:
+# 
+# If $a,b \in \mathbb{R}$ and if $a > b$, then $a > \frac{1}{2}(a + b) > b$.
+# 
+# Proof:
+# 
+# Since,
+# 
+# $$a > b$$
+# 
+# If follows that,
+# 
+# $$2a = a + a > a + b$$
+# 
+# and,
+# 
+# $$a + b > b + b = 2b$$
+# 
+# From this we have,
+# 
+# $$2a > a + b > 2b$$
+# 
+# We can now divide the inequality by 2.
+# 
+# $$a > \frac{1}{2}(a + b) > b$$
+# 
+# Q.E.D.
+# 
+# Corollary:
+# 
+# If $a \in \mathbb{R}$ and $a > 0$, then $a > \frac{1}{2}a > 0$.
+# 
+# We can use the previous result and set b = 0, which gives us:
+# 
+# $a > \frac{1}{2}(a + 0) > 0$
+# 
+# Q.E.D.
+# 
+# Theorem:
+# 
+# If $a \in \mathbb{R}$ such that $0 \le a < \epsilon$ for every strictly positive $\epsilon \in \mathbb{R}$, then a = 0.
+# 
+# Proof:
+# 
+# Suppose to the contrary that a > 0.
+# 
+# Then by the above:
+# 
+# $$a > \frac{1}{2}a > 0$$
+# 
+# If we take $\epsilon_{0} := \frac{1}{2}a$, then we obtain $a > \epsilon_{0} > 0$ so that it is false that $a < \epsilon, \text{ } \forall \epsilon > 0$.  Thus we have a contradiction, so a = 0.
+# 
+# ### Theorem - Bernoulii's Inequality
+# 
+# If x > -1 then
+# 
+# $$(1 + x)^{n} \ge 1 + nx \text{  }\forall n \in \mathbb{N}$$
+# 
+# Proof.
+# 
+# Base case:
+# 
+# n = 1:
+# 
+# plugging in n = 1.
+# 
+# $$(1 + x)  \ge 1 + x$$
+# 
+# We assume the kth case and prove the k+1st case:
+# 
+# $$(1 + x)^{k + 1} \ge 1 + (k + 1)x$$
+# 
+# $\rightarrow$
+# 
+# $$(1 + x)^{k} (1 + x) \ge 1 + xk + x$$
+# 
+# $\rightarrow$
+# 
+# $$(1 + kx)(1 + x) \ge 1 + xk + x$$
+# 
+# $\rightarrow$
+# 
+# $$1 + x + kx + kx^{2} \ge 1 + xk + x$$
+# 
+# by $x^{2} \ge 0$,
+# 
+# $\rightarrow$
+# 
+# $$1 + x + kx + kx^{2} \ge 1 + xk + x$$
+# 
+# Thus by the inductive hypothesis, 
+# 
+# $$(1 + x)^{n} \ge 1 + nx$$
+# 
+# Q.E.D.
+# 
+# ### Theorem - Cauchy's Inequality
+# 
 # 
 
 # In[ ]:
