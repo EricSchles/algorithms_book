@@ -1,5 +1,7 @@
 # Analysis Of Algorithms
 
+This book is a _work in progress_.  Proper references are to come.
+
 Chapter 1
 * Introduction to Python
 * Introduction to Proofs

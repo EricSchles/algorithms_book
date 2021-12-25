@@ -334,6 +334,188 @@
 # 
 # ### Theorem - Cauchy's Inequality
 # 
+# If $n \in \mathbb{N}$ and $a_{1}, a_{2}, ..., a_{n}$ and $b_{1}, b_{2}, ..., b_{n}$ are real numbers, then:
+# 
+# $$ (a_{1}b_{1} + ... + a_{n}b_{n})^{2} \le (a_{1}^{2} + a_{2}^{2} + ... + a_{n}^{2})(b_{1}^{2} + b_{2}^{2} ... + b_{n}^{2}) $$
+# 
+# Proof:
+# 
+# We begin by defining a function $f: \mathbb{R} \rightarrow \mathbb{R}$ for $t \in \mathbb{R}$ by
+# 
+# $$ f(t) := (a_{1} - tb_{1})^{2} + ... + (a_{n} - tb_{n})^{2}$$
+# 
+# Next we need a lemma:
+# 
+# 1) If $a \in \mathbb{R}$ and $a \ne 0$, then $a^{2}$
+# 
+# proof:
+# 
+# If $a \ne 0$, a > 0 or a < 0.
+# 
+# Case 1:
+# 
+# If a > 0, then $a * a = a^{2} > 0 $ (by order property 2)
+# 
+# Case 2:
+# 
+# If a > 0, then $(-a) * (-a) = (-1)(-1)a^{2} = 1a^{2} = a^{2} > 0$ (by order property 2).
+# 
+# Q.E.D.
+# 
+# From,
+# 
+# If $a \in \mathbb{R}$ and $a \ne 0$, then $a^{2}$ 
+# 
+# and,
+# 
+# Order Property 1 - If a,b belong to $P$, then $a + b$ belongs to $P$.
+# 
+# We have that $f(t) \ge 0$, $\forall t \in \mathbb{R}$.
+# 
+# Now we want to expand this, how might we do this?  Well consider:
+# 
+# $$ (x + y)(x + y) = x^{2} + 2xy + y^{2} $$
+# 
+# From this we can 'generalize' to:
+# 
+# $$ f(t) = (a_{1}^{2} + ... + a_{n}^{2}) + 2(a_{1}b_{1} + ...+a_{n}b_{n})t + (b_{1}^{2} + ... + b_{n}^{2})t^{2} $$
+# 
+# Next we recall the formula for finding roots:
+# 
+# $$  \frac{b \pm \sqrt{b^{2} - 4ac}}{2c} $$
+# 
+# If we had the above formula in a form that the quadratic formula was via, we could interrogate the roots of this function.  Notice that we can rewrite $f(t)$ as,
+# 
+# $$ f(t) = A + 2Bt + Ct^{2} $$
+# 
+# $$A = (a_{1}^{2} + ... + a_{n}^{2})$$
+# 
+# $$B = (a_{1}b_{1} + ...+a_{n}b_{n})$$
+# 
+# $$C = (b_{1}^{2} + ... + b_{n}^{2})$$
+# 
+# Now, we can make use of the quadratic formula, but before we do, notice that we have that $f(t) \ge 0$, thus we only need to consider _positive roots_.  So we can look simply at the discriminant of the quadratic formula:
+# 
+# $$d = (2B)^{2} - 4AC = 4(B^{2} - AC)$$
+# 
+# From $f(t) \ge 0$, $d \le 0$
+# 
+# Thus,
+# 
+# $B^{2} \le AC$.
+# 
+# Which, substituting back in gives us:
+# 
+# $$(a_{1}b_{1} + ...+a_{n}b_{n})^{2} \le (a_{1}^{2} + ... + a_{n}^{2})(b_{1}^{2} + ... + b_{n}^{2})$$
+# 
+# Q.E.D.
+# 
+# Before leaving this section, there is one more very helpful inequality we will now prove:
+# 
+# ### The Triangle Inequality
+# 
+# If $n \in \mathbb{N}$ and $a_{1}, .. ,a_{n}$ and $b_{1}, .. ,b_{n}$ are real numbers then,
+# 
+# $$\sqrt{ \sum_{i=1}^{n} (a_{i} + b_{i})^{2} } \le \sqrt{\sum_{i=1}^{n} a_{i}^{2} } + \sqrt{\sum_{i=1}^{n} b_{i}^{2} }$$
+# 
+# Like in the last proof, we are going to make some substitutions so we can more easily interogate the inequality.
+# 
+# Let's start by recalling our choice for A, B and C.
+# 
+# $$A = (a_{1}^{2} + ... + a_{n}^{2})$$
+# 
+# $$B = (a_{1}b_{1} + ...+a_{n}b_{n})$$
+# 
+# $$C = (b_{1}^{2} + ... + b_{n}^{2})$$
+# 
+# Next we use the fact that:
+# 
+# $$ (x + y)(x + y) = x^{2} + 2xy + y^{2} $$
+# 
+# To do the following:
+# 
+# $$\sum_{i=1}^{n} (a_{i} + b_{i})^{2} = A + 2B + C$$
+# 
+# Recall from the previous proof that $B^{2} \le AC$, this implies:
+# 
+# $$A + 2B + C \le A + 2 \sqrt{AC} + C = (\sqrt{A} + \sqrt{C})^{2}$$
+# 
+# Next notice, that we only worked over the inner sum, ignoring the $\sqrt$ until now, thus:
+# 
+# $$\sqrt{A + 2B + C} \le \sqrt{A} + \sqrt{C}$$
+# 
+# Now we substitute back in our values for A, B and C and make use of $\sum_{i=1}^{n} (a_{i} + b_{i})^{2} = A + 2B + C$:
+# 
+# $$\sqrt{ \sum_{i=1}^{n} (a_{i} + b_{i})^{2} } \le \sqrt{\sum_{i=1}^{n} a_{i}^{2} } + \sqrt{\sum_{i=1}^{n} b_{i}^{2} }$$
+# 
+# Q.E.D.
+# 
+# Notice that this inequality was called the triangle inequality, but this is not the _only_ triangle inequality.  There is also the following:
+# 
+# Theorem:
+# 
+# For $a, b \in \mathbb{R}$, we have 
+# 
+# $$ |a + b | \le |a| + |b|$$
+# 
+# Proof:
+# 
+# For any $r \in \mathbb{R}$, $-|r| \le r \le |r|$ 
+# 
+# Thus:
+# 
+# $-|a| \le a \le |a|$, $-|b| \le b \le |b|$ 
+# 
+# Now we prove a lemma:
+# 
+# If q > p and s > t, then q + s > p + t.
+# 
+# Proof:
+# 
+# $q > p \iff q - p > 0$ and $s > t \iff s - t > 0$
+# 
+# Thus,
+# 
+# $(q - p) + (s - t) > 0$.  Doing some algebra we have:
+# 
+# $q + s - (p + t) > 0$
+# 
+# Thus:
+# 
+# $q + s > p + t$
+# 
+# Making use of our lemma we have:
+# 
+# $$ -(|a| + |b|) \le a + b $$
+# 
+# And, 
+# 
+# $$a + b \le |a| + |b|$$
+# 
+# Thus,
+# 
+# $$ -(|a| + |b|) \le a + b \le |a| + |b|$$
+# 
+# Next we have another lemma we need to prove:
+# 
+# if c > 0, then $|a| \le c \iff -c \le a \le c$
+# 
+# Proof:
+# 
+# $\rightarrow$
+# 
+# if $|a| \le c$ then $-c \le a \le c$ by definition.
+# 
+# $\leftarrow$
+# 
+# If $-c \le a \le c$, then $a \le c$ and $-a \le c$, thus $|a| \le c$.
+# 
+# By the above lemma, we have:
+# 
+# $$|a + b| \le |a| + |b|$$
+# 
+# Taking a step back, the _reason_ the triangle inequality held in both cases is because $|a + b|$ and $\sqrt{\sum_{i=0}^{n} (a_{i} + b_{i})^{2}}$ is because both are examples of _distance functions_.  That is, we can use either to measure the distance between two points on the real number line.  For distance function defined on the reals, the above triangle inequality will hold.  In fact, this is one of the _main_ requirements for a function to be a distance function.  
+# 
 # 
 
 # In[ ]:
